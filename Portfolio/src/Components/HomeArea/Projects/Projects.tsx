@@ -1,6 +1,6 @@
 import "./Projects.css";
 import {JSX} from "react";
-import {projectsData} from "../ProjectsData.ts";
+import {projectsData} from "../../../Datas/ProjectsData.ts";
 import {ProjectCard} from "../ProjectCard/ProjectCard.tsx";
 
 export function Projects(): JSX.Element {

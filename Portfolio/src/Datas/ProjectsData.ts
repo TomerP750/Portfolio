@@ -1,4 +1,4 @@
-import {Project} from "../../Project.ts";
+import {Project} from "../Models/Project.ts";
 
 
 export const projectsData = [

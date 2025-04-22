@@ -12,10 +12,10 @@ export function Contact(): JSX.Element {
                 <div className="flex flex-col md:flex-row md:space-x-12">
 
                     <div className="flex flex-col space-y-6 md:w-1/3">
-                        <div className="flex items-center space-x-3">
-                            <PhoneIcon className="w-6 h-6 text-[#10b981]" />
-                            <span>1234567890</span>
-                        </div>
+                        {/*<div className="flex items-center space-x-3">*/}
+                        {/*    <PhoneIcon className="w-6 h-6 text-[#10b981]" />*/}
+                        {/*    <span>1234567890</span>*/}
+                        {/*</div>*/}
                         <div className="flex items-center space-x-3">
                             <MailIcon className="w-6 h-6 text-[#10b981]" />
                             <span>mail</span>

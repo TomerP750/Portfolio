@@ -1,6 +1,6 @@
 import {JSX, useState} from "react";
 import "./ProjectCard.css";
-import {Project} from "../../../Project.ts";
+import {Project} from "../../../Models/Project.ts";
 import {ArrowRight, ExternalLink, Github} from "lucide-react";
 
 
@@ -25,12 +25,12 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
             <div className="flex justify-start w-9/10 h-[70%]">
                 <p>{project.content}</p>
             </div>
-            <div className="w-9/10 flex justify-end text-white hover:text-[#10b981] transition duration-200 ease-in">
+            <div
+                className="readmore w-9/10 flex justify-end text-white hover:text-[#10b981] transition duration-200 ease-in">
                 <span className={"cursor-pointer"}>Read More <ArrowRight className={"inline cursor-pointer "}/></span>
             </div>
         </div>
     );
-
 
 
 }
