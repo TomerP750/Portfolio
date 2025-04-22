@@ -11,7 +11,7 @@ export function Home(): JSX.Element {
 
 
     return (
-        <div className="flex flex-col gap-10 justify-center">
+        <div className="flex flex-col gap-2 justify-center">
 			<Hero/>
             <About/>
             <Projects/>

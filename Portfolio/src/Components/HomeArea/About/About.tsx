@@ -3,8 +3,29 @@ import "./About.css";
 import {JSX, useState} from "react";
 import {educationData, experienceData} from "../../../Datas/TimelineData.ts";
 import {TimelineType} from "../../../Models/TimelineType.ts";
+import {Skills} from "../Skills/Skills.tsx";
+
 
 export function About(): JSX.Element {
+
+
+    // const skills = [
+    //     { name: 'Java', icon: FaCoffee, color: '#f89820' },
+    //     { name: 'Spring',      icon: SiSpring,     color: '#6db33f' },
+    //     { name: 'React',       icon: SiReact,      color: '#61dafb' },
+    //     { name: 'TypeScript',  icon: SiTypescript, color: '#3178c6' },
+    //     { name: 'JavaScript',  icon: SiJavascript, color: '#f7df1e' },
+    //     { name: 'MySQL',       icon: SiMysql,      color: '#4479a1' },
+    //     { name: 'MongoDB',     icon: SiMongodb,    color: '#47a248' },
+    //     { name: 'HTML5',       icon: SiHtml5,      color: '#e34f26' },
+    //     { name: 'CSS3',        icon: SiCss3,       color: '#264de4' },
+    //     { name: 'TailwindCSS', icon: SiTailwindcss,color: '#06b6d4' },
+    //     { name: 'Docker',      icon: SiDocker,     color: '#2496ed' },
+    //     { name: 'Python', icon: SiPython, color: '#3776AB' },
+    //
+    // ];
+
+
     return (
         <div className="text-white flex flex-col items-center py-16">
             <div className="flex flex-col w-4/5 items-center gap-20">
@@ -43,14 +64,7 @@ export function About(): JSX.Element {
 
                 </div>
 
-                <div className="flex justify-start w-2/3 mb-6">
-
-                    <div className=" flex flex-col w-full">
-                        <div className="flex justify-end w-9/10">Java Spring JavaScript TypeScript MySql MongoDB Html CSS Tailwind CSS</div>
-                    </div>
-                    <p className="w-1/8 font-semibold">Skills</p>
-                </div>
-
+                <Skills/>
 
             </div>
         </div>

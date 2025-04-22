@@ -1,6 +1,8 @@
 import "./Contact.css";
 import {JSX} from "react";
 import {MailIcon, PhoneIcon} from "lucide-react";
+import {FaGithub} from "react-icons/fa";
+import {SiGithub, SiLinkedin} from "react-icons/si";
 
 export function Contact(): JSX.Element {
     return (
@@ -17,8 +19,16 @@ export function Contact(): JSX.Element {
                         {/*    <span>1234567890</span>*/}
                         {/*</div>*/}
                         <div className="flex items-center space-x-3">
-                            <MailIcon className="w-6 h-6 text-[#10b981]" />
+                            <MailIcon className="w-6 h-6 text-white"/>
                             <span>mail</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                            <SiLinkedin className="w-6 h-6 text-[#0077B5]"/>
+                            <span>/TomerJacob</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                            <SiGithub className="w-6 h-6 text-[#6e40c9]"/>
+                            <span>/TomerP750</span>
                         </div>
                     </div>
 
@@ -26,7 +36,7 @@ export function Contact(): JSX.Element {
                         onSubmit={(e) => e.preventDefault()}
                         className="mt-8 md:mt-0 flex flex-col gap-6 md:w-full"
                     >
-                        <div className="flex flex-col">
+                    <div className="flex flex-col">
                             <label htmlFor="name" className="mb-2 font-medium">
                                 Name
                             </label>
