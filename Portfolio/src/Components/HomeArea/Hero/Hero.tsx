@@ -1,9 +1,13 @@
-import { motion } from "framer-motion";
+import {motion, useScroll, useTransform} from "framer-motion";
 import "./Hero.css";
 import {JSX} from "react";
 import {ArrowRight} from "lucide-react";
 
 export function Hero(): JSX.Element {
+
+    const { scrollY } = useScroll();
+    const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+    const scale = useTransform(scrollY, [0, 500], [1, 0.9]);
 
     const containerVariants = {
         hidden: {},
@@ -17,7 +21,10 @@ export function Hero(): JSX.Element {
 
     return (
         <motion.section
-            className="bg-gradient-to-r from-[#0b1a3a] via-[#0f172a] to-[#0f172a] items-center flex justify-center h-screen"
+            style={{ opacity, scale }}
+            className="bg-gradient-to-r from-[#0b1a3a] via-[#0f172a] to-[#0f172a]
+                 items-center flex justify-center h-screen
+                 will-change-transform will-change-opacity"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
@@ -42,12 +49,11 @@ export function Hero(): JSX.Element {
                     </motion.p>
                     <motion.p className="text-white" variants={itemVariants}>
                         I’m a passionate software developer specializing in crafting responsive,
-                        intuitive, and engaging digital experiences. My expertise spans full-stack
-                        development, including building robust backend systems and dynamic, beautiful
-                        front-end interfaces. Let’s build something amazing together.
+                        intuitive, and engaging digital experiences…
                     </motion.p>
                     <motion.button
-                        className="text-white flex items-center px-10 py-3 bg-[#10b981] rounded-full cursor-pointer hover:bg-gray-500 transition duration-200 ease-in"
+                        className="text-white flex items-center px-10 py-3 bg-[#10b981] rounded-full
+                       cursor-pointer hover:bg-gray-500 transition duration-200 ease-in"
                         variants={itemVariants}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -57,12 +63,15 @@ export function Hero(): JSX.Element {
                     </motion.button>
                 </motion.div>
 
-                {/* Image / Graphic Placeholder */}
-                <motion.div className="hidden min-[900px]:block w-1/2" variants={itemVariants}>
-                    <motion.div className="w-full h-full bg-gray-600" variants={itemVariants} />
+                {/* Image / Graphic Placeholder with animation */}
+                <motion.div
+                    className="hidden min-[900px]:block w-1/2"
+                    variants={itemVariants}
+                >
+                    <div className="w-full h-full bg-gray-600" />
                 </motion.div>
             </div>
         </motion.section>
-    )
+    );
 
 }
