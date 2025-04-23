@@ -26,13 +26,19 @@ export function NavbarRight(): JSX.Element {
 `
 
 
+    const scrollToSection = (id: string) => {
+        document
+            .getElementById(id)
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
     return (
         <div className="flex justify-between items-center gap-1 text-1xl">
             <div className="hidden min-[900px]:flex gap-2">
-                <span className={navbarCenterItem}>Home</span>
-                <span className={navbarCenterItem}>About</span>
-                <span className={navbarCenterItem}>Projects</span>
-                <span className={navbarCenterItem}>Contact</span>
+                <span onClick={() => scrollToSection("home")} className={navbarCenterItem}>Home</span>
+                <span onClick={() => scrollToSection("about")} className={navbarCenterItem}>About</span>
+                <span onClick={() => scrollToSection("projects")} className={navbarCenterItem}>Projects</span>
+                <span onClick={() => scrollToSection("contact")} className={navbarCenterItem}>Contact</span>
                 <span
                     className={"hidden sm:inline-block relative text-[#10b981] hover:text-[#e5e7eb] no-underline transition-colors duration-300 px-4 py-2 rounded-4xl border-1 cursor-pointer"}>Download CV</span>
             </div>

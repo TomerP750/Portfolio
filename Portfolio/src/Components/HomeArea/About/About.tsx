@@ -4,7 +4,6 @@ import {Skills} from "../Skills/Skills.tsx";
 import {motion, useInView, Variants} from "framer-motion";
 import {FaBriefcase, FaGraduationCap} from "react-icons/fa";
 import {User} from "lucide-react";
-import image from "../../../assets/tomerimage.jpg"
 import {educationData} from "../../../Datas/TimelineData.ts";
 
 export function About(): JSX.Element {
@@ -39,7 +38,7 @@ export function About(): JSX.Element {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
-            className="bg-[#0f172a] text-white py-12 px-4 sm:py-20 sm:px-8 lg:px-0 flex flex-col items-center space-y-8 sm:space-y-12"
+            className="bg-[#0f172a] text-white py-12 px-4 sm:py-20 sm:px-8 lg:px-0 flex flex-col items-center space-y-8 sm:space-y-12 gap-20 md:gap-10"
         >
             {/* Section Title */}
             <motion.h2
@@ -54,6 +53,7 @@ export function About(): JSX.Element {
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row items-center w-full sm:w-3/4 lg:w-2/3 gap-6 sm:gap-8"
             >
+
                 <motion.div
                     variants={itemVariants}
                     className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
@@ -62,25 +62,25 @@ export function About(): JSX.Element {
                 </motion.div>
                 <motion.div
                     variants={itemVariants}
-                    className="w-full sm:w-3/4 text-base leading-relaxed space-y-2"
+                    className="w-3/4 sm:w-3/4 text-base leading-relaxed space-y-2"
                 >
                     <motion.span>
                         Hello! I’m Tomer, a Full Stack Developer who enjoys building modern
                         websites and applications
                     </motion.span>
-                    <motion.span className="block ml-2">
+                    <motion.span>
                         from concept to launch. I combine thoughtful design with solid
                         technical skills to turn ideas into
                     </motion.span>
-                    <motion.span className="block ml-4">
+                    <motion.span>
                         smooth, functional, and visually appealing digital products. I focus
                         on writing clean,
                     </motion.span>
-                    <motion.span className="block ml-4">
+                    <motion.span>
                         maintainable code and really enjoy working as part of a team to build
                         great solutions. Whether
                     </motion.span>
-                    <motion.span className="block ml-2">
+                    <motion.span>
                         it’s a personal project or a collaborative effort, I’m always aiming
                         to deliver quality work that
                     </motion.span>
@@ -97,26 +97,21 @@ export function About(): JSX.Element {
             >
                 <motion.ul
                     variants={listVariants}
-                    className="w-full sm:w-4/5 space-y-2"
+                    className="w-full sm:w-4/5 flex flex-col items-center sm:items-end space-y-2"
                 >
-                    {educationData.map((item, idx) => {
-
-                        const indent = idx === 1 || idx === 4 ? "mr-2" : idx === 2 || idx === 3 ? "mr-4" : "";
-
-                        return (
-                            <motion.li
-                                key={idx}
-                                variants={itemVariants}
-                                className={`flex justify-end items-start space-x-2 ${indent}`}
-                            >
-        <span className="text-right text-gray-300">
-          ({item.date}) — {item.role}{" "}
-            <strong className="text-white">{item.companyOrInstitution}</strong>
-        </span>
-                                <span className="w-2 h-2 bg-gray-300 rounded-full mt-1"/>
-                            </motion.li>
-                        );
-                    })}
+                    {educationData.map((item, idx) => (
+                        <motion.li
+                            key={idx}
+                            variants={itemVariants}
+                            className="flex justify-end items-start space-x-2"
+                        >
+                        <span className="text-right text-gray-300">
+                        ({item.date}) — {item.role}{" "}
+                        <strong className="text-white">{item.companyOrInstitution}</strong>
+                        </span>
+                            <span className="w-2 h-2 bg-gray-300 rounded-full mt-1" />
+                        </motion.li>
+                    ))}
                 </motion.ul>
 
 

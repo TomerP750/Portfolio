@@ -10,20 +10,6 @@ export function Projects(): JSX.Element {
     // Trigger when 20% visible and 200px inside bottom
     const inView = useInView(ref, { once: true, margin: "0px 0px -200px 0px", amount: 0.2 });
 
-    // Container drives stagger of children
-    const containerVariants: Variants = {
-        hidden: {},
-        show: {
-            transition: { staggerChildren: 0.2 }
-        },
-    };
-
-    // Title pop-up animation
-    const titleVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-    };
-
     // Slide-in from left
     const leftVariants: Variants = {
         hidden: { x: "-100%", opacity: 0 },

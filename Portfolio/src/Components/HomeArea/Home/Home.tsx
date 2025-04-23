@@ -12,13 +12,21 @@ export function Home(): JSX.Element {
 
     return (
         <div className={`flex flex-col gap-2 justify-center`}>
-            <div className={"bg-no-repeat bg-cover bg-center"} style={{ backgroundImage: `url(${homeTopBackground})`}}>
+            <div id={"home"} className={"bg-no-repeat bg-cover bg-center"} style={{ backgroundImage: `url(${homeTopBackground})`}}>
             <Navbar/>
 			<Hero/>
             </div>
-            <About/>
-            <Projects/>
-            <Contact/>
+            <div id="about">
+                <About/>
+            </div>
+
+            <div id="projects">
+                <Projects/>
+            </div>
+
+            <div id="contact">
+                <Contact/>
+            </div>
         </div>
     );
 
