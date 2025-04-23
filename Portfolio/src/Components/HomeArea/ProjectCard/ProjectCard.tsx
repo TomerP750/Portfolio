@@ -5,7 +5,7 @@ import {ArrowRight} from "lucide-react";
 import {FiExternalLink} from "react-icons/fi";
 import {FaGithub} from "react-icons/fa";
 import {AnimatePresence, motion} from "framer-motion";
-import {FaPerson} from "react-icons/fa6";
+import {ProjectType} from "../../../Models/ProjectType.ts";
 
 
 interface ProjectCardProps {
@@ -14,10 +14,16 @@ interface ProjectCardProps {
 
 export function ProjectCard({project}: ProjectCardProps): JSX.Element {
 
+
     const [modalOpened, setModalOpened] = useState<boolean>(false);
 
-    const handleReadMore = () => setModalOpened(true);
-    const handleClose = () => setModalOpened(false);
+    const handleReadMore = () =>{
+        setModalOpened(true);
+
+    }
+    const handleClose = () =>{
+        setModalOpened(false);
+    }
 
     const truncatedContent =
         project.content.length > 100
@@ -33,7 +39,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
     return (
         <>
             <div className={`w-9/10 h-[600px] flex flex-col items-center border border-white mb-8 `}>
-                {project.imageUrl ? <img src={project.imageUrl}/> : <div className="w-full bg-[#10b981] h-4/5"><FaPerson className={"size-20"}/></div>}
+                {project.imageUrl ? <img src={project.imageUrl}/> : <div className="w-full bg-[#10b981] h-4/5"></div>}
                 <div className="flex justify-between mt-5 w-9/10">
                     <p className="mb-4 font-semibold text-2xl text-white">{project.title}</p>
                     <div className="flex gap-4">
@@ -46,6 +52,13 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                             className="cursor-pointer text-white hover:text-[#10b981] transition duration-200 ease-in"
                         />
                     </div>
+                </div>
+                <div className="flex justify-start w-9/10">
+                    {project.projectType?.map(p =>
+                        <span
+                            className={`px-2 py-1 text-black text-sm rounded-xl
+                            ${p === ProjectType.FULLSTACK ? "bg-[#EEF2FF]" : p === ProjectType.BACKEND ? "bg-[#ECFDF5]" : "bg-[#FFF8E1]"}`}>
+                            {p.toString()}</span>)}
                 </div>
                 <div className="flex justify-start w-9/10 h-1/2 mt-8">
                     <p className="text-white">{truncatedContent}</p>

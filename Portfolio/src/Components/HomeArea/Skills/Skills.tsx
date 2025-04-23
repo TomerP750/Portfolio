@@ -1,20 +1,7 @@
 import {AnimatePresence, motion, useInView, Variants} from "framer-motion";
 import "./Skills.css";
 import {JSX, useRef, useState} from "react";
-import {FaCoffee} from "react-icons/fa";
-import {
-    SiCss3, SiDocker,
-    SiHtml5,
-    SiJavascript,
-    SiMongodb,
-    SiMysql,
-    SiReact,
-    SiSpring,
-    SiTailwindcss,
-    SiTypescript
-} from "react-icons/si";
 import {skills} from "../../../Datas/SkillsData.ts";
-
 
 
 export function Skills(): JSX.Element {

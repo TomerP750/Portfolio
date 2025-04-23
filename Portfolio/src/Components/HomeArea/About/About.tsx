@@ -47,11 +47,14 @@ export function About(): JSX.Element {
                     className="mb-8 sm:mb-0 w-[100px] h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center">
                     <User className="size-10 sm:size-20 w-[150px]  text-white"/>
                 </div>
-                <p className="text-base leading-relaxed w-3/4">
-                    Hello! I’m Tomer, a Full Stack Developer specializing in crafting modern, responsive websites and
-                    applications. I blend creative design sense with robust code to deliver polished digital
-                    experiences.
-                </p>
+                <div className="text-base leading-relaxed w-3/4">
+                    <span> Hello! I’m Tomer, a Full Stack Developer who enjoys building modern websites and applications</span>
+                    <span className={"block ml-2"}> from concept to launch. I combine thoughtful design with solid technical skills to turn ideas into</span>
+                    <span className={"block ml-4"}> smooth, functional, and visually appealing digital products. I focus on writing clean,</span>
+                    <span className={"block ml-4"}> maintainable code and really enjoy working as part of a team to build great solutions. Whether</span>
+                    <span className={"block ml-2"}> it’s a personal project or a collaborative effort, I’m always aiming to deliver quality work that</span>
+                    <span>meets real needs.</span>
+                </div>
             </motion.div>
 
             {/* Row 2: Education (reversed layout) */}
@@ -59,8 +62,8 @@ export function About(): JSX.Element {
                         className="flex-col sm:flex-row sm:flex justify-between items-center w-2/3">
                 <ul className="w-4/5 flex flex-col items-end list-disc list-inside text-gray-300 space-y-2">
                     <li><strong>High School</strong> — Student (2013–2016)</li>
-                    <li><strong>Army</strong> — Intelligence & Air Force (2016–2019)</li>
-                    <li><strong>Kidum</strong> — Psychometric (2021–2022)</li>
+                    <li className={"mr-4"}><strong>Army</strong> — Intelligence & Air Force (2016–2019)</li>
+                    <li className={"mr-4"}><strong>Kidum</strong> — Psychometric (2021–2022)</li>
                     <li><strong>John Bryce</strong> — Java Fullstack (Apr 2024–Jan 2025)</li>
                 </ul>
                 <div className="mb-8 sm:mb-0 w-[100px] h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center">
