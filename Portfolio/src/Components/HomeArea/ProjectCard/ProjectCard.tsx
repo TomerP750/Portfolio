@@ -17,11 +17,11 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
 
     const [modalOpened, setModalOpened] = useState<boolean>(false);
 
-    const handleReadMore = () =>{
+    const handleReadMore = () => {
         setModalOpened(true);
 
     }
-    const handleClose = () =>{
+    const handleClose = () => {
         setModalOpened(false);
     }
 
@@ -38,38 +38,40 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
 
     return (
         <>
-            <div className={`w-9/10 h-[600px] flex flex-col items-center border border-white mb-8 `}>
+            <div className={`w-full h-[600px] flex flex-col items-center`}>
                 {project.imageUrl ? <img src={project.imageUrl}/> : <div className="w-full bg-[#10b981] h-4/5"></div>}
-                <div className="flex justify-between mt-5 w-9/10">
-                    <p className="mb-4 font-semibold text-2xl text-white">{project.title}</p>
-                    <div className="flex gap-4">
-                        <FaGithub
-                            size={25}
-                            className="cursor-pointer text-white hover:text-[#8257e5] transition duration-200 ease-in"
-                        />
-                        <FiExternalLink
-                            size={25}
-                            className="cursor-pointer text-white hover:text-[#10b981] transition duration-200 ease-in"
-                        />
+                <div className={"border border-white flex flex-col items-center h-full"}>
+                    <div className="flex justify-between mt-5 w-9/10">
+                        <p className="mb-4 font-semibold text-2xl text-white">{project.title}</p>
+                        <div className="flex gap-4">
+                            <FaGithub
+                                size={25}
+                                className="cursor-pointer text-white hover:text-[#8257e5] transition duration-200 ease-in"
+                            />
+                            <FiExternalLink
+                                size={25}
+                                className="cursor-pointer text-white hover:text-[#10b981] transition duration-200 ease-in"
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className="flex justify-start w-9/10">
-                    {project.projectType?.map(p =>
-                        <span
-                            className={`px-2 py-1 text-black text-sm rounded-xl
+                    <div className="flex justify-start w-9/10">
+                        {project.projectType?.map(p =>
+                            <span
+                                className={`px-2 py-1 text-black text-sm rounded-xl
                             ${p === ProjectType.FULLSTACK ? "bg-[#EEF2FF]" : p === ProjectType.BACKEND ? "bg-[#ECFDF5]" : "bg-[#FFF8E1]"}`}>
                             {p.toString()}</span>)}
-                </div>
-                <div className="flex justify-start w-9/10 h-1/2 mt-8">
-                    <p className="text-white">{truncatedContent}</p>
-                </div>
-                <div
-                    onClick={handleReadMore}
-                    className="flex w-9/10 justify-end mb-8"
-                >
+                    </div>
+                    <div className="flex justify-start w-9/10 h-1/2 mt-8">
+                        <p className="text-white">{truncatedContent}</p>
+                    </div>
+                    <div
+                        onClick={handleReadMore}
+                        className="flex w-9/10 justify-end mb-8"
+                    >
                     <span className={"text-[#10b981] hover:opacity-80 transition duration-200 ease-in cursor-pointer"}>
                         Learn More <ArrowRight className="inline"/>
                     </span>
+                    </div>
                 </div>
             </div>
 
@@ -96,7 +98,8 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                                     Programming Languages Used:{' '}
                                     {project.programingLanguages && project.programingLanguages.length > 0
                                         ? project.programingLanguages.map((lang, idx) => (
-                                            <span key={lang}>{lang}{idx < project.programingLanguages!.length - 1 ? ', ' : ''}</span>
+                                            <span
+                                                key={lang}>{lang}{idx < project.programingLanguages!.length - 1 ? ', ' : ''}</span>
                                         ))
                                         : <em>None</em>
                                     }

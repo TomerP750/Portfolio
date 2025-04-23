@@ -4,7 +4,7 @@ import {
     SiHtml5,
     SiJavascript,
     SiMongodb,
-    SiMysql,
+    SiMysql, SiPython,
     SiReact,
     SiSpring,
     SiTailwindcss,
@@ -111,4 +111,10 @@ export const skills = [
         color: '#2496ed',
         details: ['Containerization', 'Docker Compose', 'Image Optimization'],
     },
+    {
+        name: 'Python',
+        icon: SiPython,
+        color: '#2496ed',
+        details: ['Basic Python', 'OOP'],
+    }
 ]

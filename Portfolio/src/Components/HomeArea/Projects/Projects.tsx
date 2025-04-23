@@ -54,7 +54,7 @@ export function Projects(): JSX.Element {
             >
                 <h2 className="self-start ml-16 text-4xl font-bold">My Projects</h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 w-11/12 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 w-4/5 gap-5">
                     {projectsData.map((project, index) => (
                         <motion.div
                             key={project.id}

@@ -7,12 +7,12 @@ export function Contact(): JSX.Element {
     return (
         <section className="bg-[#0f172a] py-16 px-4">
             <div className="max-w-4xl mx-auto text-white">
-                <h2 className="text-4xl font-bold text-center text-[#10b981] mb-8">
+                <h2 className=" w-full text-4xl font-bold text-center text-[#10b981] mb-8">
                     Get in Touch
                 </h2>
                 <div className="flex flex-col md:flex-row md:space-x-12">
 
-                    <div className="flex flex-col space-y-6 md:w-1/3">
+                    <div className="flex flex-col items-center md:items-start space-y-6 md:w-1/3">
                         {/*<div className="flex items-center space-x-3">*/}
                         {/*    <PhoneIcon className="w-6 h-6 text-[#10b981]" />*/}
                         {/*    <span>1234567890</span>*/}
@@ -33,7 +33,7 @@ export function Contact(): JSX.Element {
                         className="mt-8 md:mt-0 flex flex-col gap-6 md:w-full"
                     >
                     <div className="flex flex-col">
-                            <label htmlFor="name" className="mb-2 font-medium">
+                            <label htmlFor="name" className="self-center md:self-start mb-2 font-medium">
                                 Name
                             </label>
                             <input
@@ -46,7 +46,7 @@ export function Contact(): JSX.Element {
                         </div>
 
                         <div className="flex flex-col">
-                            <label htmlFor="email" className="mb-2 font-medium">
+                            <label htmlFor="email" className="self-center md:self-start mb-2 font-medium">
                                 Email
                             </label>
                             <input
@@ -59,7 +59,7 @@ export function Contact(): JSX.Element {
                         </div>
 
                         <div className="flex flex-col">
-                            <label htmlFor="message" className="mb-2 font-medium">
+                            <label htmlFor="message" className="self-center md:self-start mb-2 font-medium">
                                 Message
                             </label>
                             <textarea
@@ -70,10 +70,9 @@ export function Contact(): JSX.Element {
                                 required
                             />
                         </div>
-
                         <button
                             type="submit"
-                            className="cursor-pointer self-start bg-[#10b981] hover:bg-[#0eab72] transition duration-300 ease-in text-white font-medium py-3 px-8 rounded-lg"
+                            className="cursor-pointer self-center md:self-start bg-[#10b981] hover:bg-[#0eab72] transition duration-300 ease-in text-white font-medium py-3 px-8 rounded-lg"
                         >
                             Send Message
                         </button>
