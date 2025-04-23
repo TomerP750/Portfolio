@@ -1,7 +1,6 @@
 import "./Contact.css";
 import {JSX} from "react";
-import {MailIcon, PhoneIcon} from "lucide-react";
-import {FaGithub} from "react-icons/fa";
+import {MailIcon} from "lucide-react";
 import {SiGithub, SiLinkedin} from "react-icons/si";
 
 export function Contact(): JSX.Element {
@@ -26,10 +25,7 @@ export function Contact(): JSX.Element {
                             <SiLinkedin className="w-6 h-6 text-[#0077B5]"/>
                             <span>/TomerJacob</span>
                         </div>
-                        <div className="flex items-center space-x-3">
-                            <SiGithub className="w-6 h-6 text-[#6e40c9]"/>
-                            <span>/TomerP750</span>
-                        </div>
+
                     </div>
 
                     <form

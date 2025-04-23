@@ -9,8 +9,11 @@ export function Projects(): JSX.Element {
 
     return (
         <div className="flex flex-col items-center text-white gap-5">
-			<p className={"text-white"}>My Projects</p>
-            <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 w-3/4 justify-items-center">
+            <div className="flex justify-start w-9/10 mb-4 ml-[4rem]">
+                <h2 className={"text-white text-4xl"}>My Projects</h2>
+            </div>
+
+            <div className="grid grid-cols-1  sm:grid-cols-2 w-9/10 justify-items-center">
                 {projectsData.map(p => <ProjectCard key={p.id} project={p}/>)}
             </div>
         </div>

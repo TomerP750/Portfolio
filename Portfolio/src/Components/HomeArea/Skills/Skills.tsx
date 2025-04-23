@@ -1,3 +1,4 @@
+import {AnimatePresence, motion, Variants} from "framer-motion";
 import "./Skills.css";
 import {JSX, useState} from "react";
 import {FaCoffee} from "react-icons/fa";
@@ -12,6 +13,7 @@ import {
     SiTailwindcss,
     SiTypescript
 } from "react-icons/si";
+import {skills} from "../../../Datas/SkillsData.ts";
 
 export function Skills(): JSX.Element {
 
@@ -21,138 +23,79 @@ export function Skills(): JSX.Element {
         setOpenSkill(prev => (prev === name ? null : name));
     };
 
+    const containerVariants: Variants = {
+        hidden: { opacity: 0, y: 30 },
+        show: { opacity: 1, y: 0, transition: { staggerChildren: 0.1, when: 'beforeChildren' } }
+    }
 
-    const skills = [
-        {
-            name: 'Java',
-            icon: FaCoffee,
-            color: '#f89820',
-            details: [
-                'Java Basic',
-                'Object-Oriented Programming',
-                'Collections & Generics',
-                'Stream API & Lambdas',
-                'JUnit Testing',
-            ],
-        },
-        {
-            name: 'Spring',
-            icon: SiSpring,
-            color: '#6db33f',
-            details: [
-                'Spring Boot Applications',
-                'Spring Security',
-                'RESTful Services',
-                'Data JPA & Transactions',
-            ],
-        },
-        {
-            name: 'React',
-            icon: SiReact,
-            color: '#61dafb',
-            details: [
-                'Functional Components & Hooks',
-                'Context API & Redux',
-                'React Router',
-                'Performance Optimization',
-            ],
-        },
-        {
-            name: 'TypeScript',
-            icon: SiTypescript,
-            color: '#3178c6',
-            details: [
-                'Static Typing',
-                'Interfaces & Generics',
-                'Advanced Types',
-            ],
-        },
-        {
-            name: 'JavaScript',
-            icon: SiJavascript,
-            color: '#f7df1e',
-            details: [
-                'ES6+ Syntax',
-                'Asynchronous Programming',
-                'DOM Manipulation',
-            ],
-        },
-        {
-            name: 'MySQL',
-            icon: SiMysql,
-            color: '#4479a1',
-            details: [
-                'Database Design',
-                'Joins & Indexes',
-                'Stored Procedures',
-            ],
-        },
-        {
-            name: 'MongoDB',
-            icon: SiMongodb,
-            color: '#47a248',
-            details: [
-                'Document Modeling',
-                'Aggregation Framework',
-                'Mongoose ODM',
-            ],
-        },
-        {
-            name: 'HTML5',
-            icon: SiHtml5,
-            color: '#e34f26',
-            details: ['Semantic Markup', 'Forms & Validation', 'Accessibility'],
-        },
-        {
-            name: 'CSS3',
-            icon: SiCss3,
-            color: '#264de4',
-            details: ['Flexbox & Grid', 'Responsive Design', 'Animations'],
-        },
-        {
-            name: 'TailwindCSS',
-            icon: SiTailwindcss,
-            color: '#06b6d4',
-            details: ['Utility-First Styling', 'Custom Configurations', 'Responsive Utilities'],
-        },
-        {
-            name: 'Docker',
-            icon: SiDocker,
-            color: '#2496ed',
-            details: ['Containerization', 'Docker Compose', 'Image Optimization'],
-        },
-    ];
+    const cardVariants: Variants = {
+        hidden: { opacity: 0, scale: 0.9 },
+        show: { opacity: 1, scale: 1, transition: { duration: 0.4 } }
+    }
 
+    const detailVariants: Variants = {
+        hidden: { height: 0, opacity: 0 },
+        show: { height: 'auto', opacity: 1, transition: { duration: 0.3 } }
+    }
 
     return (
-        <div className="flex justify-start w-2/3 mb-6">
-            <p className="w-1/8 font-semibold">Skills</p>
-            <div className="w-full">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
-                    {skills.map(({name, icon: Icon, color, details}) => (
-                        <div key={name} className="bg-gray-800 rounded-lg shadow-lg">
-                            <button
-                                onClick={() => toggleSkill(name)}
-                                className="w-full flex items-center justify-between p-4 text-left"
+        <motion.section
+            className="max-w-5xl mx-auto mt-16 mb-24 px-4"
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+        >
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#10b981] mb-8">
+                My Skills
+            </h2>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {skills.map(({ name, icon: Icon, color, details }) => (
+                    <motion.div
+                        key={name}
+                        variants={cardVariants}
+                        whileHover={{ y: -5, boxShadow: '0px 10px 20px rgba(0,0,0,0.2)' }}
+                        className="relative bg-[#1f2937] rounded-2xl overflow-hidden cursor-pointer"
+                    >
+                        {/* Icon circle */}
+                        <div
+                            onClick={() => toggleSkill(name)}
+                            className="flex items-center p-4 space-x-3"
+                        >
+                            <div
+                                className="p-3 rounded-full"
+                                style={{ backgroundColor: color + '33' }}
                             >
-                                <div className="flex items-center gap-3">
-                                    <Icon size={28} color={color}/>
-                                    <span className="font-semibold text-lg">{name}</span>
-                                </div>
-                                <span className="text-xl">{openSkill === name ? '−' : '+'}</span>
-                            </button>
-                            {openSkill === name && (
-                                <div
-                                    className="p-4 pt-0 text-sm text-gray-300 space-y-1 border-t border-gray-700">
-                                    {details.map((line, i) => (
-                                        <p key={i}>• {line}</p>
-                                    ))}
-                                </div>
-                            )}
+                                <Icon size={32} color={color} />
+                            </div>
+                            <h3 className="text-xl font-semibold text-white flex-grow">
+                                {name}
+                            </h3>
+                            <span className="text-2xl text-white">
+                {openSkill === name ? '−' : '+'}
+              </span>
                         </div>
-                    ))}
-                </div>
+
+                        <AnimatePresence>
+                            {openSkill === name && (
+                                <motion.div
+                                    variants={detailVariants}
+                                    initial="hidden"
+                                    animate="show"
+                                    exit="hidden"
+                                    className="p-4 pt-0 text-gray-300 bg-[#111827]"
+                                >
+                                    <ul className="list-disc list-inside space-y-1">
+                                        {details.map((d, idx) => (
+                                            <li key={idx}>{d}</li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </motion.div>
+                ))}
             </div>
-        </div>
-    );
+        </motion.section>
+    )
 }

@@ -1,8 +1,16 @@
 import "./NavbarRight.css";
-import {JSX} from "react";
-import {Menu} from "lucide-react";
+import {JSX, useState} from "react";
+import {Menu, X} from "lucide-react";
+import {AnimatePresence, motion } from "framer-motion";
 
 export function NavbarRight(): JSX.Element {
+
+    const [drawerOpened, setDrawerOpened] = useState<boolean>(false);
+    const drawerVariants = {
+        hidden: { x: '-100%' },
+        visible: { x: 0 },
+        exit:   { x: '-100%' },
+    }
 
     // const navbarCenterItem = "hidden sm:block text-[#10b981] hover:text-[#e5e7eb] transition px-3 py-2 rounded cursor-pointer "
 
@@ -30,7 +38,9 @@ export function NavbarRight(): JSX.Element {
             </div>
 
             <Menu className="block min-[900px]:hidden text-[#10b981]"/>
+
         </div>
 
     );
+
 }

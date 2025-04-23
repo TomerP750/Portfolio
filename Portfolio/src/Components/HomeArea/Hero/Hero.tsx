@@ -48,8 +48,7 @@ export function Hero(): JSX.Element {
                         I'm Tomer Jacob
                     </motion.p>
                     <motion.p className="text-white" variants={itemVariants}>
-                        I’m a passionate software developer specializing in crafting responsive,
-                        intuitive, and engaging digital experiences…
+                        I'm a passionate Full Stack Developer who creates modern, responsive websites and applications. Driven by curiosity, attention to detail, and a commitment to building digital experiences. Welcome to my portfolio.
                     </motion.p>
                     <motion.button
                         className="text-white flex items-center px-10 py-3 bg-[#10b981] rounded-full
@@ -63,7 +62,7 @@ export function Hero(): JSX.Element {
                     </motion.button>
                 </motion.div>
 
-                {/* Image / Graphic Placeholder with animation */}
+
                 <motion.div
                     className="hidden min-[900px]:block w-1/2"
                     variants={itemVariants}
