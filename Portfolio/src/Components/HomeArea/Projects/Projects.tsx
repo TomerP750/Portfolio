@@ -1,64 +1,71 @@
 import "./Projects.css";
-import {JSX} from "react";
+import {JSX, useRef} from "react";
 import {projectsData} from "../../../Datas/ProjectsData.ts";
 import {ProjectCard} from "../ProjectCard/ProjectCard.tsx";
-import {motion, Variants} from "framer-motion";
+import {motion, useInView, Variants} from "framer-motion";
 
 export function Projects(): JSX.Element {
 
+    const ref = useRef<HTMLElement>(null);
+    // Trigger when 20% visible and 200px inside bottom
+    const inView = useInView(ref, { once: true, margin: "0px 0px -200px 0px", amount: 0.2 });
+
+    // Container drives stagger of children
     const containerVariants: Variants = {
         hidden: {},
-        visible: {
-            // transition: {
-            //     staggerChildren: 0.2
-            // }
+        show: {
+            transition: { staggerChildren: 0.2 }
         },
     };
 
+    // Title pop-up animation
+    const titleVariants: Variants = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
+    // Slide-in from left
     const leftVariants: Variants = {
         hidden: { x: "-100%", opacity: 0 },
         visible: {
             x: 0,
             opacity: 1,
-            transition: { type: "spring", stiffness: 100, damping: 20},
-        },
+            transition: { type: "spring", stiffness: 120, damping: 20, delay: 0.1 }
+        }
     };
 
+    // Slide-in from right toward center
     const rightVariants: Variants = {
         hidden: { x: "100%", opacity: 0 },
         visible: {
             x: 0,
             opacity: 1,
-            transition: { type: "spring", stiffness: 100, damping: 20 },
-        },
+            transition: { type: "spring", stiffness: 120, damping: 20, delay: 0.1 }
+        }
     };
 
     return (
-        // this outer div hides any horizontal overflow
         <div className="overflow-x-hidden">
-            <motion.div
-                className="flex flex-col items-center text-white gap-5"
+            <motion.section
+                ref={ref}
+                className="flex flex-col items-center text-white gap-8 py-16"
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={containerVariants}
+                animate={inView ? "visible" : "hidden"}
             >
-                <div className="flex justify-start w-9/10 mb-4 ml-[4rem]">
-                    <h2 className="text-white text-4xl">My Projects</h2>
-                </div>
+                <h2 className="self-start ml-16 text-4xl font-bold">My Projects</h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 w-9/10 justify-items-center">
-                    {projectsData.map((p, i) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 w-11/12 gap-6">
+                    {projectsData.map((project, index) => (
                         <motion.div
-                            key={p.id}
-                            variants={i % 2 === 0 ? leftVariants : rightVariants}
+                            key={project.id}
+                            variants={index % 2 === 0 ? leftVariants : rightVariants}
                             className="w-full"
                         >
-                            <ProjectCard project={p} />
+                            <ProjectCard project={project} />
                         </motion.div>
                     ))}
                 </div>
-            </motion.div>
+            </motion.section>
         </div>
     );
 }
