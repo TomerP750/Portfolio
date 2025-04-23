@@ -22,7 +22,10 @@ export function Hero(): JSX.Element {
     return (
         <motion.section
             style={{ opacity, scale }}
-            className="bg-gradient-to-r from-[#0b1a3a] via-[#0f172a] to-[#0f172a]
+            // className="bg-gradient-to-r from-[#0b1a3a] via-[#0f172a] to-[#0f172a]
+            //      items-center flex justify-center h-screen
+            //      will-change-transform will-change-opacity"
+            className="
                  items-center flex justify-center h-screen
                  will-change-transform will-change-opacity"
             initial="hidden"

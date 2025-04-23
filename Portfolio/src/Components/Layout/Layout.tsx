@@ -8,7 +8,7 @@ export function Layout(): JSX.Element {
 
     return (
         <div className="Layout">
-            <Navbar/>
+            {/*<Navbar/>*/}
             <Routing/>
             <Footer/>
         </div>
