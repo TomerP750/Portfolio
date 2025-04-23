@@ -5,6 +5,7 @@ import {ArrowRight} from "lucide-react";
 import {FiExternalLink} from "react-icons/fi";
 import {FaGithub} from "react-icons/fa";
 import {AnimatePresence, motion} from "framer-motion";
+import {FaPerson} from "react-icons/fa6";
 
 
 interface ProjectCardProps {
@@ -31,8 +32,8 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
 
     return (
         <>
-            <div className="w-9/10 h-[600px] flex flex-col items-center border border-white mb-8">
-                {project.imageUrl ? <img src={project.imageUrl}/> : <div className="w-full bg-[#10b981] h-4/5"></div>}
+            <div className={`w-9/10 h-[600px] flex flex-col items-center border border-white mb-8 `}>
+                {project.imageUrl ? <img src={project.imageUrl}/> : <div className="w-full bg-[#10b981] h-4/5"><FaPerson className={"size-20"}/></div>}
                 <div className="flex justify-between mt-5 w-9/10">
                     <p className="mb-4 font-semibold text-2xl text-white">{project.title}</p>
                     <div className="flex gap-4">
@@ -63,7 +64,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                 {modalOpened && (
                     <div className="fixed inset-0 flex items-center justify-center p-4">
                         {/* Page underlay with reduced opacity */}
-                        <div className="absolute inset-0 bg-black bg-opacity-30"/>
+                        <div className="absolute inset-0 bg-transparent bg-opacity-30"/>
 
                         {/* Animated modal */}
                         <motion.div

@@ -1,6 +1,6 @@
-import {AnimatePresence, motion, Variants} from "framer-motion";
+import {AnimatePresence, motion, useInView, Variants} from "framer-motion";
 import "./Skills.css";
-import {JSX, useState} from "react";
+import {JSX, useRef, useState} from "react";
 import {FaCoffee} from "react-icons/fa";
 import {
     SiCss3, SiDocker,
@@ -14,6 +14,8 @@ import {
     SiTypescript
 } from "react-icons/si";
 import {skills} from "../../../Datas/SkillsData.ts";
+
+
 
 export function Skills(): JSX.Element {
 
@@ -38,12 +40,16 @@ export function Skills(): JSX.Element {
         show: { height: 'auto', opacity: 1, transition: { duration: 0.3 } }
     }
 
+    const ref = useRef<HTMLElement>(null);
+    const inView = useInView(ref, { once: true, amount: 0.2 });
+
     return (
         <motion.section
+            ref={ref}
             className="max-w-5xl mx-auto mt-16 mb-24 px-4"
             variants={containerVariants}
             initial="hidden"
-            animate="show"
+            animate={inView ? 'show' : 'hidden'}
         >
             <h2 className="text-3xl md:text-4xl font-bold text-center text-[#10b981] mb-8">
                 My Skills
