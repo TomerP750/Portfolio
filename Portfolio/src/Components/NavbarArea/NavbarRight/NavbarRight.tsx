@@ -2,10 +2,12 @@ import "./NavbarRight.css";
 import {JSX, useState} from "react";
 import {Menu, X} from "lucide-react";
 import {AnimatePresence, motion } from "framer-motion";
+import { scrollToSection } from "../../../Utils/Scroll";
 
 export function NavbarRight(): JSX.Element {
 
     const [drawerOpened, setDrawerOpened] = useState<boolean>(false);
+
     const drawerVariants = {
         hidden: { x: '-100%' },
         visible: { x: 0 },
@@ -24,13 +26,6 @@ export function NavbarRight(): JSX.Element {
   after:transition-transform after:duration-300
   hover:after:scale-x-100
 `
-
-
-    const scrollToSection = (id: string) => {
-        document
-            .getElementById(id)
-            ?.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
 
     return (
         <div className="flex justify-between items-center gap-1 text-1xl">

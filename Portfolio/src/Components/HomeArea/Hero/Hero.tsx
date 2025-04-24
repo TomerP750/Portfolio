@@ -2,6 +2,7 @@ import {motion, useScroll, useTransform} from "framer-motion";
 import "./Hero.css";
 import {JSX} from "react";
 import {ArrowRight} from "lucide-react";
+import {FaGithub, FaLinkedin} from "react-icons/fa";
 
 export function Hero(): JSX.Element {
 
@@ -22,30 +23,28 @@ export function Hero(): JSX.Element {
     return (
         <motion.section
             style={{ opacity, scale }}
-            // className="bg-gradient-to-r from-[#0b1a3a] via-[#0f172a] to-[#0f172a]
-            //      items-center flex justify-center h-screen
-            //      will-change-transform will-change-opacity"
             className="
-                 items-center flex justify-center h-screen
+                 items-center flex justify-center h-120 mb-10 lg:mb-0 lg:h-screen
                  will-change-transform will-change-opacity"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
+
             <div className="flex justify-center w-[90%] min-[900px]:justify-between h-3/4">
                 {/* Text Content */}
                 <motion.div
-                    className="w-full items-center flex flex-col md:items-start text-[#10b981] md:w-[45%] gap-5"
+                    className="w-full items-center flex flex-col md:items-start text-[#10b981] md:w-2/3 gap-10 md:gap-5"
                     variants={itemVariants}
                 >
                     <motion.p
-                        className="sm:text-left text-5xl sm:text-6xl md:text-7xl"
+                        className="sm:text-left text-5xl md:text-7xl"
                         variants={itemVariants}
                     >
                         Welcome,
                     </motion.p>
                     <motion.p
-                        className="text-neutral-100 sm:text-5xl md:text-6xl"
+                        className="text-neutral-100 text-5xl md:text-5xl"
                         variants={itemVariants}
                     >
                         I'm Tomer Jacob

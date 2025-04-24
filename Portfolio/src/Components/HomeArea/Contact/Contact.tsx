@@ -5,9 +5,9 @@ import {SiGithub, SiLinkedin} from "react-icons/si";
 
 export function Contact(): JSX.Element {
     return (
-        <section className="bg-[#0f172a] py-16 px-4">
+        <section className="bg-[#0f172a] bg-gradient-to-b from-[#0f172a] to-[#0b1a3a] py-16 px-4">
             <div className="max-w-4xl mx-auto text-white">
-                <h2 className=" w-full text-4xl font-bold text-center text-[#10b981] mb-8">
+                <h2 className=" w-full text-4xl font-bold text-center text-[#10b981] mb-16 md:mb-8">
                     Get in Touch
                 </h2>
                 <div className="flex flex-col md:flex-row md:space-x-12">
@@ -34,7 +34,7 @@ export function Contact(): JSX.Element {
                     >
                     <div className="flex flex-col">
                             <label htmlFor="name" className="self-center md:self-start mb-2 font-medium">
-                                Name
+                                Name*
                             </label>
                             <input
                                 id="name"
@@ -47,7 +47,7 @@ export function Contact(): JSX.Element {
 
                         <div className="flex flex-col">
                             <label htmlFor="email" className="self-center md:self-start mb-2 font-medium">
-                                Email
+                                Email*
                             </label>
                             <input
                                 id="email"
@@ -60,7 +60,7 @@ export function Contact(): JSX.Element {
 
                         <div className="flex flex-col">
                             <label htmlFor="message" className="self-center md:self-start mb-2 font-medium">
-                                Message
+                                Message*
                             </label>
                             <textarea
                                 id="message"

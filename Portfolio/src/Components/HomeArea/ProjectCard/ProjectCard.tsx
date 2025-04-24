@@ -32,7 +32,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
 
     const modalVariants = {
         hidden: {opacity: 0, scale: 0.8, transition: {duration: 0.2}},
-        visible: {opacity: 1, scale: 1, transition: {duration: 0.5}},
+        visible: {opacity: 1, scale: 1, transition: {duration: 0.3}},
         exit: {opacity: 0, scale: 0.8, transition: {duration: 0.3}},
     };
 
@@ -41,9 +41,10 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
             <div className={`w-full h-[600px] flex flex-col items-center`}>
                 {project.imageUrl ? <img src={project.imageUrl}/> : <div className="w-full bg-[#10b981] h-4/5"></div>}
                 <div className={"border border-white flex flex-col items-center h-full"}>
-                    <div className="flex justify-between mt-5 w-9/10">
-                        <p className="mb-4 font-semibold text-2xl text-white">{project.title}</p>
-                        <div className="flex gap-4">
+
+                    <div className="flex flex-col items-start sm:flex-row sm:justify-between mt-5 w-9/10">
+                        <p className="mb-4 font-semibold text-2xl text-white underline underline-offset-8">{project.title}</p>
+                        <div className="flex gap-4 mb-4 sm:mb-0">
                             <FaGithub
                                 size={25}
                                 className="cursor-pointer text-white hover:text-[#8257e5] transition duration-200 ease-in"
@@ -61,6 +62,13 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                             ${p === ProjectType.FULLSTACK ? "bg-[#EEF2FF]" : p === ProjectType.BACKEND ? "bg-[#ECFDF5]" : "bg-[#FFF8E1]"}`}>
                             {p.toString()}</span>)}
                     </div>
+
+                    {/*//TODO complete it its the programming languages used*/}
+                    <div className="flex justify-start text-sm w-9/10 mt-2">
+                        {project.programingLanguages?.map(pl => <span>{pl}</span>)}
+                    </div>
+
+
                     <div className="flex justify-start w-9/10 h-1/2 mt-8">
                         <p className="text-white">{truncatedContent}</p>
                     </div>
@@ -78,10 +86,9 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
             <AnimatePresence>
                 {modalOpened && (
                     <div className="fixed inset-0 flex items-center justify-center p-4">
-                        {/* Page underlay with reduced opacity */}
+
                         <div className="absolute inset-0 bg-transparent bg-opacity-30"/>
 
-                        {/* Animated modal */}
                         <motion.div
                             variants={modalVariants}
                             initial={"hidden"}
@@ -94,16 +101,6 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                             <div className="p-6 flex-grow overflow-y-auto">
                                 <h2 className="text-xl font-semibold mb-4 text-[#10b981]">{project.title}</h2>
                                 <p className="whitespace-pre-wrap">{project.content}</p>
-                                <p className={"mt-8"}>
-                                    Programming Languages Used:{' '}
-                                    {project.programingLanguages && project.programingLanguages.length > 0
-                                        ? project.programingLanguages.map((lang, idx) => (
-                                            <span
-                                                key={lang}>{lang}{idx < project.programingLanguages!.length - 1 ? ', ' : ''}</span>
-                                        ))
-                                        : <em>None</em>
-                                    }
-                                </p>
                             </div>
 
                             {/* Footer with Close button */}

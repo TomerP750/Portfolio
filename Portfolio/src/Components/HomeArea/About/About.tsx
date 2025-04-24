@@ -58,7 +58,7 @@ export function About(): JSX.Element {
                     variants={itemVariants}
                     className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
                 >
-                    <User size={40} className="text-white sm:!text-[50px]"/>
+                    <User size={50} className="text-white sm:!text-[50px]"/>
                 </motion.div>
                 <motion.div
                     variants={itemVariants}
@@ -106,8 +106,7 @@ export function About(): JSX.Element {
                             className="flex justify-end items-start space-x-2"
                         >
                         <span className="text-right text-gray-300">
-                        ({item.date}) — {item.role}{" "}
-                        <strong className="text-white">{item.companyOrInstitution}</strong>
+                        ({item.date}) {item.role} <strong className=""> — {item.companyOrInstitution}</strong>
                         </span>
                             <span className="w-2 h-2 bg-gray-300 rounded-full mt-1" />
                         </motion.li>
@@ -119,7 +118,7 @@ export function About(): JSX.Element {
                     variants={itemVariants}
                     className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
                 >
-                    <FaGraduationCap size={40} className="text-white sm:!text-[50px]"/>
+                    <FaGraduationCap size={50} className="text-white sm:!text-[50px]"/>
                 </motion.div>
             </motion.div>
 
@@ -132,7 +131,7 @@ export function About(): JSX.Element {
                     variants={itemVariants}
                     className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
                 >
-                    <FaBriefcase size={40} className="text-white sm:!text-[50px]"/>
+                    <FaBriefcase size={50} className="text-white sm:!text-[50px]"/>
                 </motion.div>
                 <motion.ul
                     variants={listVariants}
