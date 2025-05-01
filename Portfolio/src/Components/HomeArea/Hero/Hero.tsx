@@ -31,10 +31,10 @@ export function Hero(): JSX.Element {
             variants={containerVariants}
         >
 
-            <div className="flex justify-center w-[90%] min-[900px]:justify-between h-3/4">
+            <div className="flex justify-center w-full h-3/4">
                 {/* Text Content */}
                 <motion.div
-                    className="w-full items-center flex flex-col md:items-start text-[#10b981] md:w-2/3 gap-10 md:gap-5"
+                    className="w-full items-center flex flex-col md:items-center text-[#10b981] md:w-2/3 gap-10 md:gap-5"
                     variants={itemVariants}
                 >
                     <motion.p
@@ -49,7 +49,7 @@ export function Hero(): JSX.Element {
                     >
                         I'm Tomer Jacob
                     </motion.p>
-                    <motion.p className="text-white" variants={itemVariants}>
+                    <motion.p className="text-white w-3/4" variants={itemVariants}>
                         I'm a passionate Full Stack Developer who creates modern, responsive websites and applications. Driven by curiosity, attention to detail, and a commitment to building digital experiences. Welcome to my portfolio.
                     </motion.p>
                     <motion.button
@@ -65,12 +65,12 @@ export function Hero(): JSX.Element {
                 </motion.div>
 
 
-                <motion.div
-                    className="hidden min-[900px]:block w-1/2"
-                    variants={itemVariants}
-                >
-                    <div className="w-full h-full bg-gray-600" />
-                </motion.div>
+                {/*<motion.div*/}
+                {/*    className="hidden min-[900px]:block w-1/2"*/}
+                {/*    variants={itemVariants}*/}
+                {/*>*/}
+                {/*    <div className="w-full h-full bg-gray-600" />*/}
+                {/*</motion.div>*/}
             </div>
         </motion.section>
     );

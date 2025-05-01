@@ -39,4 +39,6 @@ export const projectsData: Project[] = [
         "Fast and Lightweight: Built with React and Tailwind CSS for rapid load times and smooth performance.\n" +
         "User-Friendly Navigation: Intuitive layout and navigation enhance user engagement and accessibility of information.\n" +
         "This portfolio project demonstrates strong front-end development skills, emphasizing proficiency in React and the utility-first styling capabilities of Tailwind CSS.",[ProjectType.FRONTEND],["React, TypeScript, Tailwind CSS"],"",""),
+
+    new Project(4, "Barber Shop", "Content", [ProjectType.FULLSTACK], ["Java, Spring, MySQL, React, TypeScript, TailwindCSS ,Redis"])
 ]

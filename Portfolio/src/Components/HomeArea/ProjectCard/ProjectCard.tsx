@@ -40,10 +40,10 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
         <>
             <div className={`w-full h-[600px] flex flex-col items-center`}>
                 {project.imageUrl ? <img src={project.imageUrl}/> : <div className="w-full bg-[#10b981] h-4/5"></div>}
-                <div className={"border border-white flex flex-col items-center h-full"}>
+                <div className={"border border-white flex flex-col items-center h-full w-full"}>
 
                     <div className="flex flex-col items-start sm:flex-row sm:justify-between mt-5 w-9/10">
-                        <p className="mb-4 font-semibold text-2xl text-white underline underline-offset-8">{project.title}</p>
+                        <p className="mb-4 font-semibold text-2xl text-white underline underline-offset-8">{project.id}) {project.title}</p>
                         <div className="flex gap-4 mb-4 sm:mb-0">
                             <FaGithub
                                 size={25}
