@@ -1,10 +1,11 @@
 import {Project} from "../Models/Project.ts";
 import socialMediaImg from "../assets/socialMediaProject.jpg"
+import tdeeImage from "../../src/assets/tdeeProjectImage.jpg"
 import {ProjectType} from "../Models/ProjectType.ts";
 
 export const projectsData: Project[] = [
 
-    new Project(1, "FitForge E-Commerce", "This project is a comprehensive fitness-oriented e-commerce platform that integrates seamless shopping experiences for fitness merchandise, workout equipment, and personalized training programs. Built using Java Spring, Spring Security, and MySQL for robust backend services, the application ensures secure user authentication, data integrity, and efficient performance.\n" +
+    new Project(1, "AuraFit E-Commerce", "This project is a comprehensive fitness-oriented e-commerce platform that integrates seamless shopping experiences for fitness merchandise, workout equipment, and personalized training programs. Built using Java Spring, Spring Security, and MySQL for robust backend services, the application ensures secure user authentication, data integrity, and efficient performance.\n" +
         "On the frontend, React provides a smooth, responsive, and intuitive user interface, delivering an optimal experience across all devices. The platform allows users to browse and purchase merchandise and equipment, enroll in tailored workout programs, and track their fitness progress over time.\n" +
         "Key features include:\n" +
         "Secure Authentication: Utilizing Spring Security to manage user roles and permissions securely.\n" +
@@ -40,5 +41,7 @@ export const projectsData: Project[] = [
         "User-Friendly Navigation: Intuitive layout and navigation enhance user engagement and accessibility of information.\n" +
         "This portfolio project demonstrates strong front-end development skills, emphasizing proficiency in React and the utility-first styling capabilities of Tailwind CSS.",[ProjectType.FRONTEND],["React, TypeScript, Tailwind CSS"],"",""),
 
-    new Project(4, "Barber Shop", "Content", [ProjectType.FULLSTACK], ["Java, Spring, MySQL, React, TypeScript, TailwindCSS ,Redis"])
+    new Project(4, "Barber Shop", "Content", [ProjectType.FULLSTACK], ["Java, Spring, MySQL, React, TypeScript, TailwindCSS"]),
+
+    new Project(5, "TDEE Calculator", "", [ProjectType.FULLSTACK], ["Java, Spring, MySQL, React, TypeScript, TailwindCss"], "","", tdeeImage)
 ]

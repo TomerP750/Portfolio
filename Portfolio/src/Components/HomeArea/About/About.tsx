@@ -2,9 +2,12 @@ import "./About.css";
 import {JSX, useRef} from "react";
 import {Skills} from "../Skills/Skills.tsx";
 import {motion, useInView, Variants} from "framer-motion";
-import {FaBriefcase, FaGraduationCap} from "react-icons/fa";
+import {FaBriefcase, FaCertificate, FaGraduationCap} from "react-icons/fa";
 import {User} from "lucide-react";
 import {educationData} from "../../../Datas/TimelineData.ts";
+import {certificationsData} from "../../../Datas/CertificationsData.ts";
+import {HiBadgeCheck} from "react-icons/hi";
+import {MdWorkspacePremium} from "react-icons/md";
 
 export function About(): JSX.Element {
 
@@ -38,7 +41,7 @@ export function About(): JSX.Element {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
-            className="bg-[#0f172a] text-white py-12 px-4 sm:py-20 sm:px-8 lg:px-0 flex flex-col items-center space-y-8 sm:space-y-12 gap-20 md:gap-10"
+            className="bg-[#0f172a] font-light text-white py-12 px-4 sm:py-20 sm:px-8 lg:px-0 flex flex-col items-center space-y-8 sm:space-y-12 gap-20 md:gap-10"
         >
             {/* Section Title */}
             <motion.h2
@@ -67,24 +70,14 @@ export function About(): JSX.Element {
                     <motion.span>
                         Hello! I’m Tomer, a Full Stack Developer who enjoys building modern
                         websites and applications
-                    </motion.span>
-                    <motion.span>
                         from concept to launch. I combine thoughtful design with solid
                         technical skills to turn ideas into
-                    </motion.span>
-                    <motion.span>
                         smooth, functional, and visually appealing digital products. I focus
                         on writing clean,
-                    </motion.span>
-                    <motion.span>
                         maintainable code and really enjoy working as part of a team to build
                         great solutions. Whether
-                    </motion.span>
-                    <motion.span>
                         it’s a personal project or a collaborative effort, I’m always aiming
                         to deliver quality work that
-                    </motion.span>
-                    <motion.span>
                         meets real needs.
                     </motion.span>
                 </motion.div>
@@ -103,12 +96,12 @@ export function About(): JSX.Element {
                         <motion.li
                             key={idx}
                             variants={itemVariants}
-                            className="flex justify-end items-start space-x-2"
+                            className="flex justify-end items-center space-x-2"
                         >
                         <span className="text-right text-gray-300">
                         ({item.date}) {item.role} <strong className=""> — {item.companyOrInstitution}</strong>
                         </span>
-                            <span className="w-2 h-2 bg-gray-300 rounded-full mt-1" />
+                            <span className="w-2 h-2 bg-gray-300 rounded-full mt-1"/>
                         </motion.li>
                     ))}
                 </motion.ul>
@@ -141,6 +134,38 @@ export function About(): JSX.Element {
                         <strong>Nike</strong> — Employee (2022–2023)
                     </motion.li>
                 </motion.ul>
+            </motion.div>
+
+            {/*Certifications*/}
+            <motion.div
+                variants={itemVariants}
+                className="flex flex-col-reverse sm:flex-row items-center sm:justify-end w-full sm:w-3/4 lg:w-2/3 gap-6"
+            >
+                <motion.ul
+                    variants={listVariants}
+                    className="w-full sm:w-4/5 flex flex-col items-center sm:items-end space-y-2"
+                >
+                    {certificationsData.map((item, idx) => (
+                        <motion.li
+                            key={idx}
+                            variants={itemVariants}
+                            className="flex justify-end items-center space-x-2"
+                        >
+                        <span className="text-right text-gray-300">
+                        <strong className="font-light hover:underline cursor-pointer">{item.name}</strong>
+                        </span>
+                            <span className="w-2 h-2 bg-gray-300 rounded-full mt-1"/>
+                        </motion.li>
+                    ))}
+                </motion.ul>
+
+
+                <motion.div
+                    variants={itemVariants}
+                    className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
+                >
+                    <MdWorkspacePremium size={50} className="text-white sm:!text-[50px]"/>
+                </motion.div>
             </motion.div>
 
             {/* Skills Section */}

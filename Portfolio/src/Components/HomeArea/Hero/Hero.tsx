@@ -59,7 +59,7 @@ export function Hero(): JSX.Element {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Let’s Work
+                        Let’s Work Together
                         <ArrowRight className="ml-2 inline" />
                     </motion.button>
                 </motion.div>
