@@ -25,10 +25,10 @@ export function Skills(): JSX.Element {
         show: {opacity: 1, scale: 1, transition: {duration: 0.4}}
     }
 
-    const detailVariants: Variants = {
-        hidden: {height: 0, opacity: 0},
-        show: {height: 'auto', opacity: 1, transition: {duration: 0.3}}
-    }
+    // const detailVariants: Variants = {
+    //     hidden: {height: 0, opacity: 0},
+    //     show: {height: 'auto', opacity: 1, transition: {duration: 0.3}}
+    // }
 
     const ref = useRef<HTMLElement>(null);
     const inView = useInView(ref, {once: true, margin: "0px 0px -200px 0px", amount: 0.2});
@@ -55,7 +55,7 @@ export function Skills(): JSX.Element {
                         key={name}
                         variants={cardVariants}
                         whileHover={{y: -5, boxShadow: '0px 10px 20px rgba(0,0,0,0.2)'}}
-                        className="relative bg-[#1f2937] rounded-2xl overflow-hidden cursor-pointer"
+                        className="relative bg-[#1f2937] rounded-2xl overflow-hidden"
                     >
                         {/* Icon circle */}
                         <div
@@ -71,28 +71,28 @@ export function Skills(): JSX.Element {
                             <h3 className="text-xl font-semibold text-white flex-grow">
                                 {name}
                             </h3>
-                            <span className="text-2xl text-white">
-                {openSkill === name ? '−' : '+'}
-              </span>
+              {/*              <span className="text-2xl text-white">*/}
+              {/*  {openSkill === name ? '−' : '+'}*/}
+              {/*</span>*/}
                         </div>
 
-                        <AnimatePresence>
-                            {openSkill === name && (
-                                <motion.div
-                                    variants={detailVariants}
-                                    initial="hidden"
-                                    animate="show"
-                                    exit="hidden"
-                                    className="p-4 pt-0 text-gray-300 bg-[#111827]"
-                                >
-                                    <ul className="list-disc list-inside space-y-1">
-                                        {details.map((d, idx) => (
-                                            <li key={idx}>{d}</li>
-                                        ))}
-                                    </ul>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+                        {/*<AnimatePresence>*/}
+                        {/*    {openSkill === name && (*/}
+                        {/*        <motion.div*/}
+                        {/*            variants={detailVariants}*/}
+                        {/*            initial="hidden"*/}
+                        {/*            animate="show"*/}
+                        {/*            exit="hidden"*/}
+                        {/*            className="p-4 pt-0 text-gray-300 bg-[#111827]"*/}
+                        {/*        >*/}
+                        {/*            <ul className="list-disc list-inside space-y-1">*/}
+                        {/*                {details.map((d, idx) => (*/}
+                        {/*                    <li key={idx}>{d}</li>*/}
+                        {/*                ))}*/}
+                        {/*            </ul>*/}
+                        {/*        </motion.div>*/}
+                        {/*    )}*/}
+                        {/*</AnimatePresence>*/}
                     </motion.div>
                 ))}
             </div>
