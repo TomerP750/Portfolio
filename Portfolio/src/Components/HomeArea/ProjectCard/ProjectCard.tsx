@@ -1,4 +1,4 @@
-import {JSX, useState} from "react";
+import {JSX, useEffect, useState} from "react";
 import "./ProjectCard.css";
 import {Project} from "../../../Models/Project.ts";
 import {ArrowRight} from "lucide-react";
@@ -35,6 +35,17 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
         visible: {opacity: 1, scale: 1, transition: {duration: 0.3}},
         exit: {opacity: 0, scale: 0.8, transition: {duration: 0.3}},
     };
+
+    useEffect(() => {
+        if (modalOpened) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        }
+    }, [modalOpened]);
 
     return (
         <>
@@ -87,7 +98,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                 {modalOpened && (
                     <div className="fixed inset-0 flex items-center justify-center p-4">
 
-                        <div className="absolute inset-0 bg-transparent bg-opacity-30"/>
+                        <div className="absolute inset-0 bg-black/50"/>
 
                         <motion.div
                             variants={modalVariants}
