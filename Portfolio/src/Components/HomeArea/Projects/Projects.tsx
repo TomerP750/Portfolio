@@ -46,7 +46,7 @@ export function Projects(): JSX.Element {
                             variants={index % 2 === 0 ? leftVariants : rightVariants}
                             className="w-full"
                         >
-                            <ProjectCard project={project} />
+                            <ProjectCard project={project} key={project.id} />
                         </motion.div>
                     ))}
                 </div>

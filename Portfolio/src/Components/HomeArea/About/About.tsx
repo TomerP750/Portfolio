@@ -8,6 +8,7 @@ import {educationData} from "../../../Datas/TimelineData.ts";
 import {certificationsData} from "../../../Datas/CertificationsData.ts";
 import {HiBadgeCheck} from "react-icons/hi";
 import {MdWorkspacePremium} from "react-icons/md";
+import aboutImage from "../../../assets/aboutImage.png";
 
 export function About(): JSX.Element {
 
@@ -48,7 +49,7 @@ export function About(): JSX.Element {
                 variants={itemVariants}
                 className="text-3xl sm:text-4xl font-bold text-center"
             >
-                About
+                <img src={aboutImage} alt={"about"} className={"w-full h-80"}/>
             </motion.h2>
 
             {/* Row 1: Profile */}

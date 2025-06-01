@@ -1,7 +1,7 @@
 import "./Contact.css";
 import {JSX} from "react";
 import {MailIcon} from "lucide-react";
-import {SiGithub, SiLinkedin} from "react-icons/si";
+import {SiLinkedin} from "react-icons/si";
 
 export function Contact(): JSX.Element {
     return (
@@ -19,7 +19,7 @@ export function Contact(): JSX.Element {
                         {/*</div>*/}
                         <div className="flex items-center space-x-3">
                             <MailIcon className="w-6 h-6 text-white"/>
-                            <span>mail</span>
+                            <span>tomer.jcb65@gmail.com</span>
                         </div>
                         <div className="flex items-center space-x-3">
                             <SiLinkedin className="w-6 h-6 text-[#0077B5]"/>

@@ -74,11 +74,11 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                             {p.toString()}</span>)}
                     </div>
 
-                    {/*//TODO complete it its the programming languages used*/}
-                    <div className="flex justify-start text-sm w-9/10 mt-2">
-                        {project.programingLanguages?.map(pl => <span>{pl}</span>)}
-                    </div>
 
+                    <div className="flex justify-start text-sm w-9/10 mt-2 gap-2 flex-wrap">
+                        {project.programingLanguages?.map((pl, idx) =>
+                            <span key={idx} className={"bg-[#10b981]/50 rounded-xl px-2 py-1"}>{pl}</span>)}
+                    </div>
 
                     <div className="flex justify-start w-9/10 h-1/2 mt-8">
                         <p className="text-white">{truncatedContent}</p>
@@ -106,7 +106,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                             animate={"visible"}
                             exit={"exit"}
                             transition={{duration: 0.1}}
-                            className="relative z-10 bg-[#0f172a] w-1/2 h-[90%] rounded-2xl overflow-hidden flex flex-col text-white"
+                            className="relative z-10 bg-[#0f172a] w-4/5 sm:w-1/2 h-[90%] rounded-2xl overflow-hidden flex flex-col text-white"
                         >
                             {/* Scrollable content area */}
                             <div className="p-6 flex-grow overflow-y-auto">
