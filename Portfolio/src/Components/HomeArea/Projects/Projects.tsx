@@ -3,6 +3,7 @@ import {JSX, useRef} from "react";
 import {projectsData} from "../../../Datas/ProjectsData.ts";
 import {ProjectCard} from "../ProjectCard/ProjectCard.tsx";
 import {motion, useInView, Variants} from "framer-motion";
+import image from "../../../assets/projectsImage.png";
 
 export function Projects(): JSX.Element {
 
@@ -37,7 +38,7 @@ export function Projects(): JSX.Element {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
             >
-                <h2 className="self-center ml-16 text-4xl font-bold">My Projects</h2>
+                <img src={image} alt="projects" className={"w-100 aspect-square"}/>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 w-4/5 gap-5">
                     {projectsData.map((project, index) => (

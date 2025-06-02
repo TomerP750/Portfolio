@@ -2,10 +2,7 @@ import {AnimatePresence, motion, useInView, Variants} from "framer-motion";
 import "./Skills.css";
 import {JSX, useRef, useState} from "react";
 import {skills} from "../../../Datas/SkillsData.ts";
-import {FaComputer} from "react-icons/fa6";
-import {Code, Code2, Monitor} from "lucide-react";
-import {FaCode} from "react-icons/fa";
-
+import image from "../../../assets/skillsImage.png";
 
 export function Skills(): JSX.Element {
 
@@ -41,12 +38,8 @@ export function Skills(): JSX.Element {
             initial="hidden"
             animate={inView ? 'show' : 'hidden'}
         >
-            <div className="flex justify-center items-center gap-2 mb-8 text-[#10b981]">
-                <Code className={""} size={45}/>
-                <h2 className="text-3xl md:text-4xl font-bold text-center ">
-                    My Skills
-                </h2>
-                <Code2 className={""} size={50}/>
+            <div className="w-full flex justify-center">
+                <img src={image} alt="mySkills" className={"w-80 aspect-square"}/>
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -71,9 +64,9 @@ export function Skills(): JSX.Element {
                             <h3 className="text-xl font-semibold text-white flex-grow">
                                 {name}
                             </h3>
-              {/*              <span className="text-2xl text-white">*/}
-              {/*  {openSkill === name ? '−' : '+'}*/}
-              {/*</span>*/}
+                            {/*              <span className="text-2xl text-white">*/}
+                            {/*  {openSkill === name ? '−' : '+'}*/}
+                            {/*</span>*/}
                         </div>
 
                         {/*<AnimatePresence>*/}

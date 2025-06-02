@@ -56,14 +56,22 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                     <div className="flex flex-col items-start sm:flex-row sm:justify-between mt-5 w-9/10">
                         <p className="mb-4 font-semibold text-2xl text-white underline underline-offset-8">{project.id}) {project.title}</p>
                         <div className="flex gap-4 mb-4 sm:mb-0">
-                            <FaGithub
-                                size={25}
-                                className="cursor-pointer text-white hover:text-[#8257e5] transition duration-200 ease-in"
-                            />
-                            <FiExternalLink
-                                size={25}
-                                className="cursor-pointer text-white hover:text-[#10b981] transition duration-200 ease-in"
-                            />
+                            <button disabled={!!project.gitHubUrl || project.gitHubUrl?.length === 0}
+                                    className={"disabled:cursor-default " +
+                                        "disabled:text-white/50 text-white hover:text-[#8257e5] cursor-pointer"}>
+                                <FaGithub
+                                    size={25}
+                                    className="transition duration-200 ease-in"
+                                />
+                            </button>
+                            <button disabled={!!project.webUrl || project.webUrl?.length === 0}
+                                    className={"disabled:cursor-default " +
+                                        "disabled:text-white/50 text-white hover:text-[#10b981] cursor-pointer"}>
+                                <FiExternalLink
+                                    size={25}
+                                    className="transition duration-200 ease-in"
+                                />
+                            </button>
                         </div>
                     </div>
                     <div className="flex justify-start w-9/10">
@@ -114,7 +122,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                                 <p className="whitespace-pre-wrap">{project.content}</p>
                             </div>
 
-                            {/* Footer with Close button */}
+                            {/* Close Button */}
                             <div className="p-4 flex justify-end">
                                 <button
                                     onClick={handleClose}
