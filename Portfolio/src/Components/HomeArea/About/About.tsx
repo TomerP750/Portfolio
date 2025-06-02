@@ -2,11 +2,10 @@ import "./About.css";
 import {JSX, useRef} from "react";
 import {Skills} from "../Skills/Skills.tsx";
 import {motion, useInView, Variants} from "framer-motion";
-import {FaBriefcase, FaCertificate, FaGraduationCap} from "react-icons/fa";
+import {FaBriefcase, FaGraduationCap} from "react-icons/fa";
 import {User} from "lucide-react";
 import {educationData} from "../../../Datas/TimelineData.ts";
 import {certificationsData} from "../../../Datas/CertificationsData.ts";
-import {HiBadgeCheck} from "react-icons/hi";
 import {MdWorkspacePremium} from "react-icons/md";
 import aboutImage from "../../../assets/aboutImage.png";
 

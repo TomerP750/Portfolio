@@ -8,7 +8,6 @@ import image from "../../../assets/projectsImage.png";
 export function Projects(): JSX.Element {
 
     const ref = useRef<HTMLElement>(null);
-    // Trigger when 20% visible and 200px inside bottom
     const inView = useInView(ref, { once: true, margin: "0px 0px -200px 0px", amount: 0.2 });
 
     const leftVariants: Variants = {
@@ -20,7 +19,6 @@ export function Projects(): JSX.Element {
         }
     };
 
-    // Slide-in from right toward center
     const rightVariants: Variants = {
         hidden: { x: "100%", opacity: 0 },
         visible: {

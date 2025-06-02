@@ -1,8 +1,8 @@
 import "./NavbarRight.css";
 import {JSX, useState} from "react";
-import {Menu, X} from "lucide-react";
-import {AnimatePresence, motion } from "framer-motion";
+import {Menu} from "lucide-react";
 import { scrollToSection } from "../../../Utils/Scroll";
+import {NavbarDrawer} from "../NavbarDrawer/NavbarDrawer.tsx";
 
 export function NavbarRight(): JSX.Element {
 
@@ -10,11 +10,6 @@ export function NavbarRight(): JSX.Element {
 
     const cvUrl = "/cv.pdf";
 
-    const drawerVariants = {
-        hidden: { x: '-100%' },
-        visible: { x: 0 },
-        exit:   { x: '-100%' },
-    }
 
     // const navbarCenterItem = "hidden sm:block text-[#10b981] hover:text-[#e5e7eb] transition px-3 py-2 rounded cursor-pointer "
 
@@ -43,7 +38,11 @@ export function NavbarRight(): JSX.Element {
                 </a>
             </div>
 
-            <Menu className="block min-[900px]:hidden text-[#10b981]"/>
+            <Menu
+                onClick={()=>setDrawerOpened(true)}
+                className="cursor-pointer block min-[900px]:hidden text-[#10b981]"/>
+
+            {drawerOpened && <NavbarDrawer onClose={()=>setDrawerOpened(false)} isOpen={drawerOpened} />}
 
         </div>
 
