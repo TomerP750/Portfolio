@@ -6,6 +6,7 @@ import {Projects} from "../Projects/Projects.tsx";
 import {Contact} from "../Contact/Contact.tsx";
 import {Navbar} from "../../NavbarArea/Navbar/Navbar.tsx";
 import homeTopBackground from "../../../assets/hero-background.png"
+import {Skills} from "../Skills/Skills.tsx";
 
 export function Home(): JSX.Element {
 
@@ -18,6 +19,10 @@ export function Home(): JSX.Element {
             </div>
             <div id="about">
                 <About/>
+            </div>
+
+            <div id="skills">
+                <Skills/>
             </div>
 
             <div id="projects">

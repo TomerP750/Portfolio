@@ -57,7 +57,9 @@ export function NavbarDrawer({onClose, isOpen}: NavbarDrawerProps): JSX.Element 
 
             <div className="w-full h-full bg-[#0f172a]">
                 <ul className="flex flex-col items-center justify-start mt-10 h-full gap-6">
-                    <li onClick={onClose} className={"w-4/5 text-[#10b981] flex justify-start items-center cursor-pointer"}><X size={30}/></li>
+                    <li onClick={onClose}
+                        className={"w-4/5 text-[#10b981] flex justify-start items-center cursor-pointer"}><X size={30}/>
+                    </li>
                     <li
                         onClick={() => handleClick("home")}
                         className={menuNavbarItem}
@@ -69,6 +71,12 @@ export function NavbarDrawer({onClose, isOpen}: NavbarDrawerProps): JSX.Element 
                         className={menuNavbarItem}
                     >
                         About
+                    </li>
+                    <li
+                        onClick={() => handleClick("skills")}
+                        className={menuNavbarItem}
+                    >
+                        Skills
                     </li>
                     <li
                         onClick={() => handleClick("projects")}

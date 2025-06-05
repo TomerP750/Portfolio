@@ -6,7 +6,7 @@ import {NavbarLeft} from "../NavbarLeft/NavbarLeft.tsx";
 
 export function Navbar(): JSX.Element {
     return (
-        <div className={"items-center flex justify-center w-full  h-20"}>
+        <div className={"items-center flex justify-center w-full h-20"}>
             <div className="w-[70%] flex justify-between">
             <NavbarLeft/>
             <NavbarRight/>

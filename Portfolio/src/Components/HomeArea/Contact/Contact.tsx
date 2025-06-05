@@ -4,11 +4,18 @@ import {MailIcon} from "lucide-react";
 import {SiLinkedin} from "react-icons/si";
 import connectImage from "../../../assets/connectImage.png";
 import {CgSpinner} from "react-icons/cg";
+import {useForm} from "react-hook-form";
+import {ContactMessage} from "../../../Models/ContactMessage.ts";
 
 export function Contact(): JSX.Element {
 
     const [loading, setLoading] = useState<boolean>(false);
 
+    const {register, handleSubmit, formState: {errors}} = useForm<ContactMessage>();
+
+    const sendData = (data: ContactMessage) => {
+
+    }
 
     return (
         <section className="bg-[#0f172a] bg-gradient-to-b from-[#0f172a] to-[#0b1a3a] py-16 px-4">
@@ -37,7 +44,7 @@ export function Contact(): JSX.Element {
                     </div>
 
                     <form
-                        onSubmit={(e) => e.preventDefault()}
+                        onSubmit={handleSubmit(sendData)}
                         className="mt-8 md:mt-0 flex flex-col gap-6 md:w-full"
                     >
                         <div className="flex flex-col">
@@ -47,6 +54,7 @@ export function Contact(): JSX.Element {
                             <input
                                 id="name"
                                 type="text"
+                                {...register("name")}
                                 placeholder="Your Name"
                                 className="bg-transparent border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#10b981] transition duration-300"
                                 required
@@ -60,7 +68,22 @@ export function Contact(): JSX.Element {
                             <input
                                 id="email"
                                 type="email"
+                                {...register("email")}
                                 placeholder="you@example.com"
+                                className="bg-transparent border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#10b981] transition duration-300"
+                                required
+                            />
+                        </div>
+
+                        <div className="flex flex-col">
+                            <label htmlFor="text" className="self-center md:self-start mb-2 font-medium">
+                                Subject*
+                            </label>
+                            <input
+                                id="subject"
+                                type="text"
+                                {...register("subject")}
+                                placeholder="Enter a subject"
                                 className="bg-transparent border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#10b981] transition duration-300"
                                 required
                             />
@@ -74,6 +97,7 @@ export function Contact(): JSX.Element {
                                 id="message"
                                 rows={5}
                                 placeholder="Enter a message"
+                                {...register("message")}
                                 className="bg-transparent border border-gray-600 rounded-lg px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-[#10b981] transition duration-300"
                                 required
                             />
@@ -81,7 +105,7 @@ export function Contact(): JSX.Element {
                         <button
                             onClick={() => setLoading(!loading)}
                             type="submit"
-                            className="cursor-pointer self-center md:self-start bg-[#10b981] hover:bg-[#0eab72] transition duration-300 ease-in text-white font-medium py-3 px-8 rounded-lg"
+                            className="w-45 cursor-pointer self-center md:self-start bg-[#10b981] hover:bg-[#0eab72] transition duration-300 ease-in text-white font-medium py-3 px-8 rounded-lg"
                         >
                             {loading ?
                                 <div className="flex items-center gap-2">

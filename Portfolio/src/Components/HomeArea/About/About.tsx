@@ -32,7 +32,7 @@ export function About(): JSX.Element {
     };
 
     const ref = useRef<HTMLElement>(null);
-    const inView = useInView(ref, {once: true, margin: "0px 0px -100px 0px", amount: 0.2});
+    const inView = useInView(ref, {once: true, margin: "0px", amount: 0.1});
 
 
     return (
@@ -168,13 +168,6 @@ export function About(): JSX.Element {
                 </motion.div>
             </motion.div>
 
-            {/* Skills Section */}
-            <motion.div
-                variants={itemVariants}
-                className="w-full sm:w-3/4 lg:w-2/3 mt-12 px-2 sm:px-0"
-            >
-                <Skills/>
-            </motion.div>
         </motion.section>
     );
 
