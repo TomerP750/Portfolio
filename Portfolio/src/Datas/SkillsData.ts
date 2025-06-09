@@ -1,4 +1,4 @@
-import {FaCoffee} from "react-icons/fa";
+import {FaCoffee, FaJava} from "react-icons/fa";
 import {
     SiCss3, SiDocker,
     SiHtml5,
@@ -15,7 +15,7 @@ import {
 export const skills = [
     {
         name: 'Java',
-        icon: FaCoffee,
+        icon: FaJava,
         color: '#f89820',
         details: [
             'Java Basic',

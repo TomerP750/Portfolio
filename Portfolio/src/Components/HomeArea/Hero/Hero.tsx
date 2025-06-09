@@ -37,31 +37,31 @@ export function Hero(): JSX.Element {
                     className="w-full items-center flex flex-col md:items-center text-[#10b981] md:w-2/3 gap-10 md:gap-5"
                     variants={itemVariants}
                 >
-                    {/*<motion.p*/}
-                    {/*    className="sm:text-left text-5xl md:text-7xl"*/}
-                    {/*    variants={itemVariants}*/}
-                    {/*>*/}
-                    {/*    Welcome,*/}
-                    {/*</motion.p>*/}
-                    {/*<motion.p*/}
-                    {/*    className="text-neutral-100 text-5xl md:text-5xl"*/}
-                    {/*    variants={itemVariants}*/}
-                    {/*>*/}
-                    {/*    I'm Tomer Jacob*/}
-                    {/*</motion.p>*/}
                     <motion.p
-                        className="sm:text-left text-5xl md:text-7xl text-[#10b981] leading-tight"
+                        className="sm:text-left text-5xl md:text-7xl"
                         variants={itemVariants}
                     >
-                        <CodeTypewriterAnimation lines={["Welcome,"]} speed={75}/>
+                        Welcome,
                     </motion.p>
+                    <motion.p
+                        className="text-neutral-100 text-5xl md:text-5xl"
+                        variants={itemVariants}
+                    >
+                        I'm Tomer Jacob
+                    </motion.p>
+                    {/*<motion.p*/}
+                    {/*    className="sm:text-left text-5xl md:text-7xl text-[#10b981] leading-tight"*/}
+                    {/*    variants={itemVariants}*/}
+                    {/*>*/}
+                    {/*    <CodeTypewriterAnimation lines={["Welcome,"]} speed={90}/>*/}
+                    {/*</motion.p>*/}
 
-                    <motion.p
-                        className="text-neutral-100 text-5xl md:text-5xl leading-tight"
-                        variants={itemVariants}
-                    >
-                        <CodeTypewriterAnimation lines={["I'm Tomer Jacob"]} speed={75}/>
-                    </motion.p>
+                    {/*<motion.p*/}
+                    {/*    className="text-neutral-100 text-5xl md:text-5xl leading-tight"*/}
+                    {/*    variants={itemVariants}*/}
+                    {/*>*/}
+                    {/*    <CodeTypewriterAnimation lines={["I'm Tomer Jacob"]} speed={90}/>*/}
+                    {/*</motion.p>*/}
 
 
                     <motion.p className="text-white w-3/4" variants={itemVariants}>

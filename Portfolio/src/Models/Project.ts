@@ -1,4 +1,5 @@
 import {ProjectType} from "./ProjectType.ts";
+import {ProgrammingLanguage} from "./ProgrammingLanguage.ts";
 
 
 export class Project {
@@ -6,7 +7,7 @@ export class Project {
     title: string
     content: string
     projectType?: ProjectType[]
-    programingLanguages?: string[]
+    programingLanguages?: ProgrammingLanguage[]
     gitHubUrl?: string
     webUrl?: string
     imageUrl?: string
@@ -14,7 +15,7 @@ export class Project {
 
 
 
-    constructor(id: number ,title:string, content:string,projectType?: ProjectType[]  ,programingLanguages?: string[],gitHubUrl?: string, webUrl?: string, imageUrl?:string) {
+    constructor(id: number ,title:string, content:string,projectType?: ProjectType[]  ,programingLanguages?: ProgrammingLanguage[],gitHubUrl?: string, webUrl?: string, imageUrl?:string) {
         this.id = id;
         this.title = title;
         this.content = content;

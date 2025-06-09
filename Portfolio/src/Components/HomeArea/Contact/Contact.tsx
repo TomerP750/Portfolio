@@ -6,15 +6,26 @@ import connectImage from "../../../assets/connectImage.png";
 import {CgSpinner} from "react-icons/cg";
 import {useForm} from "react-hook-form";
 import {ContactMessage} from "../../../Models/ContactMessage.ts";
+import contactService from "../../../Services/ContactService.ts";
 
 export function Contact(): JSX.Element {
 
     const [loading, setLoading] = useState<boolean>(false);
 
-    const {register, handleSubmit, formState: {errors}} = useForm<ContactMessage>();
+    const {register, handleSubmit, formState: {errors}, reset} = useForm<ContactMessage>();
 
     const sendData = (data: ContactMessage) => {
-
+        setLoading(true);
+        // contactService.test()
+        //     .then((result) => {
+        //
+        //     })
+        //     .catch(err => {
+        //         console.log(err.response.data)
+        //     })
+        //     .finally(() => {
+        //         setLoading(false);
+        //     })
     }
 
     return (
@@ -103,7 +114,7 @@ export function Contact(): JSX.Element {
                             />
                         </div>
                         <button
-                            onClick={() => setLoading(!loading)}
+                            disabled={loading}
                             type="submit"
                             className="w-45 cursor-pointer self-center md:self-start bg-[#10b981] hover:bg-[#0eab72] transition duration-300 ease-in text-white font-medium py-3 px-8 rounded-lg"
                         >

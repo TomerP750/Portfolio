@@ -34,7 +34,7 @@ export function Layout(): JSX.Element {
             {showBtn && (
                 <button
                     onClick={scrollToNavbar}
-                    className="cursor-pointer fixed bottom-5 right-5 bg-[#10b981] text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition"
+                    className="cursor-pointer fixed bottom-5 right-5 bg-[#10b981] text-white p-3 rounded-full shadow-lg hover:bg-neutral-300 hover:text-[#10b981] transition"
                     aria-label="Back to top"
                 >
                     <FaArrowUp size={20} />

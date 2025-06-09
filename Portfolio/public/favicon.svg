@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <!-- Solid neon‑green fill -->
+  <style>
+    .tj-fill{fill:#10b981}
+  </style>
+
+  <!-- “T” -->
+  <path class="tj-fill"
+        d="M48 40 H208 V72 H144 V216 H112 V72 H48 Z"/>
+
+  <!-- gap of 8 px (viewBox units) between T and J -->
+
+  <!-- “J” -->
+  <path class="tj-fill"
+        d="M224 72 V168 C224 204 204 224 168 224 H112 V192 H168
+           C180 192 192 180 192 168 V72 Z"/>
+</svg>
