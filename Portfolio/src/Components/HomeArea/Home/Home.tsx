@@ -1,5 +1,5 @@
 import "./Home.css";
-import {JSX} from "react";
+import {JSX, useEffect} from "react";
 import {Hero} from "../Hero/Hero.tsx";
 import {About} from "../About/About.tsx";
 import {Projects} from "../Projects/Projects.tsx";
@@ -7,8 +7,19 @@ import {Contact} from "../Contact/Contact.tsx";
 import {Navbar} from "../../NavbarArea/Navbar/Navbar.tsx";
 import homeTopBackground from "../../../assets/hero-background.png"
 import {Skills} from "../Skills/Skills.tsx";
+import {useLocation} from "react-router-dom";
+import {scrollToSection} from "../../../Utils/Scroll.ts";
 
 export function Home(): JSX.Element {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state === "projects") {
+            scrollToSection("projects");
+            window.history.replaceState({}, "", window.location.pathname);
+        }
+    }, [location.state])
 
 
     return (

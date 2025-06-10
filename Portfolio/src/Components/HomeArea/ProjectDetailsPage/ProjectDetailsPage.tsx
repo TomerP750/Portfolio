@@ -1,10 +1,11 @@
 import "./ProjectDetailsPage.css";
-import { JSX } from "react";
+import {JSX, useEffect} from "react";
 import { Project } from "../../../Models/Project";
 import {NavLink, useLocation, Navigate, useNavigate, useParams} from "react-router-dom";
 import {FiArrowLeft, FiExternalLink} from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import {projectsData} from "../../../Datas/ProjectsData.ts";
+import {ProjectType} from "../../../Models/ProjectType.ts";
 
 
 export function ProjectDetailsPage(): JSX.Element {
@@ -12,12 +13,17 @@ export function ProjectDetailsPage(): JSX.Element {
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const project = projectsData.find(p => p.id === Number(id));
+    const { pathname } = useLocation();
     const handleBackToMain = () => {
-        navigate("/");
+        navigate("/", {state: "projects", replace: true});
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname])
+
     if (!project){
-        return <Navigate to="/"/>
+        return <Navigate to="/" state={"projects"} replace={true}/>
     }
 
     return (
@@ -41,10 +47,6 @@ export function ProjectDetailsPage(): JSX.Element {
 
 
                 <div className="flex flex-col items-center gap-4">
-                    <h1 className="text-3xl md:text-4xl font-bold text-center">
-                        {project.title}
-                    </h1>
-
 
                     <div className="flex gap-5">
                         <NavLink
@@ -56,7 +58,7 @@ export function ProjectDetailsPage(): JSX.Element {
                         </NavLink>
                         <NavLink
                             to={project.gitHubUrl || "#"}
-                            className="hover:text-[#10b981] transition"
+                            className="hover:text-[#8257e5] transition"
                             aria-label="Source code"
                         >
                             <FaGithub size={28}/>
@@ -64,6 +66,21 @@ export function ProjectDetailsPage(): JSX.Element {
                     </div>
                 </div>
 
+                <h1 className="text-3xl md:text-4xl font-bold text-center">
+                    {project.title}
+                </h1>
+
+
+                <section className="w-full max-w-3xl space-y-2">
+                    <p className="text-lg font-semibold uppercase tracking-wide text-gray-300">
+                        Project Type
+                    </p>
+                    {project.projectType?.map(p =>
+                        <span
+                            className={`px-2 py-1 text-black text-sm rounded-xl
+                            ${p === ProjectType.FULLSTACK ? "bg-[#EEF2FF]" : p === ProjectType.BACKEND ? "bg-[#ECFDF5]" : "bg-[#FFF8E1]"}`}>
+                            {p.toString()}</span>)}
+                </section>
 
                 <section className="w-full max-w-3xl space-y-3">
                     <p className="text-lg font-semibold uppercase tracking-wide text-gray-300">
@@ -76,9 +93,9 @@ export function ProjectDetailsPage(): JSX.Element {
                                 <li
                                     key={pl.language}
                                     className="rounded-full px-4 py-1 text-sm font-medium text-white flex items-center gap-2"
-                                    style={{ backgroundColor: pl.colorHexCode }}
+                                    style={{backgroundColor: pl.colorHexCode}}
                                 >
-                                    <Icon size={16} className="text-white" />
+                                    <Icon size={16} className="text-white"/>
                                     {pl.language}
                                 </li>
                             );
