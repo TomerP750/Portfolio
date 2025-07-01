@@ -17,17 +17,17 @@ export function Contact(): JSX.Element {
 
     const sendData = (data: ContactMessage) => {
         setLoading(true);
-        contactService.sendMessage(data)
-            .then(() => {
-                toast.success("Message Sent Successfully, Thank you!");
-                reset();
-            })
-            .catch(err => {
-                toast.error(err.response.data);
-            })
-            .finally(() => {
-                setLoading(false);
-            })
+        // contactService.sendMessage(data)
+        //     .then(() => {
+        //         toast.success("Message Sent Successfully, Thank you!");
+        //         reset();
+        //     })
+        //     .catch(err => {
+        //         toast.error(err.response.data);
+        //     })
+        //     .finally(() => {
+        //         setLoading(false);
+        //     })
     }
 
     return (
