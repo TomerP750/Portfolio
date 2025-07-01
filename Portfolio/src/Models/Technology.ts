@@ -1,7 +1,7 @@
 import {IconType} from "react-icons";
 
 
-export class ProgrammingLanguage {
+export class Technology {
     language: string;
     colorHexCode: string;
     icon: IconType;

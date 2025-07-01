@@ -44,30 +44,31 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
 
     return (
         <>
-            <div className={`w-full h-[600px] flex flex-col items-center border border-[#10b981]`}>
+            <div className={`w-full h-164 flex flex-col items-center border border-[#10b981]`}>
                 {project.imageUrl ? <div className="relative w-full h-auto group flex items-center justify-center"
                          onMouseOver={()=>setImageHovered(true)}
                          onMouseLeave={()=>setImageHovered(false)}>
                         <img
                             src={project.imageUrl}
                             alt="image"
-                            className="block w-full h-auto"
+                            className={`block w-full h-auto ${imageHovered ? "pointer-events-none" : ""}`}
                         />
                         {imageHovered && <AnimatePresence>
                             {imageHovered && (
                                 <motion.div
-                                    className="absolute inset-0 sm:px-10 flex w-full items-center justify-around bg-black/60"
+                                    className="absolute inset-0 sm:px-10 flex items-center justify-around bg-black/60 z-10"
                                     variants={containerVariants}
                                     initial="hidden"
                                     animate="show"
                                     exit="hidden"
                                 >
-                                    <motion.div className="flex flex-col items-center text-white hover:text-[#10b981] cursor-pointer" variants={itemVariants}>
+                                    <motion.div
+                                        className="flex flex-col items-center text-white hover:text-[#10b981] cursor-pointer" variants={itemVariants}
+                                        onClick={() => navigate(`/project/${project.id}`)}
+                                    >
                                         <FaBookOpen
                                             size={25}
-                                            onClick={() =>
-                                                navigate(`/project/${project.id}`)
-                                            }
+
                                             className=""
                                         />
                                         <p>Learn More</p>
@@ -75,6 +76,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                                     <motion.div variants={itemVariants}>
                                         <Button disabled={githubDisabled}
                                                 Icon={FaGithub}
+                                                size={25}
                                                 onClick={() => navigate(`${project.gitHubUrl}`)}
                                                 className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50"}
                                         >Github</Button>
@@ -83,6 +85,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                                         <Button
                                             disabled={websiteDisabled}
                                             Icon={FiExternalLink}
+                                            size={25}
                                             onClick={() => navigate(`${project.webUrl}`)}
                                             className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50"}
                                         >
@@ -122,6 +125,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                     <div className="flex justify-start w-9/10">
                         {project.projectType?.map(p =>
                             <span
+                                key={p.toString()}
                                 className={`px-2 py-1 text-black text-sm rounded-xl
                             ${p === ProjectType.FULLSTACK ? "bg-[#EEF2FF]" : p === ProjectType.BACKEND ? "bg-[#ECFDF5]" : "bg-[#FFF8E1]"}`}>
                             {p.toString()}</span>)}
@@ -129,18 +133,30 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
 
 
                     <div className="flex justify-start text-sm w-9/10 mt-2 gap-2 flex-wrap">
-                        {project.programingLanguages?.map((pl, idx) =>
-                            <span key={idx} className={"bg-[#10b981]/50 rounded-xl px-2 py-1"}>{pl.language}</span>)}
+                        {project.programingLanguages?.map((pl) => {
+                            const Icon = pl.icon;
+                            return (
+                                <li
+                                    key={pl.language}
+                                    className="rounded-full px-2 py-1 text-sm font-medium text-white flex items-center gap-2"
+                                    style={{backgroundColor: pl.colorHexCode}}
+                                >
+                                    <Icon size={16} className="text-white"/>
+                                    {pl.language}
+                                </li>
+                            );
+                        })}
                     </div>
 
                     <div className="flex justify-start w-9/10 h-1/2 mt-8">
                         <p className="text-white">{truncatedContent}</p>
                     </div>
+
                     <div
                         className="flex w-9/10 justify-end mb-8"
                     >
                     <span
-                        onClick={()=>navigate(`/project/${project.id}`)}
+                        onClick={() => navigate(`/project/${project.id}`)}
                         className={"flex items-center gap-1 text-[#10b981] hover:opacity-80 transition duration-200 ease-in cursor-pointer"}>
                         Learn More <ArrowRight/>
                     </span>

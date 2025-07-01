@@ -9,6 +9,7 @@ import homeTopBackground from "../../../assets/hero-background.png"
 import {Skills} from "../Skills/Skills.tsx";
 import {useLocation} from "react-router-dom";
 import {scrollToSection} from "../../../Utils/Scroll.ts";
+import {Footer} from "../../Footer/Footer.tsx";
 
 export function Home(): JSX.Element {
 
@@ -23,6 +24,7 @@ export function Home(): JSX.Element {
 
 
     return (
+        <>
         <div className={`flex flex-col gap-2 justify-center`}>
             <div id={"home"} className={"bg-no-repeat bg-cover bg-center"} style={{ backgroundImage: `url(${homeTopBackground})`}}>
             <Navbar/>
@@ -44,6 +46,8 @@ export function Home(): JSX.Element {
                 <Contact/>
             </div>
         </div>
+        <Footer/>
+            </>
     );
 
 }

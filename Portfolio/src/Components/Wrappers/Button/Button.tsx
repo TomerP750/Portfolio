@@ -12,14 +12,15 @@ interface ButtonProps {
     className?: string;
     itemVariants?: Variants;
     children?: React.ReactNode;
+    size?: number
 }
-export function Button({children ,Icon ,disabled, onClick, className, itemVariants}: ButtonProps): JSX.Element {
+export function Button({children ,size ,Icon ,disabled, onClick, className, itemVariants}: ButtonProps): JSX.Element {
 
     return (
         <motion.p variants={itemVariants}>
             <button disabled={disabled} onClick={onClick}
                     className={`${className}`}>
-                {Icon && <Icon size={25} className="transition duration-200 ease-in"/>}
+                {Icon && <Icon size={size} className="transition duration-200 ease-in"/>}
                 <p>{children}</p>
             </button>
         </motion.p>

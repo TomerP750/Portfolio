@@ -8,10 +8,6 @@ class ContactService {
         return (await axios.post("http://localhost:8080/api/contact", data));
     }
 
-    async test() {
-        return "hi";
-    }
-
 }
 
 const contactService = new ContactService();

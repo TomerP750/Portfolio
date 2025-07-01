@@ -96,15 +96,15 @@
 //
 
 
-import { motion, Variants } from "framer-motion";
-import { skills } from "../../../Datas/SkillsData.ts";
+import {motion, Variants} from "framer-motion";
+import {skills} from "../../../Datas/SkillsData.ts";
 import image from "../../../assets/skillsImage.png";
 import {JSX} from "react";
 
 export function Skills(): JSX.Element {
 
     const containerVariants: Variants = {
-        hidden: { opacity: 0 },
+        hidden: {opacity: 0},
         show: {
             opacity: 1,
             transition: {
@@ -115,7 +115,7 @@ export function Skills(): JSX.Element {
 
 
     const cardVariants: Variants = {
-        hidden: { opacity: 0 },
+        hidden: {opacity: 0},
         show: {
             opacity: 1,
             transition: {
@@ -130,10 +130,10 @@ export function Skills(): JSX.Element {
 
             <motion.div
                 className="w-full flex justify-center mb-12"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6 }}
+                initial={{opacity: 0, y: 20}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true, amount: 0.2}}
+                transition={{duration: 0.6}}
             >
                 <img
                     src={image}
@@ -148,9 +148,9 @@ export function Skills(): JSX.Element {
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{once: true, amount: 0.2}}
             >
-                {skills.map(({ name, icon: Icon, color }) => (
+                {skills.map(({name, icon: Icon, color}) => (
                     <motion.div
                         key={name}
                         variants={cardVariants}
@@ -178,10 +178,9 @@ export function Skills(): JSX.Element {
                 transparent 1px,
                 transparent 6px
               ),
-              #1f2937]  /* fallback solid dark behind the grid */
+              #1f2937]
             "
                     >
-
                         <div
                             className="
                 relative
@@ -198,7 +197,7 @@ export function Skills(): JSX.Element {
                 group-hover:bg-[var(--icon-color)]
                 group-hover:shadow-[0_0_12px_var(--icon-color)]
               "
-                            style={{ "--icon-color": color } as React.CSSProperties}
+                            style={{"--icon-color": color} as React.CSSProperties}
                         >
                             <Icon
                                 size={32}
@@ -215,7 +214,6 @@ export function Skills(): JSX.Element {
                   bg-gray-800/50
                   px-2 py-1
                   rounded-md
-                  border-b-2 border-dashed border-gray-500/50
                   transition-all
                   duration-300
                   group-hover:bg-gray-800/70

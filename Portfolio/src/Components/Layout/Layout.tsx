@@ -29,7 +29,7 @@ export function Layout(): JSX.Element {
         <div className="Layout">
 
             <Routing/>
-            <Footer/>
+            {/*<Footer/>*/}
 
             {showBtn && (
                 <button

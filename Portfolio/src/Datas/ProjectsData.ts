@@ -5,111 +5,191 @@ import { ProjectType } from "../Models/ProjectType.ts";
 import portfolioImage from "../assets/porftolioWebImage.jpg";
 import auraFitImage from "../assets/auraFitImage.jpg";
 import barberShopImage from "../assets/barberShopImage.jpg";
-import { programmingLanguagesData } from "./ProgrammingLanguagesData.ts";
+import appifyImage from "../assets/AppifyImages/myApplications.jpg";
+import { technologiesData } from "./TechnologiesData.ts";
 
 export const projectsData: Project[] = [
     new Project(
         1,
-        "AuraFit E-Commerce",
-        "This project is a comprehensive fitness-oriented e-commerce platform that integrates seamless shopping experiences for fitness merchandise, workout equipment, and personalized training programs. Built using Java Spring, Spring Security, and MySQL for robust backend services, the application ensures secure user authentication, data integrity, and efficient performance." +
-        " On the frontend, React provides a smooth, responsive, and intuitive user interface, delivering an optimal experience across all devices. The platform allows users to browse and purchase merchandise and equipment, enroll in tailored workout programs, and track their fitness progress over time." +
-        " Key features include: Secure Authentication, Dynamic Product Management, Workout Program Integration, Fitness Tracker. This project demonstrates a full-stack development capability, showcasing expertise in combining backend Java frameworks, secure database management, and modern frontend React practices to create a compelling and functional fitness platform.",
+        "Coupon System",
+        "The Coupon System is a promotional engine built with a Java Spring backend and a React frontend. Marketing teams can generate custom coupon codes with defined values, expiration dates, and usage limits; customers redeem codes during checkout for automatic discounts; and administrators track real-time usage statistics, export redemption reports, and manage user access levels.",
+        [
+            "Generate and configure coupon codes with custom values, expiration dates, and usage limits",
+            "Distribute coupons via shareable links or emails",
+            "Redeem coupons during checkout for automatic discounts",
+            "Track real-time usage statistics and export redemption reports",
+            "Manage user access with role-based permissions"
+        ],
         [ProjectType.FULLSTACK],
         [
-            programmingLanguagesData[0],
-            programmingLanguagesData[1],
-            programmingLanguagesData[5],
-            programmingLanguagesData[2],
-            programmingLanguagesData[3],
-            programmingLanguagesData[9]
+            technologiesData[0],
+            technologiesData[1],
+            technologiesData[5],
+            technologiesData[2],
+            technologiesData[3],
+            technologiesData[8],
+            technologiesData[13],
         ],
         "",
         "",
-        auraFitImage
+        socialMediaImg
     ),
+
     new Project(
         2,
-        "Coupon System",
-        "This project is an intuitive and efficient Coupon Management System designed to streamline promotional campaigns and customer interactions. Built using Java Spring on the backend, the application provides a robust RESTful API to handle coupon creation, distribution, and redemption securely and effectively." +
-        " React powers the frontend, delivering a user-friendly and responsive interface for managing coupons. Users can easily create, edit, track, and manage coupon details, including expiration dates, discount values, and usage limits. Key features include: Secure API Management, Dynamic Coupon Handling, User-Friendly Interface, Real-time Tracking. This project highlights your proficiency in developing comprehensive web solutions using Java Spring for backend robustness and React for an interactive frontend experience.",
+        "Social Media",
+        "This Social Media platform pairs a Java Spring backend with a React frontend to deliver a full community experience. Users register and customize profiles; create posts with text, images, or hashtags; follow and unfollow other members; like, comment on, and share posts; receive instant notifications for new interactions; and exchange direct messages in a modern, real-time interface.",
+        [
+            "User registration and customizable profiles",
+            "Create, edit, and delete posts with text, images, and hashtags",
+            "Follow/unfollow other users to curate personalized feeds",
+            "Like, comment on, and share posts",
+            "Receive instant notifications for new likes, comments, and follows",
+            "Direct messaging between users"
+        ],
         [ProjectType.FULLSTACK],
         [
-            programmingLanguagesData[0],
-            programmingLanguagesData[1],
-            programmingLanguagesData[5],
-            programmingLanguagesData[2],
-            programmingLanguagesData[3],
-            programmingLanguagesData[8]
+            technologiesData[0],
+            technologiesData[1],
+            technologiesData[5],
+            technologiesData[2],
+            technologiesData[3],
+            technologiesData[8],
+            technologiesData[13],
         ],
         "",
         "",
         socialMediaImg
     ),
+
     new Project(
         3,
-        "Social Media",
-        "This project is a dynamic and interactive social media platform built to facilitate seamless communication and community engagement. Developed using Java Spring for the backend, the application efficiently handles user authentication, data storage, real-time interactions, and secure content management." +
-        " On the frontend, React provides a modern, responsive, and engaging user interface. Users can easily create profiles, share updates, interact with posts through comments and likes, and manage their connections effectively. Key features include: Secure User Authentication, Real-Time Interactions, Interactive UI, Content Management. This project demonstrates your expertise in developing full-stack web applications with a strong emphasis on performance, user engagement, and security using Java Spring and React.",
-        [ProjectType.FULLSTACK],
-        [
-            programmingLanguagesData[0],
-            programmingLanguagesData[1],
-            programmingLanguagesData[5],
-            programmingLanguagesData[2],
-            programmingLanguagesData[3],
-            programmingLanguagesData[8]
-        ],
-        "",
-        "",
-        socialMediaImg
-    ),
-    new Project(
-        4,
         "Portfolio",
-        "This project is a modern and visually compelling personal portfolio website created to effectively showcase technical skills, projects, and professional experiences. Built using React and styled with Tailwind CSS, it provides a fast, responsive, and engaging user interface." +
-        " Visitors can explore detailed project showcases, clearly presented technical skill sets, professional experiences, and easily reach out through integrated contact forms. Key features include: Interactive Project Showcases, Responsive Design, Fast and Lightweight, User-Friendly Navigation. This portfolio project demonstrates strong front-end development skills, emphasizing proficiency in React and the utility-first styling capabilities of Tailwind CSS.",
+        "The Portfolio site is a front-end application built with React and Tailwind CSS to showcase technical skills, projects, and professional experience. Visitors explore interactive galleries of past work; review proficiency indicators for key technologies; follow a chronological career timeline; and reach out via an integrated contact form, all within a fast, responsive design.",
+        [
+            "Interactive project galleries with screenshots and descriptions",
+            "Skillset highlights with proficiency indicators",
+            "Chronological experience timeline",
+            "Contact form for inquiries and collaborations",
+            "Light/dark theme toggle and responsive navigation"
+        ],
         [ProjectType.FRONTEND],
         [
-            programmingLanguagesData[2],
-            programmingLanguagesData[3],
-            programmingLanguagesData[9]
+            technologiesData[2],
+            technologiesData[3],
+            technologiesData[9]
         ],
         "",
         "",
         portfolioImage
     ),
+
     new Project(
-        5,
+        4,
         "Barber Shop",
-        "Content",
+        "The Barber Shop web app is a full-stack solution with a Java Spring backend and a React frontend, offering clients a unified portal for grooming services and retail. Clients select a service type (haircut, shave, styling), choose their preferred barber, pick a date and time, and receive instant confirmation. They can also shop a curated online store of pomades, beard oils, tools, and accessories, complete the checkout flow, and track order status.",
+        [
+            "Online appointment booking for haircuts, shaves, and styling",
+            "Select preferred barber and available date/time",
+            "Instant booking confirmation emails",
+            "Browse curated online store of pomades, beard oils, and grooming tools",
+            "Add products to cart and complete checkout",
+            "Basic order tracking and history"
+        ],
         [ProjectType.FULLSTACK],
         [
-            programmingLanguagesData[0],
-            programmingLanguagesData[1],
-            programmingLanguagesData[5],
-            programmingLanguagesData[2],
-            programmingLanguagesData[3],
-            programmingLanguagesData[9]
+            technologiesData[0],
+            technologiesData[1],
+            technologiesData[5],
+            technologiesData[2],
+            technologiesData[3],
+            technologiesData[9],
+            technologiesData[13],
         ],
         "",
         "",
         barberShopImage
     ),
+
+    new Project(
+        5,
+        "AuraFit E-Commerce",
+        "AuraFit E-Commerce is a sport-brand online shop built with a Java Spring/Spring Security/MySQL backend and a React frontend. Customers can seamlessly browse a curated selection of athletic apparel, footwear, and workout equipment; filter products by category, size, color, or price; add items to a wishlist or shopping cart; apply discount codes at checkout; and securely review their order history.",
+        [
+            "Browse product catalogs by category (apparel, shoes, accessories)",
+            "Filter and sort by size, color, price, and brand",
+            "View detailed product pages with multiple images and descriptions",
+            "Add items to wishlist or shopping cart",
+            "Apply discount codes at checkout",
+            "Complete secure checkout and review order history"
+        ],
+        [ProjectType.FULLSTACK],
+        [
+            technologiesData[0],
+            technologiesData[1],
+            technologiesData[5],
+            technologiesData[2],
+            technologiesData[3],
+            technologiesData[9],
+            technologiesData[13],
+        ],
+        "",
+        "",
+        auraFitImage
+    ),
+
     new Project(
         6,
         "TDEE Calculator",
-        "",
+        "The TDEE Calculator is a front-end single-page application built with React and TypeScript that helps users determine their Total Daily Energy Expenditure. By entering age, gender, height, weight, and activity level, the app applies the Mifflin–St Jeor formula to generate an immediate calorie-target recommendation, offers optional macronutrient breakdowns, and updates results in real time as inputs change.",
+        [
+            "Input age, gender, height, weight, and activity level",
+            "Calculate daily caloric needs using the Mifflin–St Jeor formula",
+            "Optional macronutrient breakdown suggestions",
+            "Real-time result updates as inputs change",
+            "Responsive design for all devices"
+        ],
         [ProjectType.FULLSTACK],
         [
-            programmingLanguagesData[0],
-            programmingLanguagesData[1],
-            programmingLanguagesData[5],
-            programmingLanguagesData[2],
-            programmingLanguagesData[3],
-            programmingLanguagesData[9]
+            technologiesData[0],
+            technologiesData[1],
+            technologiesData[5],
+            technologiesData[2],
+            technologiesData[3],
+            technologiesData[9],
+            technologiesData[13],
         ],
         "",
         "",
         tdeeImage
+    ),
+
+    new Project(
+        7,
+        "Appify",
+        "Appify is a full-stack job-application tracker with a Java Spring backend and a React (TypeScript) frontend that streamlines the job search process. Users add entries for each application—specifying company, role, submission date, status, and notes—then filter and search by company, city, or status. A dashboard summarizes total applications, today’s submissions, average per day, and status distribution, and data can be exported to CSV for offline analysis.",
+        [
+            "Add, edit, and delete job application entries with company, role, date, status, and notes",
+            "Filter and search applications by company, city, or status",
+            "Dashboard analytics showing total applications, today’s submissions, average per day, and status distribution",
+            "Export application data to CSV",
+            "Real-time updates and responsive UI"
+        ],
+        [ProjectType.FULLSTACK],
+        [
+            technologiesData[0],
+            technologiesData[1],
+            technologiesData[5],
+            technologiesData[2],
+            technologiesData[3],
+            technologiesData[9],
+            technologiesData[12],
+            technologiesData[13],
+        ],
+        "",
+        "",
+        appifyImage
     )
 ];
+
+

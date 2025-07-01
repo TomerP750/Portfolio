@@ -3,6 +3,7 @@ import "./Hero.css";
 import {JSX} from "react";
 import {ArrowRight} from "lucide-react";
 import {CodeTypewriterAnimation} from "../../CodeTypeWriterAnimation/CodeTypeWriterAnimation.tsx";
+import {scrollToSection} from "../../../Utils/Scroll.ts";
 
 export function Hero(): JSX.Element {
 
@@ -49,20 +50,6 @@ export function Hero(): JSX.Element {
                     >
                         I'm Tomer Jacob
                     </motion.p>
-                    {/*<motion.p*/}
-                    {/*    className="sm:text-left text-5xl md:text-7xl text-[#10b981] leading-tight"*/}
-                    {/*    variants={itemVariants}*/}
-                    {/*>*/}
-                    {/*    <CodeTypewriterAnimation lines={["Welcome,"]} speed={90}/>*/}
-                    {/*</motion.p>*/}
-
-                    {/*<motion.p*/}
-                    {/*    className="text-neutral-100 text-5xl md:text-5xl leading-tight"*/}
-                    {/*    variants={itemVariants}*/}
-                    {/*>*/}
-                    {/*    <CodeTypewriterAnimation lines={["I'm Tomer Jacob"]} speed={90}/>*/}
-                    {/*</motion.p>*/}
-
 
                     <motion.p className="text-white w-3/4" variants={itemVariants}>
                         I'm a passionate Full Stack Developer who creates modern, responsive websites and applications.
@@ -76,6 +63,7 @@ export function Hero(): JSX.Element {
                         variants={itemVariants}
                         whileHover={{scale: 1.05}}
                         whileTap={{scale: 0.95}}
+                        onClick={()=>scrollToSection("contact")}
                     >
                         <span
                             className="absolute inset-0 w-0 bg-gray-500 transition-all duration-300 ease-in-out group-hover:w-full z-0"

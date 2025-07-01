@@ -7,6 +7,7 @@ import {CgSpinner} from "react-icons/cg";
 import {useForm} from "react-hook-form";
 import {ContactMessage} from "../../../Models/ContactMessage.ts";
 import contactService from "../../../Services/ContactService.ts";
+import {toast} from "react-toastify";
 
 export function Contact(): JSX.Element {
 
@@ -16,16 +17,17 @@ export function Contact(): JSX.Element {
 
     const sendData = (data: ContactMessage) => {
         setLoading(true);
-        // contactService.test()
-        //     .then((result) => {
-        //
-        //     })
-        //     .catch(err => {
-        //         console.log(err.response.data)
-        //     })
-        //     .finally(() => {
-        //         setLoading(false);
-        //     })
+        contactService.sendMessage(data)
+            .then(() => {
+                toast.success("Message Sent Successfully, Thank you!");
+                reset();
+            })
+            .catch(err => {
+                toast.error(err.response.data);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     }
 
     return (
@@ -38,7 +40,7 @@ export function Contact(): JSX.Element {
 
                 <div className="flex flex-col md:flex-row md:space-x-12">
 
-                    <div className="flex flex-col items-center md:items-start space-y-6 md:w-1/3">
+                    <div className="flex flex-col items-center md:items-center space-y-6 md:w-full">
                         {/*<div className="flex items-center space-x-3">*/}
                         {/*    <PhoneIcon className="w-6 h-6 text-[#10b981]" />*/}
                         {/*    <span>1234567890</span>*/}
@@ -81,20 +83,6 @@ export function Contact(): JSX.Element {
                                 type="email"
                                 {...register("email")}
                                 placeholder="you@example.com"
-                                className="bg-transparent border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#10b981] transition duration-300"
-                                required
-                            />
-                        </div>
-
-                        <div className="flex flex-col">
-                            <label htmlFor="text" className="self-center md:self-start mb-2 font-medium">
-                                Subject*
-                            </label>
-                            <input
-                                id="subject"
-                                type="text"
-                                {...register("subject")}
-                                placeholder="Enter a subject"
                                 className="bg-transparent border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#10b981] transition duration-300"
                                 required
                             />
