@@ -3,7 +3,6 @@ import {JSX} from "react";
 import {FaGithub, FaLinkedin} from "react-icons/fa";
 import {NavLink} from "react-router-dom";
 import {scrollToSection} from "../../Utils/Scroll.ts";
-import {useTheme} from "../../Context/ThemeContext.tsx";
 
 
 interface FooterProps {

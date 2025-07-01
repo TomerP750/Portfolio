@@ -1,10 +1,6 @@
 import {TimelineItem} from "../Models/TimelineItem.ts";
 
 
-export const experienceData = [
-    new TimelineItem("2022-2023", "Employee", "Nike")
-]
-
 export const educationData = [
     new TimelineItem("2013-2016", "High School Diploma", "High School"),
     new TimelineItem("2016-2019", "Army", "Intelligence and Air Force"),

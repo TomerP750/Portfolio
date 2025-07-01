@@ -1,7 +1,6 @@
 import "./ProjectDetailsPage.css";
 import {JSX, useEffect} from "react";
-import {Project} from "../../../Models/Project";
-import {NavLink, useLocation, Navigate, useNavigate, useParams} from "react-router-dom";
+import {Navigate, useLocation, useNavigate, useParams} from "react-router-dom";
 import {FiArrowLeft, FiExternalLink} from "react-icons/fi";
 import {FaGithub} from "react-icons/fa";
 import {projectsData} from "../../../Datas/ProjectsData.ts";

@@ -1,8 +1,6 @@
 import "./Button.css";
 import {motion, Variants} from "framer-motion";
 import {JSX} from "react";
-import {FiExternalLink} from "react-icons/fi";
-import {Project} from "../../../Models/Project.ts";
 import {IconType} from "react-icons";
 
 interface ButtonProps {

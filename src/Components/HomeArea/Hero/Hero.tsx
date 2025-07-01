@@ -2,7 +2,6 @@ import {motion, useScroll, useTransform} from "framer-motion";
 import "./Hero.css";
 import {JSX} from "react";
 import {ArrowRight} from "lucide-react";
-import {CodeTypewriterAnimation} from "../../CodeTypeWriterAnimation/CodeTypeWriterAnimation.tsx";
 import {scrollToSection} from "../../../Utils/Scroll.ts";
 
 export function Hero(): JSX.Element {

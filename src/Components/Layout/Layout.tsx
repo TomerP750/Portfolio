@@ -1,7 +1,6 @@
 import "./Layout.css";
 import {JSX, useEffect, useState} from "react";
 import {Routing} from "../Routing/Routing.tsx";
-import {Footer} from "../Footer/Footer.tsx";
 import {FaArrowUp} from "react-icons/fa";
 // import {Navbar} from "../NavbarArea/Navbar/Navbar.tsx";
 

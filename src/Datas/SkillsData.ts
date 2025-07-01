@@ -1,4 +1,4 @@
-import {FaCoffee, FaJava} from "react-icons/fa";
+import {FaJava} from "react-icons/fa";
 import {
     SiCss3, SiDocker,
     SiHtml5,

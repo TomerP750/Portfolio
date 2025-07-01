@@ -4,7 +4,7 @@ import {projectsData} from "../../../Datas/ProjectsData.ts";
 import {ProjectCard} from "../ProjectCard/ProjectCard.tsx";
 import {motion, useInView, Variants} from "framer-motion";
 import image from "../../../assets/projectsImage.png";
-import {AiFillCaretDown, AiFillCaretUp} from "react-icons/ai";
+import {AiFillCaretDown} from "react-icons/ai";
 
 
 type SortType = "newest-oldest" | "oldest-newest" | "a-z" | "z-a";
