@@ -25,7 +25,7 @@ export function NavbarDrawer({ onClose, isOpen }: NavbarDrawerProps): JSX.Elemen
         exit: { x: '-100%' },
     }
 
-    const cvUrl = "/cv.pdf";
+    // const cvUrl = "/cv.pdf";
 
     const handleClick = (sectionId: string) => {
         scrollToSection(sectionId);

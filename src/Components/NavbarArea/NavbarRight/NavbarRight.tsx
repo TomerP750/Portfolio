@@ -8,7 +8,7 @@ export function NavbarRight(): JSX.Element {
 
     const [drawerOpened, setDrawerOpened] = useState<boolean>(false);
 
-    const cvUrl = "/cv.pdf";
+    // const cvUrl = "/cv.pdf";
 
     const navbarCenterItem = `hidden sm:inline-block relative text-[#10b981] hover:text-[#e5e7eb] no-underline
   transition-colors duration-300
