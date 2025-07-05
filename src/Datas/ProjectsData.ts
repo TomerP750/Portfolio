@@ -57,7 +57,7 @@ export const projectsData: Project[] = [
             technologiesData[8],
             technologiesData[13],
         ],
-        "",
+        "https://github.com/TomerP750/My_social_media_project",
         "",
         socialMediaImg
     ),
@@ -135,7 +135,7 @@ export const projectsData: Project[] = [
             technologiesData[13],
             technologiesData[14]
         ],
-        "",
+        "https://github.com/TomerP750/AuraFit-E-Commerce-Project",
         "",
         auraFitImage
     ),
@@ -188,7 +188,7 @@ export const projectsData: Project[] = [
             technologiesData[12],
             technologiesData[13],
         ],
-        "",
+        "https://github.com/TomerP750/Appify",
         "",
         appifyImage
     )
