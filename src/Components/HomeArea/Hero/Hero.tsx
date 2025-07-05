@@ -48,7 +48,7 @@ export function Hero(): JSX.Element {
                         className="text-neutral-100 text-5xl md:text-5xl"
                         variants={itemVariants}
                     >
-                        I'm Tomer Jacob
+                        I'm Tomer
                     </motion.p>
 
                     <motion.p className="text-white w-3/4" variants={itemVariants}>

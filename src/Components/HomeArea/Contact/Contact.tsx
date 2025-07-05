@@ -1,7 +1,7 @@
 import "./Contact.css";
 import { JSX } from "react";
 // import { MailIcon } from "lucide-react";
-import { SiLinkedin } from "react-icons/si";
+// import { SiLinkedin } from "react-icons/si";
 import connectImage from "../../../assets/connectImage.png";
 // import { CgSpinner } from "react-icons/cg";
 // import { useForm } from "react-hook-form";
@@ -47,10 +47,10 @@ export function Contact(): JSX.Element {
                             <MailIcon className="w-6 h-6 text-white" />
                             <span></span>
                         </div> */}
-                        <div className="flex items-center space-x-3">
+                        {/* <div className="flex items-center space-x-3">
                             <SiLinkedin className="w-6 h-6 text-[#0077B5]" />
                             <span>/TomerJacob</span>
-                        </div>
+                        </div> */}
 
                     </div>
 
