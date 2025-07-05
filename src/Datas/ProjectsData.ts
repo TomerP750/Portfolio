@@ -1,6 +1,6 @@
 import { Project } from "../Models/Project.ts";
 import { ProjectType } from "../Models/ProjectType.ts";
-import { Technology } from "../Models/Technology.ts";
+// import { Technology } from "../Models/Technology.ts";
 import appifyImage from "../assets/AppifyImages/myApplications.jpg";
 import auraFitImage from "../assets/auraFitImage.jpg";
 import barberShopImage from "../assets/barberShopImage.jpg";

@@ -1,32 +1,32 @@
 import "./Contact.css";
-import { JSX, useState } from "react";
-import { MailIcon } from "lucide-react";
+import { JSX } from "react";
+// import { MailIcon } from "lucide-react";
 import { SiLinkedin } from "react-icons/si";
 import connectImage from "../../../assets/connectImage.png";
-import { CgSpinner } from "react-icons/cg";
-import { useForm } from "react-hook-form";
-import {ContactMessage} from "../../../Models/ContactMessage.ts";
+// import { CgSpinner } from "react-icons/cg";
+// import { useForm } from "react-hook-form";
+// import {ContactMessage} from "../../../Models/ContactMessage.ts";
 
 export function Contact(): JSX.Element {
 
-    const [loading, setLoading] = useState<boolean>(false);
+    // const [loading, setLoading] = useState<boolean>(false);
 
-    const { register, handleSubmit } = useForm<ContactMessage>();
+    // const { register, handleSubmit } = useForm<ContactMessage>();
 
-    const sendData = (data: ContactMessage) => {
-        setLoading(true);
-        // contactService.sendMessage(data)
-        //     .then(() => {
-        //         toast.success("Message Sent Successfully, Thank you!");
-        //         reset();
-        //     })
-        //     .catch(err => {
-        //         toast.error(err.response.data);
-        //     })
-        //     .finally(() => {
-        //         setLoading(false);
-        //     })
-    }
+    // const sendData = (data: ContactMessage) => {
+    //     setLoading(true);
+    //     // contactService.sendMessage(data)
+    //     //     .then(() => {
+    //     //         toast.success("Message Sent Successfully, Thank you!");
+    //     //         reset();
+    //     //     })
+    //     //     .catch(err => {
+    //     //         toast.error(err.response.data);
+    //     //     })
+    //     //     .finally(() => {
+    //     //         setLoading(false);
+    //     //     })
+    // }
 
     return (
         <section className="bg-[#0f172a] bg-gradient-to-b from-[#0f172a] to-[#0b1a3a] py-16 px-4">
@@ -43,10 +43,10 @@ export function Contact(): JSX.Element {
                         {/*    <PhoneIcon className="w-6 h-6 text-[#10b981]" />*/}
                         {/*    <span>1234567890</span>*/}
                         {/*</div>*/}
-                        <div className="flex items-center space-x-3">
+                        {/* <div className="flex items-center space-x-3">
                             <MailIcon className="w-6 h-6 text-white" />
-                            <span>tomer.jcb65@gmail.com</span>
-                        </div>
+                            <span></span>
+                        </div> */}
                         <div className="flex items-center space-x-3">
                             <SiLinkedin className="w-6 h-6 text-[#0077B5]" />
                             <span>/TomerJacob</span>
@@ -54,7 +54,7 @@ export function Contact(): JSX.Element {
 
                     </div>
 
-                    <form
+                    {/* <form
                         onSubmit={handleSubmit(sendData)}
                         className="mt-8 md:mt-0 flex flex-col gap-6 md:w-full"
                     >
@@ -116,7 +116,7 @@ export function Contact(): JSX.Element {
                                 "Send Message"
                             )}
                         </button>
-                    </form>
+                    </form> */}
 
                 </div>
             </div>
