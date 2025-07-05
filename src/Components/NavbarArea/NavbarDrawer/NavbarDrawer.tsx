@@ -87,7 +87,7 @@ export function NavbarDrawer({ onClose, isOpen }: NavbarDrawerProps): JSX.Elemen
                     >
                         Contact
                     </li>
-                    <li>
+                    {/* <li>
                         <a
                             href={cvUrl}
                             download="Tomer_CV.pdf"
@@ -96,7 +96,7 @@ export function NavbarDrawer({ onClose, isOpen }: NavbarDrawerProps): JSX.Elemen
                         >
                             Download CV
                         </a>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </motion.div>

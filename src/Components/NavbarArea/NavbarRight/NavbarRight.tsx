@@ -29,11 +29,11 @@ export function NavbarRight(): JSX.Element {
                 <span onClick={() => scrollToSection("skills")} className={navbarCenterItem}>Skills</span>
                 <span onClick={() => scrollToSection("projects")} className={navbarCenterItem}>Projects</span>
                 <span onClick={() => scrollToSection("contact")} className={navbarCenterItem}>Contact</span>
-                <a href={cvUrl} download={"Tomer_CV.pdf"}
+                {/* <a href={cvUrl} download={"Tomer_CV.pdf"}
                    className={"hidden sm:inline-block relative text-[#10b981] " +
                        "hover:text-[#e5e7eb] no-underline transition-colors duration-300 px-4 py-2 " +
                        "rounded-4xl border-1 cursor-pointer"}>Download CV
-                </a>
+                </a> */}
             </div>
 
             <Menu
