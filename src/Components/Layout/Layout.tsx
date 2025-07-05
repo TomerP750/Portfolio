@@ -7,6 +7,7 @@ import {FaArrowUp} from "react-icons/fa";
 export function Layout(): JSX.Element {
 
     const [showBtn, setShowBtn] = useState(false);
+
     useEffect(() => {
         const onScroll = () => {
             setShowBtn(window.scrollY > 300);
@@ -14,6 +15,7 @@ export function Layout(): JSX.Element {
         window.addEventListener("scroll", onScroll, { passive: true });
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
     const scrollToNavbar = () => {
         const navEl = document.getElementById("navbar");
         if (navEl) {

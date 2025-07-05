@@ -4,7 +4,9 @@ import {Layout} from "./Components/Layout/Layout.tsx";
 import {BrowserRouter} from "react-router-dom";
 
 createRoot(document.getElementById('root')!).render(
-    <BrowserRouter basename="/Portfolio">
+    <BrowserRouter >
         <Layout/>
     </BrowserRouter>,
 )
+
+// on BrowserRouter tag add this basename="/Portfolio"

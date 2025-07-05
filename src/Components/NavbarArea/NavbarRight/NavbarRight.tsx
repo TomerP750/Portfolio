@@ -10,9 +10,6 @@ export function NavbarRight(): JSX.Element {
 
     const cvUrl = "/cv.pdf";
 
-
-    // const navbarCenterItem = "hidden sm:block text-[#10b981] hover:text-[#e5e7eb] transition px-3 py-2 rounded cursor-pointer "
-
     const navbarCenterItem = `hidden sm:inline-block relative text-[#10b981] hover:text-[#e5e7eb] no-underline
   transition-colors duration-300
   px-3 py-2 rounded cursor-pointer

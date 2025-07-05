@@ -31,10 +31,11 @@ export function Hero(): JSX.Element {
             variants={containerVariants}
         >
 
-            <div className="flex justify-center w-full h-3/4">
+            <div className="flex justify-center w-full h-4/5">
                 {/* Text Content */}
                 <motion.div
-                    className="w-full items-center flex flex-col md:items-center text-[#10b981] md:w-2/3 gap-10 md:gap-5"
+                    className="w-full items-center flex flex-col md:items-center text-[#10b981] 
+                    md:w-2/3 gap-10 md:gap-5"
                     variants={itemVariants}
                 >
                     <motion.p

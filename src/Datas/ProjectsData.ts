@@ -1,24 +1,23 @@
 import { Project } from "../Models/Project.ts";
-import socialMediaImg from "../assets/socialMediaProject.jpg";
-import tdeeImage from "../assets/tdeeProjectImage.jpg";
 import { ProjectType } from "../Models/ProjectType.ts";
-import portfolioImage from "../assets/porftolioWebImage.jpg";
+import { Technology } from "../Models/Technology.ts";
+import appifyImage from "../assets/AppifyImages/myApplications.jpg";
 import auraFitImage from "../assets/auraFitImage.jpg";
 import barberShopImage from "../assets/barberShopImage.jpg";
-import appifyImage from "../assets/AppifyImages/myApplications.jpg";
+import portfolioImage from "../assets/porftolioWebImage.jpg";
+import socialMediaImg from "../assets/socialMediaProject.jpg";
 import { technologiesData } from "./TechnologiesData.ts";
+
 
 export const projectsData: Project[] = [
     new Project(
         1,
         "Coupon System",
-        "The Coupon System is a promotional engine built with a Java Spring backend and a React frontend. Marketing teams can generate custom coupon codes with defined values, expiration dates, and usage limits; customers redeem codes during checkout for automatic discounts; and administrators track real-time usage statistics, export redemption reports, and manage user access levels.",
+        "The Coupon System is a promotional engine built with a Java Spring backend and a React frontend. Marketing teams can generate custom coupon codes with defined values, expiration dates, and usage limits; customers redeem codes during checkout for automatic discounts.",
         [
-            "Generate and configure coupon codes with custom values, expiration dates, and usage limits",
-            "Distribute coupons via shareable links or emails",
-            "Redeem coupons during checkout for automatic discounts",
-            "Track real-time usage statistics and export redemption reports",
-            "Manage user access with role-based permissions"
+            "Users can Browse and search for coupons across various categories (e.g. food, travel, retail).",
+            "Companies can create, update, and delete their own coupons",
+            "Administrators have full control over managing companies and customers, including creating, updating, and deleting them"
         ],
         [ProjectType.FULLSTACK],
         [
@@ -29,10 +28,11 @@ export const projectsData: Project[] = [
             technologiesData[3],
             technologiesData[8],
             technologiesData[13],
+            
         ],
         "",
         "",
-        socialMediaImg
+        ""
     ),
 
     new Project(
@@ -77,7 +77,8 @@ export const projectsData: Project[] = [
         [
             technologiesData[2],
             technologiesData[3],
-            technologiesData[9]
+            technologiesData[9],
+            technologiesData[14]
         ],
         "",
         "",
@@ -132,37 +133,38 @@ export const projectsData: Project[] = [
             technologiesData[3],
             technologiesData[9],
             technologiesData[13],
+            technologiesData[14]
         ],
         "",
         "",
         auraFitImage
     ),
 
-    new Project(
-        6,
-        "TDEE Calculator",
-        "The TDEE Calculator is a front-end single-page application built with React and TypeScript that helps users determine their Total Daily Energy Expenditure. By entering age, gender, height, weight, and activity level, the app applies the Mifflin–St Jeor formula to generate an immediate calorie-target recommendation, offers optional macronutrient breakdowns, and updates results in real time as inputs change.",
-        [
-            "Input age, gender, height, weight, and activity level",
-            "Calculate daily caloric needs using the Mifflin–St Jeor formula",
-            "Optional macronutrient breakdown suggestions",
-            "Real-time result updates as inputs change",
-            "Responsive design for all devices"
-        ],
-        [ProjectType.FULLSTACK],
-        [
-            technologiesData[0],
-            technologiesData[1],
-            technologiesData[5],
-            technologiesData[2],
-            technologiesData[3],
-            technologiesData[9],
-            technologiesData[13],
-        ],
-        "",
-        "",
-        tdeeImage
-    ),
+    // new Project(
+    //     6,
+    //     "TDEE Calculator",
+    //     "The TDEE Calculator is a front-end single-page application built with React and TypeScript that helps users determine their Total Daily Energy Expenditure. By entering age, gender, height, weight, and activity level, the app applies the Mifflin–St Jeor formula to generate an immediate calorie-target recommendation, offers optional macronutrient breakdowns, and updates results in real time as inputs change.",
+    //     [
+    //         "Input age, gender, height, weight, and activity level",
+    //         "Calculate daily caloric needs using the Mifflin–St Jeor formula",
+    //         "Optional macronutrient breakdown suggestions",
+    //         "Real-time result updates as inputs change",
+    //         "Responsive design for all devices"
+    //     ],
+    //     [ProjectType.FULLSTACK],
+    //     [
+    //         technologiesData[0],
+    //         technologiesData[1],
+    //         technologiesData[5],
+    //         technologiesData[2],
+    //         technologiesData[3],
+    //         technologiesData[9],
+    //         technologiesData[13],
+    //     ],
+    //     "",
+    //     "",
+    //     tdeeImage
+    // ),
 
     new Project(
         7,

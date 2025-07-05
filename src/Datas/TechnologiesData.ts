@@ -8,6 +8,7 @@ import {
     SiMongodb,
     SiTailwindcss,
     SiDocker, SiSocketdotio, SiPostman,
+    SiFramer,
 } from "react-icons/si";
 
 export const technologiesData: Technology[] = [
@@ -25,4 +26,5 @@ export const technologiesData: Technology[] = [
     new Technology("Python", "#3776AB", FaPython),
     new Technology("WebSocket", "#339933", SiSocketdotio),
     new Technology("Postman", "#FF6C37", SiPostman),
+    new Technology("Framer Motion", "#0055FF", SiFramer)
 ];
