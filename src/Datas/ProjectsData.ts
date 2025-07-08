@@ -41,11 +41,10 @@ export const projectsData: Project[] = [
         "This Social Media platform pairs a Java Spring backend with a React frontend to deliver a full community experience. Users register and customize profiles; create posts with text, images, or hashtags; follow and unfollow other members; like, comment on, and share posts; receive instant notifications for new interactions; and exchange direct messages in a modern, real-time interface.",
         [
             "User registration and customizable profiles",
-            "Create, edit, and delete posts with text, images, and hashtags",
+            "Create, edit, and delete posts",
             "Follow/unfollow other users to curate personalized feeds",
-            "Like, comment on, and share posts",
-            "Receive instant notifications for new likes, comments, and follows",
-            "Direct messaging between users"
+            "Like and comment on posts",
+            "Receive notifications for new likes, comments, and follows",
         ],
         [ProjectType.FULLSTACK],
         [
@@ -67,11 +66,10 @@ export const projectsData: Project[] = [
         "Portfolio",
         "The Portfolio site is a front-end application built with React and Tailwind CSS to showcase technical skills, projects, and professional experience. Visitors explore interactive galleries of past work; review proficiency indicators for key technologies; follow a chronological career timeline; and reach out via an integrated contact form, all within a fast, responsive design.",
         [
-            "Interactive project galleries with screenshots and descriptions",
+            "Project galleries with screenshots and descriptions",
             "Skillset highlights with proficiency indicators",
-            "Chronological experience timeline",
-            "Contact form for inquiries and collaborations",
-            "Light/dark theme toggle and responsive navigation"
+            // "Chronological experience timeline",
+            "Responsive navigation"
         ],
         [ProjectType.FRONTEND],
         [
@@ -85,32 +83,32 @@ export const projectsData: Project[] = [
         portfolioImage
     ),
 
-    new Project(
-        4,
-        "Barber Shop",
-        "The Barber Shop web app is a full-stack solution with a Java Spring backend and a React frontend, offering clients a unified portal for grooming services and retail. Clients select a service type (haircut, shave, styling), choose their preferred barber, pick a date and time, and receive instant confirmation. They can also shop a curated online store of pomades, beard oils, tools, and accessories, complete the checkout flow, and track order status.",
-        [
-            "Online appointment booking for haircuts, shaves, and styling",
-            "Select preferred barber and available date/time",
-            "Instant booking confirmation emails",
-            "Browse curated online store of pomades, beard oils, and grooming tools",
-            "Add products to cart and complete checkout",
-            "Basic order tracking and history"
-        ],
-        [ProjectType.FULLSTACK],
-        [
-            technologiesData[0],
-            technologiesData[1],
-            technologiesData[5],
-            technologiesData[2],
-            technologiesData[3],
-            technologiesData[9],
-            technologiesData[13],
-        ],
-        "",
-        "",
-        barberShopImage
-    ),
+    // new Project(
+    //     4,
+    //     "Barber Shop",
+    //     "The Barber Shop web app is a full-stack solution with a Java Spring backend and a React frontend, offering clients a unified portal for grooming services and retail. Clients select a service type (haircut, shave, styling), choose their preferred barber, pick a date and time, and receive instant confirmation. They can also shop a curated online store of pomades, beard oils, tools, and accessories, complete the checkout flow, and track order status.",
+    //     [
+    //         "Online appointment booking for haircuts, shaves, and styling",
+    //         "Select preferred barber and available date/time",
+    //         "Instant booking confirmation emails",
+    //         "Browse curated online store of pomades, beard oils, and grooming tools",
+    //         "Add products to cart and complete checkout",
+    //         "Basic order tracking and history"
+    //     ],
+    //     [ProjectType.FULLSTACK],
+    //     [
+    //         technologiesData[0],
+    //         technologiesData[1],
+    //         technologiesData[5],
+    //         technologiesData[2],
+    //         technologiesData[3],
+    //         technologiesData[9],
+    //         technologiesData[13],
+    //     ],
+    //     "",
+    //     "",
+    //     barberShopImage
+    // ),
 
     new Project(
         5,

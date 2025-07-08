@@ -54,14 +54,14 @@ export function Footer({page}: FooterProps): JSX.Element {
     }
 
     return (
-        <footer className="bg-[#0b1a3a]">
+        <footer className="bg-gradient-to-b from-[#0f172a] to-[#0b1a3a]">
             <div className="max-w-4xl mx-auto px-4 py-8">
 
                 <nav className="flex justify-center items-center flex-wrap space-x-4">
                     <span onClick={() => scrollToSection("home")} className={linkClasses}>Home</span>
                     <span onClick={() => scrollToSection("about")} className={linkClasses}>About</span>
                     <span onClick={() => scrollToSection("projects")} className={linkClasses}>Projects</span>
-                    <span onClick={() => scrollToSection("contact")} className={linkClasses}>Contact</span>
+                    {/* <span onClick={() => scrollToSection("contact")} className={linkClasses}>Contact</span> */}
 
                     <NavLink
                         to="/"

@@ -11,9 +11,12 @@ import {Button} from "../../Wrappers/Button/Button.tsx";
 
 export function ProjectDetailsPage(): JSX.Element {
 
+    
     const navigate = useNavigate();
     const {id} = useParams<{ id: string }>();
     const project = projectsData.find(p => p.id === Number(id));
+    const githubDisabled = !project?.gitHubUrl?.trim();
+    const webUrlDisabled = !project?.webUrl?.trim();
     const {pathname} = useLocation();
     const handleBackToMain = () => {
         navigate("/", {state: "projects", replace: true});
@@ -52,18 +55,18 @@ export function ProjectDetailsPage(): JSX.Element {
 
                         <div className="flex gap-5">
 
-                            <Button disabled={!!project.gitHubUrl || project.gitHubUrl?.length === 0}
+                            <Button disabled={githubDisabled}
                                     Icon={FaGithub}
                                     size={30}
                                     onClick={() => navigate(`${project.gitHubUrl}`)}
-                                    className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50"}
+                                    className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50 hover:text-[#8257e5] cursor-pointer"}
                             />
                             <Button
-                                disabled={!!project.webUrl || project.webUrl?.length === 0}
+                                disabled={webUrlDisabled}
                                 Icon={FiExternalLink}
                                 size={30}
                                 onClick={() => navigate(`${project.webUrl}`)}
-                                className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50"}
+                                className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50 hover:text-[#10b981] cursor-pointer"}
                             />
 
                         </div>

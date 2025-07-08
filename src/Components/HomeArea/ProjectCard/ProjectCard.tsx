@@ -16,8 +16,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({project}: ProjectCardProps): JSX.Element {
 
-    const [githubDisabled] = useState<boolean>(!!project.gitHubUrl || project.gitHubUrl?.length === 0);
-    const [websiteDisabled] = useState<boolean>(!!project.webUrl || project.webUrl?.length === 0);
+    const githubDisabled = !project.gitHubUrl?.trim();
+    const webUrlDisabled = !project.webUrl?.trim();
     const [imageHovered, setImageHovered] = useState<boolean>(false);
     const navigate = useNavigate();
 
@@ -78,16 +78,16 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                                                 Icon={FaGithub}
                                                 size={25}
                                                 onClick={() => navigate(`${project.gitHubUrl}`)}
-                                                className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50"}
+                                                className={"flex flex-col text-white items-center hover:text-[#10b981] cursor-pointer disabled:cursor-not-allowed disabled:text-white/50"}
                                         >Github</Button>
                                     </motion.div>
                                     <motion.div variants={itemVariants}>
                                         <Button
-                                            disabled={websiteDisabled}
+                                            disabled={webUrlDisabled}
                                             Icon={FiExternalLink}
                                             size={25}
                                             onClick={() => navigate(`${project.webUrl}`)}
-                                            className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50"}
+                                            className={"flex flex-col text-white items-center hover:text-[#10b981] cursor-pointer disabled:cursor-not-allowed disabled:text-white/50"}
                                         >
                                             Website
                                         </Button>
@@ -112,7 +112,7 @@ export function ProjectCard({project}: ProjectCardProps): JSX.Element {
                                     className="transition duration-200 ease-in"
                                 />
                             </button>
-                            <button disabled={websiteDisabled}
+                            <button disabled={webUrlDisabled}
                                     className={"disabled:cursor-not-allowed " +
                                         "disabled:text-white/50 text-white hover:text-[#10b981] cursor-pointer"}>
                                 <FiExternalLink

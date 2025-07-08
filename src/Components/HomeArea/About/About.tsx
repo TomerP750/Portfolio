@@ -1,11 +1,11 @@
 import "./About.css";
-import {JSX, useRef} from "react";
-import {motion, useInView, Variants} from "framer-motion";
-import {FaBriefcase, FaGraduationCap} from "react-icons/fa";
-import {User} from "lucide-react";
-import {educationData} from "../../../Datas/TimelineData.ts";
-import {certificationsData} from "../../../Datas/CertificationsData.ts";
-import {MdWorkspacePremium} from "react-icons/md";
+import { JSX, useRef } from "react";
+import { motion, useInView, Variants } from "framer-motion";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import { User } from "lucide-react";
+import { educationData } from "../../../Datas/TimelineData.ts";
+import { certificationsData } from "../../../Datas/CertificationsData.ts";
+import { MdWorkspacePremium } from "react-icons/md";
 import aboutImage from "../../../assets/aboutImage.png";
 
 export function About(): JSX.Element {
@@ -20,18 +20,18 @@ export function About(): JSX.Element {
     };
 
     const containerVariants: Variants = {
-        hidden: {opacity: 0},
-        show: {opacity: 1, transition: {staggerChildren: 0.4, when: 'beforeChildren'}}
+        hidden: { opacity: 0 },
+        show: { opacity: 1, transition: { staggerChildren: 0.4, when: 'beforeChildren' } }
     };
 
 
     const itemVariants: Variants = {
-        hidden: {opacity: 0, y: 20},
-        show: {opacity: 1, y: 0, transition: {duration: 1.1}}
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0, transition: { duration: 1.1 } }
     };
 
     const ref = useRef<HTMLElement>(null);
-    const inView = useInView(ref, {once: true, margin: "0px", amount: 0.1});
+    const inView = useInView(ref, { once: true, margin: "0px", amount: 0.1 });
 
 
     return (
@@ -47,7 +47,7 @@ export function About(): JSX.Element {
                 variants={itemVariants}
                 className="text-3xl sm:text-4xl font-bold text-center"
             >
-                <img src={aboutImage} alt={"about"} className={"w-full h-80"}/>
+                <img src={aboutImage} alt={"about"} className={"w-full h-80"} />
             </motion.h2>
 
             {/* Row 1: Profile */}
@@ -60,7 +60,7 @@ export function About(): JSX.Element {
                     variants={itemVariants}
                     className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
                 >
-                    <User size={50} className="text-white sm:!text-[50px]"/>
+                    <User size={50} className="text-white sm:!text-[50px]" />
                 </motion.div>
                 <motion.div
                     variants={itemVariants}
@@ -97,10 +97,10 @@ export function About(): JSX.Element {
                             variants={itemVariants}
                             className="flex justify-end items-center space-x-2"
                         >
-                        <span className="text-right text-gray-300">
-                        ({item.date}) {item.role} <strong className=""> — {item.companyOrInstitution}</strong>
-                        </span>
-                            <span className="w-2 h-2 bg-gray-300 rounded-full mt-1"/>
+                            <span className="text-right text-gray-300">
+                                ({item.date}) {item.role} <strong className=""> — {item.companyOrInstitution}</strong>
+                            </span>
+                            <span className="w-2 h-2 bg-gray-300 rounded-full mt-1" />
                         </motion.li>
                     ))}
                 </motion.ul>
@@ -110,11 +110,11 @@ export function About(): JSX.Element {
                     variants={itemVariants}
                     className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
                 >
-                    <FaGraduationCap size={50} className="text-white sm:!text-[50px]"/>
+                    <FaGraduationCap size={50} className="text-white sm:!text-[50px]" />
                 </motion.div>
             </motion.div>
 
-            {/* Row 3: Experience */}
+            {/* Row 3: Experience
             <motion.div
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row items-center w-full sm:w-3/4 lg:w-2/3 gap-6 sm:gap-8"
@@ -130,12 +130,12 @@ export function About(): JSX.Element {
                     className="w-full sm:w-4/5 list-disc list-inside text-gray-300 space-y-2 flex flex-col items-center sm:items-start"
                 >
                     <motion.li variants={itemVariants}>
-                        <strong>Nike</strong> — Employee (2022–2023)
+                        <strong>Nike</strong> — Employee (2023)
                     </motion.li>
                 </motion.ul>
-            </motion.div>
+            </motion.div> */}
 
-            {/*Certifications*/}
+            {/* Certifications Right side
             <motion.div
                 variants={itemVariants}
                 className="flex flex-col-reverse sm:flex-row items-center sm:justify-end w-full sm:w-3/4 lg:w-2/3 gap-6"
@@ -165,7 +165,41 @@ export function About(): JSX.Element {
                 >
                     <MdWorkspacePremium size={50} className="text-white sm:!text-[50px]"/>
                 </motion.div>
+            </motion.div> */}
+
+
+            {/*Certifications for left side*/}
+            <motion.div
+                variants={itemVariants}
+                className="flex flex-col sm:flex-row items-center w-full sm:w-3/4 lg:w-2/3 gap-6 sm:gap-8"
+            >
+
+                <motion.div
+                    variants={itemVariants}
+                    className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
+                >
+                    <MdWorkspacePremium size={50} className="text-white sm:!text-[50px]" />
+                </motion.div>
+                <motion.div
+                    variants={itemVariants}
+                    className="w-3/4 sm:w-3/4 text-base leading-relaxed space-y-2"
+                >
+                    {certificationsData.map((item, idx) => (
+                        <motion.li
+                            key={idx}
+                            variants={itemVariants}
+                            className="flex justify-start items-center space-x-2"
+                        >
+                            <span className="w-2 h-2 bg-gray-300 rounded-full" />
+                            <span className="text-right text-gray-300">
+                                <strong className="font-light hover:underline cursor-pointer">{item.name}</strong>
+                            </span>
+
+                        </motion.li>
+                    ))}
+                </motion.div>
             </motion.div>
+
 
         </motion.section>
     );
