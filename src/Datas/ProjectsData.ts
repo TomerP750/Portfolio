@@ -83,32 +83,32 @@ export const projectsData: Project[] = [
         portfolioImage
     ),
 
-    // new Project(
-    //     4,
-    //     "Barber Shop",
-    //     "The Barber Shop web app is a full-stack solution with a Java Spring backend and a React frontend, offering clients a unified portal for grooming services and retail. Clients select a service type (haircut, shave, styling), choose their preferred barber, pick a date and time, and receive instant confirmation. They can also shop a curated online store of pomades, beard oils, tools, and accessories, complete the checkout flow, and track order status.",
-    //     [
-    //         "Online appointment booking for haircuts, shaves, and styling",
-    //         "Select preferred barber and available date/time",
-    //         "Instant booking confirmation emails",
-    //         "Browse curated online store of pomades, beard oils, and grooming tools",
-    //         "Add products to cart and complete checkout",
-    //         "Basic order tracking and history"
-    //     ],
-    //     [ProjectType.FULLSTACK],
-    //     [
-    //         technologiesData[0],
-    //         technologiesData[1],
-    //         technologiesData[5],
-    //         technologiesData[2],
-    //         technologiesData[3],
-    //         technologiesData[9],
-    //         technologiesData[13],
-    //     ],
-    //     "",
-    //     "",
-    //     barberShopImage
-    // ),
+    new Project(
+        4,
+        "Barber Shop",
+        "The Barber Shop web app is a full-stack solution with a Java Spring backend and a React frontend, offering clients a unified portal for grooming services and retail. Clients select a service type (haircut, shave, styling), choose their preferred barber, pick a date and time, and receive instant confirmation. They can also shop a curated online store of pomades, beard oils, tools, and accessories, complete the checkout flow, and track order status.",
+        [
+            "Online appointment booking for haircuts, shaves, and styling",
+            "Select preferred barber and available date/time",
+            // "Instant booking confirmation emails",
+            "Browse curated online store of grooming products",
+            "Add products to cart and complete checkout",
+            "Basic order tracking and history"
+        ],
+        [ProjectType.FULLSTACK],
+        [
+            technologiesData[0],
+            technologiesData[1],
+            technologiesData[5],
+            technologiesData[2],
+            technologiesData[3],
+            technologiesData[9],
+            technologiesData[13],
+        ],
+        "",
+        "",
+        barberShopImage
+    ),
 
     new Project(
         5,

@@ -1,7 +1,8 @@
 import "./About.css";
 import { JSX, useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
-import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import { FaGraduationCap } from "react-icons/fa";
+// import { FaBriefcase } from "react-icons/fa";
 import { User } from "lucide-react";
 import { educationData } from "../../../Datas/TimelineData.ts";
 import { certificationsData } from "../../../Datas/CertificationsData.ts";
