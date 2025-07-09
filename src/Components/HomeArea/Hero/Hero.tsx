@@ -31,7 +31,7 @@ export function Hero(): JSX.Element {
             variants={containerVariants}
         >
 
-            <div className="flex justify-center w-full h-4/5">
+            <div className="flex justify-center w-full h-full mt-3 sm:mt-0 sm:h-4/5">
                 {/* Text Content */}
                 <motion.div
                     className="w-full items-center flex flex-col md:items-center text-[#10b981] 
