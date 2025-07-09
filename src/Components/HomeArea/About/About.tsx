@@ -1,5 +1,5 @@
 import "./About.css";
-import { JSX, useRef } from "react";
+import { JSX, useRef, useState } from "react";
 import { motion, useInView, Variants } from "framer-motion";
 import { FaGraduationCap } from "react-icons/fa";
 // import { FaBriefcase } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { educationData } from "../../../Datas/TimelineData.ts";
 import { certificationsData } from "../../../Datas/CertificationsData.ts";
 import { MdWorkspacePremium } from "react-icons/md";
 import aboutImage from "../../../assets/aboutImage.png";
+import { AboutModal, ModalType } from "../AboutModal/AboutModal.tsx";
 
 export function About(): JSX.Element {
 
@@ -33,7 +34,8 @@ export function About(): JSX.Element {
 
     const ref = useRef<HTMLElement>(null);
     const inView = useInView(ref, { once: true, margin: "0px", amount: 0.1 });
-
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const [modalType, setModalType] = useState<ModalType>("John Bryce Grades");
 
     return (
         <motion.section
@@ -90,7 +92,7 @@ export function About(): JSX.Element {
             >
                 <motion.ul
                     variants={listVariants}
-                    className="w-full sm:w-4/5 flex flex-col items-center sm:items-end space-y-2"
+                    className="w-full sm:w-4/5 flex flex-col items-end sm:items-end space-y-2"
                 >
                     {educationData.map((item, idx) => (
                         <motion.li
@@ -98,7 +100,7 @@ export function About(): JSX.Element {
                             variants={itemVariants}
                             className="flex justify-end items-center space-x-2"
                         >
-                            <span className="text-right text-gray-300">
+                            <span className="text-xs sm:text-base text-center sm:text-right text-gray-300">
                                 ({item.date}) {item.role} <strong className=""> — {item.companyOrInstitution}</strong>
                             </span>
                             <span className="w-2 h-2 bg-gray-300 rounded-full mt-1" />
@@ -190,14 +192,22 @@ export function About(): JSX.Element {
                             key={idx}
                             variants={itemVariants}
                             className="flex justify-start items-center space-x-2"
+                            onClick={() => {
+                                setModalType(item.name as ModalType);
+                                setModalOpen(true);
+                            }}
                         >
                             <span className="w-2 h-2 bg-gray-300 rounded-full" />
                             <span className="text-right text-gray-300">
-                                <strong className="font-light hover:underline cursor-pointer">{item.name}</strong>
+                                <strong
+                                    className="font-light hover:underline cursor-pointer">{item.name}
+                                </strong>
                             </span>
 
                         </motion.li>
                     ))}
+
+                    {modalOpen && <AboutModal type={modalType} onClose={()=>setModalOpen(false)}/> }
                 </motion.div>
             </motion.div>
 

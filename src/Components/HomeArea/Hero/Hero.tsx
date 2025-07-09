@@ -25,27 +25,27 @@ export function Hero(): JSX.Element {
             style={{opacity, scale}}
             className="
                  items-center flex justify-center h-120 mb-10 lg:mb-0 lg:h-screen
-                 will-change-transform will-change-opacity"
+                 will-change-transform will-change-opacity mt-10"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
 
-            <div className="flex justify-center w-full h-full mt-3 sm:mt-0 sm:h-4/5">
+            <div className="flex justify-center w-full h-full mt-10 sm:mt-0 sm:h-4/5">
                 {/* Text Content */}
                 <motion.div
                     className="w-full items-center flex flex-col md:items-center text-[#10b981] 
-                    md:w-2/3 gap-10 md:gap-5"
+                    md:w-2/3 gap-3 md:gap-5"
                     variants={itemVariants}
                 >
                     <motion.p
-                        className="sm:text-left text-5xl md:text-7xl"
+                        className="sm:text-left text-4xl md:text-5xl lg:text-7xl"
                         variants={itemVariants}
                     >
                         Welcome,
                     </motion.p>
                     <motion.p
-                        className="text-neutral-100 text-5xl md:text-5xl"
+                        className="text-neutral-100 text-4xl md:text-5xl"
                         variants={itemVariants}
                     >
                         I'm Tomer
