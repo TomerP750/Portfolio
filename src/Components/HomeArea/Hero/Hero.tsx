@@ -63,7 +63,7 @@ export function Hero(): JSX.Element {
                         variants={itemVariants}
                         whileHover={{scale: 1.05}}
                         whileTap={{scale: 0.95}}
-                        onClick={()=>scrollToSection("contact")}
+                        onClick={()=>scrollToSection("about")}
                     >
                         <span
                             className="absolute inset-0 w-0 bg-gray-500 transition-all duration-300 ease-in-out group-hover:w-full z-0"
