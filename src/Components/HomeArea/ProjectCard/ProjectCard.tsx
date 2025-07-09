@@ -6,7 +6,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { FaBookOpen, FaGithub } from "react-icons/fa";
 import { ProjectType } from "../../../Models/ProjectType.ts";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../Wrappers/Button/Button.tsx";
 
 
