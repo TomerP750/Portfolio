@@ -1,4 +1,4 @@
-import {FaJava} from "react-icons/fa";
+import { FaJava } from "react-icons/fa";
 import {
     SiCss3, SiDocker,
     SiHtml5,
@@ -8,8 +8,11 @@ import {
     SiReact,
     SiSpring,
     SiTailwindcss,
-    SiTypescript
+    SiTypescript,
+    SiPostgresql,
+    SiNodedotjs
 } from "react-icons/si";
+
 
 
 export const skills = [
@@ -88,6 +91,16 @@ export const skills = [
         ],
     },
     {
+        name: 'PostgreSQL',
+        icon: SiPostgresql,
+        color: '#336791',
+        details: [
+            'Document Modeling',
+            'Aggregation Framework',
+            'Mongoose ODM',
+        ],
+    },
+    {
         name: 'HTML5',
         icon: SiHtml5,
         color: '#e34f26',
@@ -116,5 +129,13 @@ export const skills = [
         icon: SiPython,
         color: '#2496ed',
         details: ['Basic Python', 'OOP'],
-    }
+    },
+    {
+        name: 'Node.JS',
+        icon: SiNodedotjs,
+        color: '#339933',
+        details: ['Basic Python', 'OOP'],
+    },
+    
+
 ]

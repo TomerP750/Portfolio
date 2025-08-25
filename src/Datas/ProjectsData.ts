@@ -6,6 +6,7 @@ import auraFitImage from "../assets/auraFitImage.jpg";
 import barberShopImage from "../assets/barberShopImage.jpg";
 import portfolioImage from "../assets/porftolioWebImage.jpg";
 import socialMediaImg from "../assets/socialMediaProject.jpg";
+import tdeeImage from "../assets/tdeeProjectImage.jpg"
 import { technologiesData } from "./TechnologiesData.ts";
 
 
@@ -138,31 +139,31 @@ export const projectsData: Project[] = [
         auraFitImage
     ),
 
-    // new Project(
-    //     6,
-    //     "TDEE Calculator",
-    //     "The TDEE Calculator is a front-end single-page application built with React and TypeScript that helps users determine their Total Daily Energy Expenditure. By entering age, gender, height, weight, and activity level, the app applies the Mifflin–St Jeor formula to generate an immediate calorie-target recommendation, offers optional macronutrient breakdowns, and updates results in real time as inputs change.",
-    //     [
-    //         "Input age, gender, height, weight, and activity level",
-    //         "Calculate daily caloric needs using the Mifflin–St Jeor formula",
-    //         "Optional macronutrient breakdown suggestions",
-    //         "Real-time result updates as inputs change",
-    //         "Responsive design for all devices"
-    //     ],
-    //     [ProjectType.FULLSTACK],
-    //     [
-    //         technologiesData[0],
-    //         technologiesData[1],
-    //         technologiesData[5],
-    //         technologiesData[2],
-    //         technologiesData[3],
-    //         technologiesData[9],
-    //         technologiesData[13],
-    //     ],
-    //     "",
-    //     "",
-    //     tdeeImage
-    // ),
+    new Project(
+        6,
+        "TDEE Calculator",
+        "The TDEE Calculator is a front-end single-page application built with React and TypeScript that helps users determine their Total Daily Energy Expenditure. By entering age, gender, height, weight, and activity level, the app applies the Mifflin–St Jeor formula to generate an immediate calorie-target recommendation, offers optional macronutrient breakdowns, and updates results in real time as inputs change.",
+        [
+            "Input age, gender, height, weight, and activity level",
+            "Calculate daily caloric needs using the Mifflin–St Jeor formula",
+            "Optional macronutrient breakdown suggestions",
+            "Real-time result updates as inputs change",
+            "Responsive design for all devices"
+        ],
+        [ProjectType.FULLSTACK],
+        [
+            technologiesData[0],
+            technologiesData[1],
+            technologiesData[5],
+            technologiesData[2],
+            technologiesData[3],
+            technologiesData[9],
+            technologiesData[13],
+        ],
+        "",
+        "",
+        tdeeImage
+    ),
 
     new Project(
         7,
