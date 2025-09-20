@@ -9,10 +9,11 @@ import {
     SiSpring,
     SiTailwindcss,
     SiTypescript,
-    SiPostgresql,
-    SiNodedotjs
+    SiNodedotjs,
+    SiExpress,
+    SiPostman
 } from "react-icons/si";
-
+import { Role } from "../Models/Skill";
 
 
 export const skills = [
@@ -20,121 +21,104 @@ export const skills = [
         name: 'Java',
         icon: FaJava,
         color: '#f89820',
-        details: [
-            'Java Basic',
-            'Object-Oriented Programming',
-            'Collections & Generics',
-            'Stream API & Lambdas',
-            'JUnit Testing',
-        ],
+        role: 'backend' as Role 
+        
     },
     {
         name: 'Spring',
         icon: SiSpring,
         color: '#6db33f',
-        details: [
-            'Spring Boot Applications',
-            'Spring Security',
-            'RESTful Services',
-            'Data JPA & Transactions',
-        ],
+        role: 'backend' as Role 
     },
     {
         name: 'React',
         icon: SiReact,
         color: '#61dafb',
-        details: [
-            'Functional Components & Hooks',
-            'Context API & Redux',
-            'React Router',
-            'Performance Optimization',
-        ],
+        role: 'frontend' as Role 
+        
     },
     {
         name: 'TypeScript',
         icon: SiTypescript,
         color: '#3178c6',
-        details: [
-            'Static Typing',
-            'Interfaces & Generics',
-            'Advanced Types',
-        ],
+        role: 'frontend' as Role 
+        
     },
     {
         name: 'JavaScript',
         icon: SiJavascript,
         color: '#f7df1e',
-        details: [
-            'ES6+ Syntax',
-            'Asynchronous Programming',
-            'DOM Manipulation',
-        ],
+        role: 'frontend' as Role 
+        
     },
     {
         name: 'MySQL',
         icon: SiMysql,
-        color: '#4479a1',
-        details: [
-            'Database Design',
-            'Joins & Indexes',
-            'Stored Procedures',
-        ],
+        color: '#4479a1', 
+        role: 'database' as Role 
+        
     },
     {
         name: 'MongoDB',
         icon: SiMongodb,
         color: '#47a248',
-        details: [
-            'Document Modeling',
-            'Aggregation Framework',
-            'Mongoose ODM',
-        ],
+        role: 'database' as Role 
+        
     },
-    {
-        name: 'PostgreSQL',
-        icon: SiPostgresql,
-        color: '#336791',
-        details: [
-            'Document Modeling',
-            'Aggregation Framework',
-            'Mongoose ODM',
-        ],
-    },
+    // {
+    //     name: 'PostgreSQL',
+    //     icon: SiPostgresql,
+    //     color: '#336791',
+    //     role: 'backend' as Role 
+        
+    // },
     {
         name: 'HTML5',
         icon: SiHtml5,
         color: '#e34f26',
-        details: ['Semantic Markup', 'Forms & Validation', 'Accessibility'],
+        role: 'frontend' as Role 
     },
     {
         name: 'CSS3',
         icon: SiCss3,
         color: '#264de4',
-        details: ['Flexbox & Grid', 'Responsive Design', 'Animations'],
+        role: 'frontend' as Role 
     },
     {
         name: 'TailwindCSS',
         icon: SiTailwindcss,
         color: '#06b6d4',
-        details: ['Utility-First Styling', 'Custom Configurations', 'Responsive Utilities'],
+        role: 'frontend' as Role 
     },
     {
         name: 'Docker',
         icon: SiDocker,
         color: '#2496ed',
-        details: ['Containerization', 'Docker Compose', 'Image Optimization'],
+        role: 'tools' as Role 
     },
     {
         name: 'Python',
         icon: SiPython,
         color: '#2496ed',
-        details: ['Basic Python', 'OOP'],
+        role: 'backend' as Role 
     },
     {
         name: 'Node.JS',
         icon: SiNodedotjs,
         color: '#339933',
-        details: ['Basic Python', 'OOP'],
+        role: 'backend' as Role 
+    },
+    {
+        name: 'Express.JS',
+        icon: SiExpress,
+        color: '#ffffff',
+        role: 'backend' as Role 
+    },
+    {
+        name: 'Postman',
+        icon: SiPostman,
+        color: 'FF6C37',
+        role: 'tools' as Role 
     },
     
 

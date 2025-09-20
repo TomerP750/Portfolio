@@ -1,7 +1,7 @@
 import {motion, useScroll, useTransform} from "framer-motion";
 import "./Hero.css";
 import {JSX} from "react";
-import {ArrowRight} from "lucide-react";
+import {ArrowDown, ArrowRight} from "lucide-react";
 import {scrollToSection} from "../../../Utils/Scroll.ts";
 
 export function Hero(): JSX.Element {
@@ -59,7 +59,7 @@ export function Hero(): JSX.Element {
 
 
                     <motion.button
-                        className="relative overflow-hidden bg-[#10b981] rounded-full px-10 py-3 cursor-pointer group"
+                        className="relative overflow-hidden bg-[#10b981] rounded-full px-10 py-3 cursor-pointer group mt-5"
                         variants={itemVariants}
                         whileHover={{scale: 1.05}}
                         whileTap={{scale: 0.95}}
@@ -70,7 +70,7 @@ export function Hero(): JSX.Element {
                         />
                         <span className="relative z-10 flex items-center text-white group-hover:text-gray-100">
                             Let’s Work Together
-                            <ArrowRight className="ml-2 inline"/>
+                            <ArrowDown className="ml-2 inline"/>
                         </span>
                     </motion.button>
                 </motion.div>

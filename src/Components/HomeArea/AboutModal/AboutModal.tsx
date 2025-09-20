@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { JSX } from "react";
 import jbGrades from "../../../assets/JBGrades.jpeg";
-// import jbCertifications from "../../../assets/JBCertifications.png";
 import { BiX } from "react-icons/bi";
 import { motion } from "framer-motion";
 

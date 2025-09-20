@@ -18,7 +18,7 @@ export function Button({children ,size ,Icon ,disabled, onClick, className, item
         <motion.p variants={itemVariants}>
             <button disabled={disabled} onClick={onClick}
                     className={`${className}`}>
-                {Icon && <Icon size={size} className="transition duration-200 ease-in"/>}
+                {Icon && <Icon size={size} className=""/>}
                 <p>{children}</p>
             </button>
         </motion.p>

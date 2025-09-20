@@ -75,15 +75,18 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                                     />
                                     <p>Learn More</p>
                                 </motion.div>
+
                                 <motion.div variants={itemVariants}>
                                     <a href={project.gitHubUrl} target="_blank" rel="noopener noreferrer">
                                         <Button disabled={githubDisabled}
                                             Icon={FaGithub}
                                             size={25}
                                             className={"flex flex-col text-white items-center hover:text-[#10b981] cursor-pointer disabled:cursor-not-allowed disabled:text-white/50"}
-                                        >Github</Button>
+                                        >Github
+                                        </Button>
                                     </a>
                                 </motion.div>
+
                                 <motion.div variants={itemVariants}>
                                     <a href={project.webUrl} target="_blank" rel="noopener noreferrer">
                                         <Button

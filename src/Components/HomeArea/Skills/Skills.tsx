@@ -1,12 +1,14 @@
-import {motion, Variants} from "framer-motion";
-import {skills} from "../../../Datas/SkillsData.ts";
+import { motion, Variants } from "framer-motion";
+import { skills } from "../../../Datas/SkillsData.ts";
 import image from "../../../assets/skillsImage.png";
-import {JSX} from "react";
+import { JSX, useState } from "react";
+import { SkillCard } from "../SkillCard.tsx";
+import { Role } from "../../../Models/Skill.ts";
 
 export function Skills(): JSX.Element {
 
     const containerVariants: Variants = {
-        hidden: {opacity: 0},
+        hidden: { opacity: 0 },
         show: {
             opacity: 1,
             transition: {
@@ -15,27 +17,29 @@ export function Skills(): JSX.Element {
         },
     };
 
+    const buttonStyle = "py-1 px-3 cursor-pointer rounded-xl"
+    const activeButtonStyle = "bg-[#10b981]"
 
-    const cardVariants: Variants = {
-        hidden: {opacity: 0},
-        show: {
-            opacity: 1,
-            transition: {
-                duration: 0.9,
-                ease: "easeOut",
-            },
-        },
-    };
+    const [active, setActive] = useState<Role>("backend");
+
+
+    const getSkills = (active: Role) => {
+
+        return skills.length > 0 ? skills.filter(s => s.role === active) : [];
+
+    }
+
 
     return (
         <section className="skills-section max-w-5xl mx-auto mt-16 mb-24 px-4">
 
+            {/* Image */}
             <motion.div
                 className="w-full flex justify-center mb-12"
-                initial={{opacity: 0, y: 20}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true, amount: 0.2}}
-                transition={{duration: 0.6}}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6 }}
             >
                 <img
                     src={image}
@@ -44,107 +48,50 @@ export function Skills(): JSX.Element {
                 />
             </motion.div>
 
+            <div className="flex flex-col items-center gap-10">
+                {/* Buttons */}
+                <motion.div
+                    className="flex justify-center items-center gap-3 text-white mb-10"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.9 }}
+                >
+                    <motion.button
+                        onClick={() => setActive("backend")}
+                        className={`${buttonStyle} ${active === "backend" && activeButtonStyle}`}>Backend
+                    </motion.button>
 
-            <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{once: true, amount: 0.2}}
-            >
-                {skills.map(({name, icon: Icon, color}) => (
-                    <motion.div
-                        key={name}
-                        variants={cardVariants}
-                        className="
-              relative
-              rounded-2xl
-              overflow-hidden
-              border-2 border-transparent
-              group
-              cursor-pointer
-              transform
-              transition-all
-              duration-300
-              bg-[repeating-linear-gradient(
-                to right,
-                rgba(255,255,255,0.02) 0px,
-                rgba(255,255,255,0.02) 1px,
-                transparent 1px,
-                transparent 6px
-              ),
-              repeating-linear-gradient(
-                to bottom,
-                rgba(255,255,255,0.02) 0px,
-                rgba(255,255,255,0.02) 1px,
-                transparent 1px,
-                transparent 6px
-              ),
-              #1f2937]
-            "
-                    >
-                        <div
-                            className="
-                relative
-                z-20
-                flex
-                items-center
-                justify-center
-                w-16 h-16
-                mx-auto mt-6
-                rounded-full
-                bg-gray-800
-                transition-all
-                duration-300
-                group-hover:bg-[var(--icon-color)]
-                group-hover:shadow-[0_0_12px_var(--icon-color)]
-              "
-                            style={{"--icon-color": color} as React.CSSProperties}
-                        >
-                            <Icon
-                                size={32}
-                                className="text-[var(--icon-color)] group-hover:text-gray-900"
-                            />
-                        </div>
+                    <motion.button
+                        onClick={() => setActive("database")}
+                        className={`${buttonStyle} ${active === "database" && activeButtonStyle}`}>Database
+                    </motion.button>
 
-                        <div className="relative z-20 p-4 text-center">
-                            <code
-                                className="
-                  inline-block
-                  font-mono
-                  text-green-300
-                  bg-gray-800/50
-                  px-2 py-1
-                  rounded-md
-                  transition-all
-                  duration-300
-                  group-hover:bg-gray-800/70
-                  group-hover:border-green-400/70
-                  group-hover:text-green-400
-                "
-                            >
-                                &lt;{name} /&gt;
-                            </code>
-                        </div>
+                    <motion.button
+                        onClick={() => setActive("frontend")}
+                        className={`${buttonStyle} ${active === "frontend" && activeButtonStyle}`}>Frontend
+                    </motion.button>
 
-                        <div
-                            className="
-                absolute inset-0
-                z-10
-                ring-0
-                transition-all
-                duration-300
-                group-hover:ring-2
-                group-hover:ring-green-400
-                group-hover:ring-opacity-50
-                group-hover:shadow-lg
-              "
-                        />
-                    </motion.div>
-                ))}
-            </motion.div>
+                    <motion.button
+                        onClick={() => setActive("tools")}
+                        className={`${buttonStyle} ${active === "tools" && activeButtonStyle}`}>Tools
+                    </motion.button>
+
+
+                </motion.div>
+
+                {/* Skills grid */}
+                <motion.div
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 w-4/5"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    {getSkills(active).map(s => <SkillCard skill={s} />)}
+                </motion.div>
+            </div>
         </section>
     );
 }
-
 
