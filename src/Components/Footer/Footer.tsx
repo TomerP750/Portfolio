@@ -54,7 +54,7 @@ export function Footer({page}: FooterProps): JSX.Element {
     }
 
     return (
-        <footer className="bg-gradient-to-b from-[#0f172a] to-[#0b1a3a]">
+        <footer className="">
             <div className="max-w-4xl mx-auto px-4 py-8">
 
                 <nav className="flex justify-center items-center flex-wrap space-x-4">

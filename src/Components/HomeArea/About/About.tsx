@@ -33,6 +33,7 @@ export function About(): JSX.Element {
 
     const ref = useRef<HTMLElement>(null);
     const inView = useInView(ref, { once: true, margin: "0px", amount: 0.1 });
+    
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [modalType, setModalType] = useState<ModalType>("John Bryce Grades");
 
@@ -42,7 +43,7 @@ export function About(): JSX.Element {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
-            className="bg-[#0f172a] font-light text-white py-12 px-4 sm:py-20 sm:px-8 lg:px-0 flex flex-col items-center space-y-8 sm:space-y-12 gap-20 md:gap-10"
+            className="bg-[#191f2f] font-light text-white py-12 px-4 sm:py-20 sm:px-8 lg:px-0 flex flex-col items-center space-y-8 sm:space-y-12 gap-20 md:gap-10"
         >
             {/* Section Title */}
             <motion.h2

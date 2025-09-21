@@ -1,8 +1,9 @@
 import {motion, useScroll, useTransform} from "framer-motion";
 import "./Hero.css";
 import {JSX} from "react";
-import {ArrowDown, ArrowRight} from "lucide-react";
+import {ArrowDown} from "lucide-react";
 import {scrollToSection} from "../../../Utils/Scroll.ts";
+import dotGrid from "../../../assets/dotgrid.png";
 
 export function Hero(): JSX.Element {
 
@@ -24,34 +25,36 @@ export function Hero(): JSX.Element {
         <motion.section
             style={{opacity, scale}}
             className="
-                 items-center flex justify-center h-120 mb-10 lg:mb-0 lg:h-screen
-                 will-change-transform will-change-opacity mt-10"
+                 items-center flex justify-center h-120 my-20 lg:mb-0 lg:h-screen
+                 will-change-transform will-change-opacity  relative"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
 
+            <img src={dotGrid} alt="dotgrid" className="w-100 aspect-square absolute left-[55%] top-2 -z-10"/>
+
             <div className="flex justify-center w-full h-full mt-10 sm:mt-0 sm:h-4/5">
                 {/* Text Content */}
                 <motion.div
-                    className="w-full items-center flex flex-col md:items-center text-[#10b981] 
+                    className="w-full items-center flex flex-col md:items-start text-[#10b981] 
                     md:w-2/3 gap-3 md:gap-5"
                     variants={itemVariants}
                 >
                     <motion.p
-                        className="sm:text-left text-4xl md:text-5xl lg:text-7xl"
+                        className="sm:text-left text-4xl md:text-5xl lg:text-7xl font-bold text-white"
                         variants={itemVariants}
                     >
-                        Welcome,
+                        Welcome, I'm Tomer<span className="text-[#10b981]">.</span>
                     </motion.p>
                     <motion.p
-                        className="text-neutral-100 text-4xl md:text-5xl"
+                        className="text-neutral-100 text-4xl md:text-2xl font-light"
                         variants={itemVariants}
                     >
-                        I'm Tomer
+                        a <span className="text-[#10b981] font-medium">Full Stack Developer</span>
                     </motion.p>
 
-                    <motion.p className="text-white w-3/4" variants={itemVariants}>
+                    <motion.p className="text-white w-3/4 font-light" variants={itemVariants}>
                         I'm a passionate Full Stack Developer who creates modern, responsive websites and applications.
                         Driven by curiosity, attention to detail, and a commitment to building digital experiences.
                         Welcome to my portfolio.
