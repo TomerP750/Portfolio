@@ -33,7 +33,7 @@ export function About(): JSX.Element {
 
     const ref = useRef<HTMLElement>(null);
     const inView = useInView(ref, { once: true, margin: "0px", amount: 0.1 });
-    
+
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [modalType, setModalType] = useState<ModalType>("John Bryce Grades");
 

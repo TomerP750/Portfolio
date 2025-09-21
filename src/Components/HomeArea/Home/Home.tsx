@@ -25,7 +25,7 @@ export function Home(): JSX.Element {
 
     return (
         <>
-        <div className={`flex flex-col gap-2 justify-center`}>
+        <div className={`flex flex-col justify-center`}>
             <div id={"home"} className={"bg-no-repeat bg-cover bg-center"} style={{ backgroundImage: `url(${homeTopBackground})`}}>
             <Navbar/>
 			<Hero/>

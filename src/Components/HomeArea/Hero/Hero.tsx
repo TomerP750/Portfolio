@@ -18,23 +18,23 @@ export function Hero(): JSX.Element {
 
     const itemVariants = {
         hidden: {opacity: 0, y: 20},
-        visible: {opacity: 1, y: 0, transition: {duration: 0.6}}
+        visible: {opacity: 1, y: 0, transition: {duration: 1.0}}
     };
 
     return (
         <motion.section
             style={{opacity, scale}}
             className="
-                 items-center flex justify-center h-120 my-20 lg:mb-0 lg:h-screen
-                 will-change-transform will-change-opacity  relative"
+                flex items-center justify-center h-120 mt-20 lg:mb-0 lg:h-150
+                 will-change-transform will-change-opacity relative"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
         >
 
-            <img src={dotGrid} alt="dotgrid" className="w-100 aspect-square absolute left-[55%] top-2 -z-10"/>
+            <img src={dotGrid} alt="dotgrid" className="hidden xl:inline-block w-120 aspect-square absolute left-[55%] bottom-[30%] -z-10"/>
 
-            <div className="flex justify-center w-full h-full mt-10 sm:mt-0 sm:h-4/5">
+            <div className="flex justify-center w-full h-full sm:mt-0 sm:h-4/5">
                 {/* Text Content */}
                 <motion.div
                     className="w-full items-center flex flex-col md:items-start text-[#10b981] 
