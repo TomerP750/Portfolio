@@ -5,6 +5,7 @@ import { ProjectCard } from "../ProjectCard/ProjectCard.tsx";
 import { motion, useInView } from "framer-motion";
 import image from "../../../assets/projectsImage.png";
 import { AiFillCaretDown } from "react-icons/ai";
+import { FaFilter } from "react-icons/fa";
 
 
 type SortType = "newest-oldest" | "oldest-newest" | "a-z" | "z-a";
@@ -16,6 +17,9 @@ export function Projects(): JSX.Element {
 
     const [sortType, setSortType] = useState<SortType>("oldest-newest");
 
+    const [filterOpen, setFilterOpen] = useState<boolean>(false);
+
+    const paginationLength = Math.ceil(projectsData.length / 5);
 
     const sortProjects = (sortType: SortType) => {
 
@@ -35,9 +39,9 @@ export function Projects(): JSX.Element {
         }
     }
 
-    const sortedProjects = useMemo(() => 
+    const sortedProjects = useMemo(() =>
         sortProjects(sortType),
-    [sortType])
+        [sortType])
 
 
     const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -53,7 +57,49 @@ export function Projects(): JSX.Element {
                 animate={inView ? "visible" : "hidden"}
             >
                 <img src={image} alt="projects" className={"w-100 aspect-square"} />
-                <div className={"flex w-4/5 items-center justify-end"}>
+
+                <div className={"flex w-4/5 items-center justify-end gap-5"}>
+
+                    {/* <div className="relative">
+                        <button onClick={() => setFilterOpen(!filterOpen)}>
+                            <FaFilter size={20} className={`hover:text-[#10b981] transition-colors cursor-pointer ${filterOpen ? 'text-[#10b981]' : 'text-white'}`} />
+                        </button>
+                        {filterOpen &&
+                            <div className="flex flex-col gap-5 items-start justify-center px-5 absolute bg-slate-800 border border-[#10b981] rounded-lg h-40 w-60 right-0 mt-2 z-1000">
+
+                                <label className="flex items-center space-x-3 mb-3 cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        name="role"
+                                        value="fullstack"
+                                        className="w-4 aspect-square accent-[#10b981] rounded-md cursor-pointer"
+                                    />
+                                    <span className="text-white">Full Stack</span>
+                                </label>
+
+                                <label className="flex items-center space-x-3 mb-3 cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        name="role"
+                                        value="frontend"
+                                        className="w-4 aspect-square accent-[#10b981] rounded-md cursor-pointer"
+                                    />
+                                    <span className="text-white">Front End</span>
+                                </label>
+
+                                <label className="flex items-center space-x-3 cursor-pointer">
+                                    <input
+                                        type="checkbox"
+                                        name="role"
+                                        value="backend"
+                                        className="w-4 aspect-square accent-[#10b981] rounded-md cursor-pointer"
+                                    />
+                                    <span className="text-white">Back End</span>
+                                </label>
+
+                            </div>}
+                    </div> */}
+
                     <div className="relative inline-block w-40">
                         <select
                             className="w-full bg-[#0f172a] px-2 py-1 pr-8 border border-[#10b981] focus:border-white cursor-pointer appearance-none"
@@ -70,7 +116,9 @@ export function Projects(): JSX.Element {
                             <AiFillCaretDown className="text-white" />
                         </div>
                     </div>
+
                 </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 w-4/5 gap-5">
                     {sortedProjects.map((project) => (
                         <motion.div
@@ -81,6 +129,16 @@ export function Projects(): JSX.Element {
                         </motion.div>
                     ))}
                 </div>
+
+                {/* {[...Array(paginationLength)].map((_, i) => (
+                    <button
+                        key={i}
+                        className="text-white border-2 p-1 hover:text-[#10b981] hover:border-[#10b981]-2 transition-colors  aspect-square rounded-full text-center cursor-pointer"
+                    >
+                        {i + 1}
+                    </button>
+                ))} */}
+                
             </motion.section>
         </div>
     );

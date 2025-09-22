@@ -20,7 +20,7 @@ export function NavbarDrawer({ onClose, isOpen }: NavbarDrawerProps): JSX.Elemen
     }, [isOpen]);
 
     const drawerVariants = {
-        hidden: { x: '-100%' },
+        hidden: { x: '100%' },
         visible: { x: 0 },
         exit: { x: '-100%' },
     }

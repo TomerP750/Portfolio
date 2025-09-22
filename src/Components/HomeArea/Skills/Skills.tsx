@@ -1,9 +1,9 @@
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import { skills } from "../../../Datas/SkillsData.ts";
-import image from "../../../assets/skillsImage.png";
 import { JSX, useMemo, useState } from "react";
-import { SkillCard } from "../SkillCard.tsx";
+import { skills } from "../../../Datas/SkillsData.ts";
 import { Role } from "../../../Models/Skill.ts";
+import image from "../../../assets/skillsImage.png";
+import { SkillCard } from "../SkillCard.tsx";
 
 export function Skills(): JSX.Element {
 
@@ -23,8 +23,10 @@ export function Skills(): JSX.Element {
         exit: { opacity: 0, y: -8, transition: { duration: 0.12 } },
     };
 
-    const buttonStyle = "py-1 px-3 cursor-pointer rounded-xl"
-    const activeButtonStyle = "bg-[#10b981]"
+    
+    // const ref = useRef(null);
+    // const isInView = useInView(ref, { once: true })
+
 
     const [active, setActive] = useState<Role>("backend");
 
@@ -35,7 +37,7 @@ export function Skills(): JSX.Element {
 
 
     return (
-        <section className="skills-section max-w-5xl mx-auto mt-16 mb-24 px-4">
+        <motion.section className="skills-section max-w-5xl mx-auto mt-16 mb-24 px-4">
 
             {/* Image */}
             <motion.div
@@ -83,10 +85,9 @@ export function Skills(): JSX.Element {
                 </motion.div>
 
                 {/* Skills grid */}
-                {/* Skills grid */}
                 <motion.div
                     key={active} // helps AnimatePresence "mode=wait" below
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-4/5 min-h-70"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-15 sm:gap-6 w-4/5 min-h-70"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="show"
@@ -109,7 +110,7 @@ export function Skills(): JSX.Element {
                     </AnimatePresence>
                 </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

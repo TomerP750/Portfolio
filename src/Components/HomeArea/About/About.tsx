@@ -92,7 +92,7 @@ export function About(): JSX.Element {
             >
                 <motion.ul
                     variants={listVariants}
-                    className="w-full sm:w-4/5 flex flex-col items-end sm:items-end space-y-2"
+                    className="w-full sm:w-4/5 flex flex-col items-center sm:items-end space-y-2"
                 >
                     {educationData.map((item, idx) => (
                         <motion.li
@@ -100,7 +100,7 @@ export function About(): JSX.Element {
                             variants={itemVariants}
                             className="flex justify-end items-center space-x-2"
                         >
-                            <span className="text-xs sm:text-base text-center sm:text-right text-gray-300">
+                            <span className="text-sm sm:text-base text-center sm:text-right text-gray-300">
                                 ({item.date}) {item.role} <strong className=""> — {item.companyOrInstitution}</strong>
                             </span>
                             <span className="w-2 h-2 bg-gray-300 rounded-full mt-1" />
@@ -138,40 +138,8 @@ export function About(): JSX.Element {
                 </motion.ul>
             </motion.div> */}
 
-            {/* Certifications Right side
-            <motion.div
-                variants={itemVariants}
-                className="flex flex-col-reverse sm:flex-row items-center sm:justify-end w-full sm:w-3/4 lg:w-2/3 gap-6"
-            >
-                <motion.ul
-                    variants={listVariants}
-                    className="w-full sm:w-4/5 flex flex-col items-center sm:items-end space-y-2"
-                >
-                    {certificationsData.map((item, idx) => (
-                        <motion.li
-                            key={idx}
-                            variants={itemVariants}
-                            className="flex justify-end items-center space-x-2"
-                        >
-                        <span className="text-right text-gray-300">
-                        <strong className="font-light hover:underline cursor-pointer">{item.name}</strong>
-                        </span>
-                            <span className="w-2 h-2 bg-gray-300 rounded-full mt-1"/>
-                        </motion.li>
-                    ))}
-                </motion.ul>
-
-
-                <motion.div
-                    variants={itemVariants}
-                    className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
-                >
-                    <MdWorkspacePremium size={50} className="text-white sm:!text-[50px]"/>
-                </motion.div>
-            </motion.div> */}
-
-
-            {/*Certifications for left side*/}
+            
+            {/*Certifications*/}
             <motion.div
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row items-center w-full sm:w-3/4 lg:w-2/3 gap-6 sm:gap-8"
@@ -183,9 +151,10 @@ export function About(): JSX.Element {
                 >
                     <MdWorkspacePremium size={50} className="text-white sm:!text-[50px]" />
                 </motion.div>
+
                 <motion.div
                     variants={itemVariants}
-                    className="w-3/4 sm:w-3/4 text-base leading-relaxed space-y-2"
+                    className="w-3/4 flex flex-col items-center sm:items-start gap-2"
                 >
                     {certificationsData.map((item, idx) => (
                         <motion.li
@@ -208,7 +177,9 @@ export function About(): JSX.Element {
                     ))}
 
                     {modalOpen && <AboutModal type={modalType} onClose={()=>setModalOpen(false)}/> }
+
                 </motion.div>
+
             </motion.div>
 
 

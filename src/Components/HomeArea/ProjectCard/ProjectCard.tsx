@@ -133,6 +133,7 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                             </a>
                         </div>
                     </div>
+                    
                     <div className="flex justify-start w-9/10">
                         {project.projectType?.map(p =>
                             <span
