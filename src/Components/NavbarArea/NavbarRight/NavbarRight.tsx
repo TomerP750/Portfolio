@@ -1,12 +1,10 @@
-import "./NavbarRight.css";
-import {JSX, useState} from "react";
-import {Menu} from "lucide-react";
+import { JSX } from "react";
 import { scrollToSection } from "../../../Utils/Scroll";
-import {NavbarDrawer} from "../NavbarDrawer/NavbarDrawer.tsx";
+import "./NavbarRight.css";
 
 export function NavbarRight(): JSX.Element {
 
-    const [drawerOpened, setDrawerOpened] = useState<boolean>(false);
+    // const [drawerOpened, setDrawerOpened] = useState<boolean>(false);
 
     // const cvUrl = "/cv.pdf";
 
@@ -36,11 +34,15 @@ export function NavbarRight(): JSX.Element {
                 </a> */}
             </div>
 
-            <Menu
+            {/* <Menu
                 onClick={() => setDrawerOpened(true)}
                 className="cursor-pointer block min-[900px]:hidden text-[#10b981]"/>
 
-            {drawerOpened && <NavbarDrawer onClose={()=>setDrawerOpened(false)} isOpen={drawerOpened} />}
+            {drawerOpened && <NavbarDrawer onClose={()=>setDrawerOpened(false)} isOpen={drawerOpened} />} */}
+
+            
+            
+        
 
         </div>
 
