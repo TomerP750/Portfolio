@@ -5,7 +5,7 @@ import { ProjectCard } from "../ProjectCard/ProjectCard.tsx";
 import { motion, useInView } from "framer-motion";
 import image from "../../../assets/projectsImage.png";
 import { AiFillCaretDown } from "react-icons/ai";
-import { FaFilter } from "react-icons/fa";
+
 
 
 type SortType = "newest-oldest" | "oldest-newest" | "a-z" | "z-a";
@@ -17,9 +17,7 @@ export function Projects(): JSX.Element {
 
     const [sortType, setSortType] = useState<SortType>("oldest-newest");
 
-    const [filterOpen, setFilterOpen] = useState<boolean>(false);
-
-    const paginationLength = Math.ceil(projectsData.length / 5);
+    
 
     const sortProjects = (sortType: SortType) => {
 
