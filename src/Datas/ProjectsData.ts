@@ -8,7 +8,7 @@ import socialMediaImg from "../assets/socialMediaProject.jpg";
 import grouplyImage from "../assets/grouplyImage.jpg";
 // import tdeeImage from "../assets/tdeeProjectImage.jpg"
 import { technologiesData } from "./TechnologiesData.ts";
-import auraFitDemoVideo from "../../public/aurafit demo.mp4";
+// import auraFitDemoVideo from "../../public/aurafit demo.mp4";
 
 
 export const projectsData: Project[] = [
@@ -108,7 +108,7 @@ export const projectsData: Project[] = [
         "https://github.com/TomerP750/AuraFit-E-Commerce-Project",
         "",
         auraFitImage,
-        auraFitDemoVideo
+        // auraFitDemoVideo
     ),
 
     // new Project(
