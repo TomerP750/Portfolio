@@ -5,8 +5,10 @@ import auraFitImage from "../assets/auraFitImage.jpg";
 // import barberShopImage from "../assets/barberShopImage.jpg";
 import portfolioImage from "../assets/porftolioWebImage.jpg";
 import socialMediaImg from "../assets/socialMediaProject.jpg";
+import grouplyImage from "../assets/grouplyImage.jpg";
 // import tdeeImage from "../assets/tdeeProjectImage.jpg"
 import { technologiesData } from "./TechnologiesData.ts";
+import auraFitDemoVideo from "../../public/aurafit demo.mp4";
 
 
 export const projectsData: Project[] = [
@@ -81,33 +83,6 @@ export const projectsData: Project[] = [
         portfolioImage
     ),
 
-    // new Project(
-    //     4,
-    //     "Barber Shop",
-    //     "The Barber Shop web app is a full-stack solution with a Java Spring backend and a React frontend, offering clients a unified portal for grooming services and retail. Clients select a service type (haircut, shave, styling), choose their preferred barber, pick a date and time, and receive instant confirmation. They can also shop a curated online store of pomades, beard oils, tools, and accessories, complete the checkout flow, and track order status.",
-    //     [
-    //         "Online appointment booking for haircuts, shaves, and styling",
-    //         "Select preferred barber and available date/time",
-    //         // "Instant booking confirmation emails",
-    //         "Browse curated online store of grooming products",
-    //         "Add products to cart and complete checkout",
-    //         "Basic order tracking and history"
-    //     ],
-    //     [ProjectType.FULLSTACK],
-    //     [
-    //         technologiesData[0],
-    //         technologiesData[1],
-    //         technologiesData[5],
-    //         technologiesData[2],
-    //         technologiesData[3],
-    //         technologiesData[9],
-    //         technologiesData[13],
-    //     ],
-    //     "",
-    //     "",
-    //     barberShopImage
-    // ),
-
     new Project(
         4,
         "AuraFit E-Commerce",
@@ -132,7 +107,8 @@ export const projectsData: Project[] = [
         ],
         "https://github.com/TomerP750/AuraFit-E-Commerce-Project",
         "",
-        auraFitImage
+        auraFitImage,
+        auraFitDemoVideo
     ),
 
     // new Project(
@@ -180,7 +156,7 @@ export const projectsData: Project[] = [
             technologiesData["mysql"],
             technologiesData["tailwindcss"],
             technologiesData["typescript"],
-            technologiesData["websocket"],
+            
         ],
         "https://github.com/TomerP750/Appify",
         "",
@@ -210,7 +186,8 @@ export const projectsData: Project[] = [
     ],
     "https://github.com/TomerP750/Grouply",
     "",
-    // grouplyImage
+    grouplyImage,
+    "video"
 ),
 
 ];

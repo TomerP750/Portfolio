@@ -18,6 +18,7 @@ export function ProjectDetailsPage(): JSX.Element {
     const githubDisabled = !project?.gitHubUrl?.trim();
     const webUrlDisabled = !project?.webUrl?.trim();
     const { pathname } = useLocation();
+    
     const handleBackToMain = () => {
         navigate("/", { state: "projects", replace: true });
     }
@@ -44,11 +45,14 @@ export function ProjectDetailsPage(): JSX.Element {
                         <p>Back to Main Page</p>
                     </div>
 
-                    <img
-                        src={project.imageUrl}
-                        alt={project.title}
-                        className="w-full max-w-3xl max-h-[450px] object-cover shadow-lg"
-                    />
+                    {project.videoUrl ? <video
+                        src={project.videoUrl}
+                        controls
+                        muted
+                        loop
+                        playsInline
+                        className="w-full max-w-3xl max-h-[450px] aspect-video object-cover shadow-lg"
+                    /> : <img src={project.imageUrl} className="w-full max-w-3xl max-h-[450px] aspect-video object-cover shadow-lg bg-slate-800"/>}
 
 
                     <div className="flex flex-col items-center gap-4">
