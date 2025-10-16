@@ -185,7 +185,34 @@ export const projectsData: Project[] = [
         "https://github.com/TomerP750/Appify",
         "",
         appifyImage
-    )
+    ),
+    new Project(
+    8,
+    "Grouply",
+    "Grouply is a collaborative platform for junior developers to connect, form study or development groups, and work together on projects. It helps users find other juniors based on shared interests, technologies, and roles—allowing them to create or join projects, post open positions, send invitations, and collaborate through integrated chat and notifications. Designed to simulate real teamwork and boost portfolio-building, Grouply combines social networking with project management in one modern platform.",
+    [
+        "Create and manage projects with detailed descriptions, roles, and statuses",
+        "Invite other juniors or request to join existing projects",
+        "Browse and filter projects by technologies, positions, and activity",
+        "Real-time chat rooms and notifications for collaboration and updates",
+        "Personal dashboard with connections, stats, and project insights",
+        "Responsive UI with light/dark themes and modern animations"
+    ],
+    [ProjectType.FULLSTACK],
+    [
+        technologiesData["java"],
+        technologiesData["spring"],
+        technologiesData["react"],
+        technologiesData["mysql"],
+        technologiesData["tailwindcss"],
+        technologiesData["typescript"],
+        technologiesData["websocket"],
+    ],
+    "https://github.com/TomerP750/Grouply",
+    "",
+    // grouplyImage
+),
+
 ];
 
 
