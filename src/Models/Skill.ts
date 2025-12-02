@@ -17,4 +17,4 @@ export class Skill {
 
 }
 
-export type Role = "backend" | "database" | "frontend" | "tools";
+export type Role = "backend" | "database" | "frontend" | "tools" | "cloud";

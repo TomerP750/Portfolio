@@ -1,4 +1,4 @@
-import { FaJava } from "react-icons/fa";
+import { FaAws, FaJava } from "react-icons/fa";
 import {
     SiCss3, SiDocker,
     SiHtml5,
@@ -117,9 +117,15 @@ export const skills = [
     {
         name: 'Postman',
         icon: SiPostman,
-        color: 'FF6C37',
+        color: '#FF6C37',
         role: 'tools' as Role 
     },
+    {
+        name: 'AWS - IAM, EC2, S3, Lambda ',
+        icon: FaAws,
+        color: '#FF9900',
+        role: 'cloud' as Role
+    }
     
 
 ]

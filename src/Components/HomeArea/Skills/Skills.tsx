@@ -65,7 +65,7 @@ export function Skills(): JSX.Element {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.9 }}
                 >
-                    {["backend", "database", "frontend", "tools"].map((role) => (
+                    {["backend", "database", "frontend", "tools", "cloud"].map((role) => (
                         <motion.button
                             key={role}
                             onClick={() => setActive(role as Role)}
@@ -86,7 +86,7 @@ export function Skills(): JSX.Element {
 
                 {/* Skills grid */}
                 <motion.div
-                    key={active} // helps AnimatePresence "mode=wait" below
+                    key={active} 
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-15 sm:gap-6 w-4/5 min-h-70"
                     variants={containerVariants}
                     initial="hidden"

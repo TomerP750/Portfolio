@@ -5,7 +5,7 @@ import auraFitImage from "../assets/auraFitImage.jpg";
 // import barberShopImage from "../assets/barberShopImage.jpg";
 import portfolioImage from "../assets/porftolioWebImage.jpg";
 import socialMediaImg from "../assets/socialMediaProject.jpg";
-import grouplyImage from "../assets/grouplyImage.jpg";
+import grouplyImage from "../assets/grouply_feed.jpg";
 // import tdeeImage from "../assets/tdeeProjectImage.jpg"
 import { technologiesData } from "./TechnologiesData.ts";
 // import auraFitDemoVideo from "../../public/aurafit demo.mp4";
