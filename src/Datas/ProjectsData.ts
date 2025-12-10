@@ -1,7 +1,6 @@
 import { Project } from "../Models/Project.ts";
 import { ProjectType } from "../Models/ProjectType.ts";
 import appifyImage from "../assets/AppifyImages/myApplications.jpg";
-import auraFitImage from "../assets/auraFitImage.jpg";
 // import barberShopImage from "../assets/barberShopImage.jpg";
 import portfolioImage from "../assets/porftolioWebImage.jpg";
 import socialMediaImg from "../assets/socialMediaProject.jpg";
@@ -15,6 +14,15 @@ import groplyDashboardIndex from "../assets/grouply/dashboard-index-1.jpg";
 import groplyDashboardTable from "../assets/grouply/dashboard-projects.jpg";
 import grouplySettings from "../assets/grouply/settings.jpg";
 
+
+import auraFitMain from "../assets/auraFitImage.jpg";
+import auraFitItemList from "../assets/AuraFitImages/item-list.jpg";
+import auraFitItemPage from "../assets/AuraFitImages/item-page.jpg";
+import auraFitItemReviews from "../assets/AuraFitImages/reviews.jpg";
+import auraFitCartPage from "../assets/AuraFitImages/cart-page.jpg";
+import auraFitCheckoutPage from "../assets/AuraFitImages/checkout-page.jpg";
+import auraFitOrderSuccessPage from "../assets/AuraFitImages/order-success.jpg";
+import auraFitOrderHistory from "../assets/AuraFitImages/order-history.jpg";
 
 
 
@@ -38,11 +46,11 @@ export const projectsData: Project[] = [
             technologiesData["tailwindcss"],
             technologiesData["mysql"],
             technologiesData["typescript"],
-            
+
         ],
         "",
         "",
-        []
+        undefined
     ),
 
     new Project(
@@ -115,7 +123,11 @@ export const projectsData: Project[] = [
         ],
         "https://github.com/TomerP750/AuraFit-E-Commerce-Project",
         "",
-        [auraFitImage],
+        [
+            auraFitMain, auraFitItemList, auraFitItemPage, auraFitItemReviews,
+            auraFitCartPage, auraFitCheckoutPage,
+            auraFitOrderSuccessPage, auraFitOrderHistory
+        ],
         // auraFitDemoVideo
     ),
 
@@ -164,38 +176,38 @@ export const projectsData: Project[] = [
             technologiesData["mysql"],
             technologiesData["tailwindcss"],
             technologiesData["typescript"],
-            
+
         ],
         "https://github.com/TomerP750/Appify",
         "",
         [appifyImage]
     ),
     new Project(
-    8,
-    "Grouply",
-    "Grouply is a collaborative platform for junior developers to connect, form study or development groups, and work together on projects. It helps users find other juniors based on shared interests, technologies, and roles—allowing them to create or join projects, post open positions, send invitations, and collaborate through integrated chat and notifications. Designed to simulate real teamwork and boost portfolio-building, Grouply combines social networking with project management in one modern platform.",
-    [
-        "Create and manage projects with detailed descriptions, roles, and statuses",
-        "Invite other juniors or request to join existing projects",
-        "Browse and filter projects by technologies, positions, and activity",
-        "Real-time chat rooms and notifications for collaboration and updates",
-        "Personal dashboard with connections, stats, and project insights",
-        "Responsive UI with light/dark themes and modern animations"
-    ],
-    [ProjectType.FULLSTACK],
-    [
-        technologiesData["java"],
-        technologiesData["spring"],
-        technologiesData["react"],
-        technologiesData["mysql"],
-        technologiesData["tailwindcss"],
-        technologiesData["typescript"],
-        technologiesData["websocket"],
-    ],
-    "https://github.com/TomerP750/Grouply",
-    "",
-    [grouplyFeed, grouplyLightMode, gropulyChat, groplyDashboardIndex, groplyDashboardTable, grouplySettings],
-),
+        8,
+        "Grouply",
+        "Grouply is a collaborative platform for junior developers to connect, form study or development groups, and work together on projects. It helps users find other juniors based on shared interests, technologies, and roles—allowing them to create or join projects, post open positions, send invitations, and collaborate through integrated chat and notifications. Designed to simulate real teamwork and boost portfolio-building, Grouply combines social networking with project management in one modern platform.",
+        [
+            "Create and manage projects with detailed descriptions, roles, and statuses",
+            "Invite other juniors or request to join existing projects",
+            "Browse and filter projects by technologies, positions, and activity",
+            "Real-time chat rooms and notifications for collaboration and updates",
+            "Personal dashboard with connections, stats, and project insights",
+            "Responsive UI with light/dark themes and modern animations"
+        ],
+        [ProjectType.FULLSTACK],
+        [
+            technologiesData["java"],
+            technologiesData["spring"],
+            technologiesData["react"],
+            technologiesData["mysql"],
+            technologiesData["tailwindcss"],
+            technologiesData["typescript"],
+            technologiesData["websocket"],
+        ],
+        "https://github.com/TomerP750/Grouply",
+        "",
+        [grouplyFeed, grouplyLightMode, gropulyChat, groplyDashboardIndex, groplyDashboardTable, grouplySettings],
+    ),
 
 ];
 
