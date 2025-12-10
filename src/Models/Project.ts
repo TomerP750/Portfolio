@@ -11,13 +11,13 @@ export class Project {
     programingLanguages?: Technology[]
     gitHubUrl?: string
     webUrl?: string
-    imageUrl?: string
+    imageUrl?: string[]
     videoUrl?: string
 
 
 
 
-    constructor(id: number , title:string, content:string, features?: string[] , projectType?: ProjectType[]  , programingLanguages?: Technology[], gitHubUrl?: string, webUrl?: string, imageUrl?:string, videoUrl?: string) {
+    constructor(id: number , title:string, content:string, features?: string[] , projectType?: ProjectType[]  , programingLanguages?: Technology[], gitHubUrl?: string, webUrl?: string, imageUrl?:string[], videoUrl?: string) {
         this.id = id;
         this.title = title;
         this.content = content;

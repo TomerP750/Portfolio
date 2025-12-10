@@ -50,7 +50,7 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                     onMouseOver={() => setImageHovered(true)}
                     onMouseLeave={() => setImageHovered(false)}>
                     <img
-                        src={project.imageUrl}
+                        src={project.imageUrl[0]}
                         alt="image"
                         className={`block w-full h-auto ${imageHovered ? "pointer-events-none" : ""}`}
                     />

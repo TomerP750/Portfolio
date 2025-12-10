@@ -5,10 +5,18 @@ import auraFitImage from "../assets/auraFitImage.jpg";
 // import barberShopImage from "../assets/barberShopImage.jpg";
 import portfolioImage from "../assets/porftolioWebImage.jpg";
 import socialMediaImg from "../assets/socialMediaProject.jpg";
-import grouplyImage from "../assets/grouply_feed.jpg";
 // import tdeeImage from "../assets/tdeeProjectImage.jpg"
 import { technologiesData } from "./TechnologiesData.ts";
 // import auraFitDemoVideo from "../../public/aurafit demo.mp4";
+import grouplyFeed from "../assets/grouply/feed.jpg"
+import grouplyLightMode from "../assets/grouply/lightmode.jpg"
+import gropulyChat from "../assets/grouply/chat.jpg";
+import groplyDashboardIndex from "../assets/grouply/dashboard-index-1.jpg";
+import groplyDashboardTable from "../assets/grouply/dashboard-projects.jpg";
+import grouplySettings from "../assets/grouply/settings.jpg";
+
+
+
 
 
 export const projectsData: Project[] = [
@@ -34,7 +42,7 @@ export const projectsData: Project[] = [
         ],
         "",
         "",
-        ""
+        []
     ),
 
     new Project(
@@ -58,7 +66,7 @@ export const projectsData: Project[] = [
         ],
         "https://github.com/TomerP750/My_social_media_project",
         "",
-        socialMediaImg
+        [socialMediaImg]
     ),
 
     new Project(
@@ -80,7 +88,7 @@ export const projectsData: Project[] = [
         ],
         "",
         "",
-        portfolioImage
+        [portfolioImage]
     ),
 
     new Project(
@@ -107,7 +115,7 @@ export const projectsData: Project[] = [
         ],
         "https://github.com/TomerP750/AuraFit-E-Commerce-Project",
         "",
-        auraFitImage,
+        [auraFitImage],
         // auraFitDemoVideo
     ),
 
@@ -160,7 +168,7 @@ export const projectsData: Project[] = [
         ],
         "https://github.com/TomerP750/Appify",
         "",
-        appifyImage
+        [appifyImage]
     ),
     new Project(
     8,
@@ -186,8 +194,7 @@ export const projectsData: Project[] = [
     ],
     "https://github.com/TomerP750/Grouply",
     "",
-    grouplyImage,
-    "video"
+    [grouplyFeed, grouplyLightMode, gropulyChat, groplyDashboardIndex, groplyDashboardTable, grouplySettings],
 ),
 
 ];

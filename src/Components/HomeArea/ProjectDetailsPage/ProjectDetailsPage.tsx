@@ -1,5 +1,5 @@
 import "./ProjectDetailsPage.css";
-import { JSX, useEffect } from "react";
+import { JSX, useEffect, useState } from "react";
 import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { FiArrowLeft, FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
@@ -7,6 +7,7 @@ import { projectsData } from "../../../Datas/ProjectsData.ts";
 import { ProjectType } from "../../../Models/ProjectType.ts";
 import { Footer } from "../../Footer/Footer.tsx";
 import { Button } from "../../Wrappers/Button/Button.tsx";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 
 export function ProjectDetailsPage(): JSX.Element {
@@ -18,7 +19,8 @@ export function ProjectDetailsPage(): JSX.Element {
     const githubDisabled = !project?.gitHubUrl?.trim();
     const webUrlDisabled = !project?.webUrl?.trim();
     const { pathname } = useLocation();
-    
+    const [index, setIndex] = useState<number>(0);
+
     const handleBackToMain = () => {
         navigate("/", { state: "projects", replace: true });
     }
@@ -30,6 +32,17 @@ export function ProjectDetailsPage(): JSX.Element {
     if (!project) {
         return <Navigate to="/" state={"projects"} replace={true} />
     }
+
+    const images = project.imageUrl ?? [];
+    const hasVideo = !!project.videoUrl;
+
+    const handlePrev = () => {
+        setIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
+    const handleNext = () => {
+        setIndex((prev) => (prev + 1) % images.length);
+    };
 
     return (
         <>
@@ -45,14 +58,65 @@ export function ProjectDetailsPage(): JSX.Element {
                         <p>Back to Main Page</p>
                     </div>
 
-                    {project.videoUrl ? <video
-                        src={project.videoUrl}
-                        controls
-                        muted
-                        loop
-                        playsInline
-                        className="w-full max-w-3xl max-h-[450px] aspect-video object-cover shadow-lg"
-                    /> : <img src={project.imageUrl} className="w-full max-w-3xl max-h-[450px] aspect-video object-cover shadow-lg bg-slate-800"/>}
+                    {hasVideo ? (
+                        <video
+                            src={project.videoUrl}
+                            controls
+                            muted
+                            loop
+                            playsInline
+                            className="w-full max-w-3xl max-h-[450px] aspect-video object-cover shadow-lg"
+                        />
+                    ) : images.length > 0 ? (
+                        <div className="relative w-full max-w-3xl">
+                            {/* Current image */}
+                            <img
+                                src={images[index]}
+                                className="w-full max-w-3xl max-h-[450px] object-cover shadow-lg bg-slate-800 rounded-xl"
+                            />
+
+                            {/* Prev button */}
+                            {images.length > 1 && (
+                                <button
+                                    type="button"
+                                    onClick={handlePrev}
+                                    className="cursor-pointer absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/50 px-3 py-2 text-white text-xl hover:bg-black/70"
+                                >
+                                    <BiChevronLeft/>
+                                </button>
+                            )}
+
+                            {/* Next button */}
+                            {images.length > 1 && (
+                                <button
+                                    type="button"
+                                    onClick={handleNext}
+                                    className="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/50 px-3 py-2 text-white text-xl hover:bg-black/70"
+                                >
+                                    <BiChevronRight/>
+                                </button>
+                            )}
+
+                            {/* Dots */}
+                            {images.length > 1 && (
+                                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                                    {images.map((_, i) => (
+                                        <button
+                                            key={i}
+                                            type="button"
+                                            onClick={() => setIndex(i)}
+                                            className={`h-2.5 w-2.5 rounded-full transition ${i === index
+                                                    ? "bg-white"
+                                                    : "bg-white/40 hover:bg-white/70"
+                                                }`}
+                                        />
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ) : null}
+
+
 
 
                     <div className="flex flex-col items-center gap-4">
