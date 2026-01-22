@@ -117,7 +117,7 @@ export function Projects(): JSX.Element {
 
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 w-4/5 gap-5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 w-4/5 gap-15 lg:gap-5">
                     {sortedProjects.map((project) => (
                         <motion.div
                             key={project.id}

@@ -67,6 +67,7 @@ export function Skills(): JSX.Element {
                 >
                     {["backend", "database", "frontend", "tools", "cloud"].map((role) => (
                         <motion.button
+                            aria-label="Skill header button"
                             key={role}
                             onClick={() => setActive(role as Role)}
                             className="relative py-1 px-4 rounded-xl font-medium text-sm md:text-base cursor-pointer"

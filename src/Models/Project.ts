@@ -3,6 +3,7 @@ import {Technology} from "./Technology.ts";
 
 
 export class Project {
+    
     id: number
     title: string
     content: string
@@ -13,8 +14,6 @@ export class Project {
     webUrl?: string
     imageUrl?: string[]
     videoUrl?: string
-
-
 
 
     constructor(id: number , title:string, content:string, features?: string[] , projectType?: ProjectType[]  , programingLanguages?: Technology[], gitHubUrl?: string, webUrl?: string, imageUrl?:string[], videoUrl?: string) {

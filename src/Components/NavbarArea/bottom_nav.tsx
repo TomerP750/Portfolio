@@ -10,22 +10,22 @@ export function BottomNavbar() {
       className="fixed bottom-0 w-full z-[1000] grid grid-cols-4 bg-slate-800 h-20 lg:hidden"
       role="navigation"
     >
-      <button onClick={() => scrollToSection("home")} className={navBtn}>
+      <button aria-label="Home button" onClick={() => scrollToSection("home")} className={navBtn}>
         <BiHome size={22} />
         <span className="text-sm font-medium">Home</span>
       </button>
 
-      <button onClick={() => scrollToSection("about")} className={navBtn}>
+      <button aria-label="About button" onClick={() => scrollToSection("about")} className={navBtn}>
         <BiUser size={22} />
         <span className="text-sm font-medium">About</span>
       </button>
 
-      <button onClick={() => scrollToSection("skills")} className={navBtn}>
+      <button aria-label="Skills button" onClick={() => scrollToSection("skills")} className={navBtn}>
         <BiCodeAlt size={22} />
         <span className="text-sm font-medium">Skills</span>
       </button>
 
-      <button onClick={() => scrollToSection("projects")} className={navBtn}>
+      <button aria-label="Projects button" onClick={() => scrollToSection("projects")} className={navBtn}>
         <BiFolderOpen size={22} />
         <span className="text-sm font-medium">Projects</span>
       </button>

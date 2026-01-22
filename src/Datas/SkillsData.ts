@@ -11,7 +11,9 @@ import {
     SiTypescript,
     SiNodedotjs,
     SiExpress,
-    SiPostman
+    SiPostman,
+    SiFigma,
+    SiApachekafka
 } from "react-icons/si";
 import { Role } from "../Models/Skill";
 
@@ -119,6 +121,18 @@ export const skills = [
         icon: SiPostman,
         color: '#FF6C37',
         role: 'tools' as Role 
+    },
+    {
+        name: 'Figma',
+        icon: SiFigma,
+        color: '#F24E1E',
+        role: 'tools' as Role,
+    },
+    {
+        name: 'Kakfa',
+        icon: SiApachekafka,
+        color: '#F24E1E',
+        role: 'tools' as Role,
     },
     {
         name: 'AWS - IAM, EC2, S3, Lambda ',

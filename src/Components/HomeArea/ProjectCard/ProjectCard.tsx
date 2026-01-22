@@ -45,7 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
 
     return (
         <>
-            <div className={`w-full h-164 flex flex-col items-center border border-[#10b981]`}>
+            <div className={`w-full min-h-164 flex flex-col items-center border border-[#10b981]`}>
                 {project.imageUrl ? <div className="relative w-full h-auto group flex items-center justify-center"
                     onMouseOver={() => setImageHovered(true)}
                     onMouseLeave={() => setImageHovered(false)}>
@@ -104,7 +104,6 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                     </AnimatePresence>}
                 </div>
 
-
                     : <div className="w-full bg-[#10b981] h-4/5" />}
                 <div className={"border-t border-[#10b981] flex flex-col items-center h-full w-full"}>
 
@@ -112,7 +111,7 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                         <p className="mb-4 font-semibold text-2xl text-white underline underline-offset-8">{project.id} {project.title}</p>
                         <div className="flex gap-4 mb-4 sm:mb-0">
                             <a href={project.gitHubUrl} target="_blank" rel="noopener noreferrer">
-                                <button disabled={githubDisabled}
+                                <button aria-label="Github button" disabled={githubDisabled}
                                     className={"disabled:cursor-not-allowed " +
                                         "disabled:text-white/50 text-white hover:text-[#8257e5] cursor-pointer"}>
                                     <FaGithub
@@ -122,7 +121,7 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                                 </button>
                             </a>
                             <a href={project.webUrl} target="_blank" rel="noopener noreferrer">
-                                <button disabled={webUrlDisabled}
+                                <button aria-label="Webpage link button" disabled={webUrlDisabled}
                                     className={"disabled:cursor-not-allowed " +
                                         "disabled:text-white/50 text-white hover:text-[#10b981] cursor-pointer"}>
                                     <FiExternalLink
@@ -133,7 +132,7 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                             </a>
                         </div>
                     </div>
-                    
+
                     <div className="flex justify-start w-9/10">
                         {project.projectType?.map(p =>
                             <span
@@ -169,7 +168,7 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                     >
                         <span
                             onClick={() => navigate(`/project/${project.id}`)}
-                            className={"flex items-center gap-1 text-[#10b981] hover:opacity-80 transition duration-200 ease-in cursor-pointer"}>
+                            className={" flex items-center gap-1 text-[#10b981] hover:opacity-80 transition duration-200 ease-in cursor-pointer"}>
                             Learn More <ArrowRight />
                         </span>
                     </div>

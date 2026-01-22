@@ -51,12 +51,13 @@ export function ProjectDetailsPage(): JSX.Element {
                 {/* MAIN CONTENT */}
                 <main className="flex-grow flex flex-col items-center gap-10 py-10 px-4">
 
-                    <div
+                    <button
+                        aria-label="Back to main button"
                         onClick={() => handleBackToMain()}
                         className="flex justify-center items-center gap-2 border border-white hover:border-[#10b981] px-6 py-2 rounded-full cursor-pointer text-sm hover:text-[#10b981] transition duration-300">
                         <FiArrowLeft />
                         <p>Back to Main Page</p>
-                    </div>
+                    </button>
 
                     {hasVideo ? (
                         <video
@@ -72,6 +73,7 @@ export function ProjectDetailsPage(): JSX.Element {
                             {/* Current image */}
                             <img
                                 src={images[index]}
+                                alt="image"
                                 className="w-full max-w-3xl max-h-[450px] object-cover shadow-lg bg-slate-800 rounded-xl"
                             />
 
@@ -79,6 +81,7 @@ export function ProjectDetailsPage(): JSX.Element {
                             {images.length > 1 && (
                                 <button
                                     type="button"
+                                    aria-label="Previous image arrow button"
                                     onClick={handlePrev}
                                     className="cursor-pointer absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/50 px-3 py-2 text-white text-xl hover:bg-black/70"
                                 >
@@ -90,6 +93,7 @@ export function ProjectDetailsPage(): JSX.Element {
                             {images.length > 1 && (
                                 <button
                                     type="button"
+                                    aria-label="Next image arrow button"
                                     onClick={handleNext}
                                     className="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/50 px-3 py-2 text-white text-xl hover:bg-black/70"
                                 >
@@ -103,6 +107,7 @@ export function ProjectDetailsPage(): JSX.Element {
                                     {images.map((_, i) => (
                                         <button
                                             key={i}
+                                            aria-label="Index navigate circles buttons"
                                             type="button"
                                             onClick={() => setIndex(i)}
                                             className={`h-2.5 w-2.5 rounded-full transition ${i === index

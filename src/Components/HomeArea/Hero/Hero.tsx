@@ -25,7 +25,7 @@ export function Hero(): JSX.Element {
         <motion.section
             style={{opacity, scale}}
             className="
-                flex items-center justify-center h-120 mt-20 lg:mb-0 lg:h-150
+                flex items-center justify-center min-h-120 2xl:max-w-2/3 mt-20 lg:mb-0 lg:h-150
                  will-change-transform will-change-opacity relative"
             initial="hidden"
             animate="visible"
@@ -62,6 +62,7 @@ export function Hero(): JSX.Element {
 
 
                     <motion.button
+                        aria-label="Hero main button"
                         className="relative overflow-hidden bg-[#10b981] rounded-full px-10 py-3 cursor-pointer group mt-5"
                         variants={itemVariants}
                         whileHover={{scale: 1.05}}
