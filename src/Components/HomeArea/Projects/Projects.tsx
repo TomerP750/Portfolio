@@ -97,7 +97,7 @@ export function Projects(): JSX.Element {
 
                             </div>}
                     </div> */}
-
+                    
                     <div className="relative inline-block w-40">
                         <select
                             className="w-full bg-[#0f172a] px-2 py-1 pr-8 border border-[#10b981] focus:border-white cursor-pointer appearance-none"
