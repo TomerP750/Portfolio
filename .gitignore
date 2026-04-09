@@ -29,6 +29,6 @@ dist-ssr
 *.sw?
 
 
-src/assets/
+# src/assets/
 
-src/Datas/
+# src/Datas/
