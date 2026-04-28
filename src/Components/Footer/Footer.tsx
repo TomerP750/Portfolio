@@ -47,7 +47,7 @@ export function Footer({page}: FooterProps): JSX.Element {
 
 
                     <p className="text-center text-sm text-gray-400">
-                        &copy; {new Date().getFullYear()} Tomer Jacob. All rights reserved.
+                        &copy; {new Date().getFullYear()} Tomer. All rights reserved.
                     </p>
                 </div>
             </footer>)
@@ -63,7 +63,7 @@ export function Footer({page}: FooterProps): JSX.Element {
                     <span onClick={() => scrollToSection("projects")} className={linkClasses}>Projects</span>
                     {/* <span onClick={() => scrollToSection("contact")} className={linkClasses}>Contact</span> */}
 
-                    <NavLink
+                    {/* <NavLink
                         to="/"
                         target="_blank"
                         className={iconClasses}
@@ -78,7 +78,7 @@ export function Footer({page}: FooterProps): JSX.Element {
                         aria-label="LinkedIn"
                     >
                         <FaLinkedin size={20}/>
-                    </NavLink>
+                    </NavLink> */}
                 </nav>
 
 

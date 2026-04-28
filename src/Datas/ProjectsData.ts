@@ -25,6 +25,12 @@ import auraFitOrderSuccessPage from "../assets/AuraFitImages/order-success.jpg";
 import auraFitOrderHistory from "../assets/AuraFitImages/order-history.jpg";
 
 
+import devpathHero from "../assets/devpath-images/hero.jpg";
+import devpathDashboard from "../assets/devpath-images/dashboard.jpg";
+import devpathDashboard1 from "../assets/devpath-images/dashboard-1.jpg";
+import devpathLogin from "../assets/devpath-images/login.jpg";
+import devpathSignup from "../assets/devpath-images/signup.jpg";
+
 
 
 export const projectsData: Project[] = [
@@ -208,6 +214,40 @@ export const projectsData: Project[] = [
         "",
         [grouplyFeed, grouplyLightMode, gropulyChat, groplyDashboardIndex, groplyDashboardTable, grouplySettings],
     ),
+    new Project(
+        9,
+        "DevPath",
+        "DevPath is a learning-progress platform for developers to organize their learning journey, manage study material, and track progress through structured folders and lectures. It helps users build a clear learning path, separate topics by category, and monitor their development over time through a clean dashboard-focused interface.",
+        [
+            "Create and manage learning folders by topic or technology",
+            "Add lectures and organize study material inside each folder",
+            "Track learning progress across different development topics",
+            "Dashboard overview with learning activity and progress insights",
+            "Authentication pages for login and signup",
+            "Responsive UI with a clean and modern developer-focused design"
+        ],
+        [ProjectType.FULLSTACK],
+        [
+            technologiesData["java"],
+            technologiesData["spring"],
+            technologiesData["react"],
+            technologiesData["mysql"],
+            technologiesData["tailwindcss"],
+            technologiesData["typescript"],
+        ],
+        "https://github.com/TomerP750/DevPath",
+        "",
+        [
+            devpathHero,
+            devpathDashboard,
+            devpathDashboard1,
+            devpathLogin,
+            devpathSignup,
+        ],
+    ),
+
+
+
 
 ];
 

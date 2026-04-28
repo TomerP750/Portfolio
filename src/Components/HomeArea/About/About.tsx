@@ -1,8 +1,8 @@
 import "./About.css";
 import { JSX, useRef, useState } from "react";
 import { motion, useInView, Variants } from "framer-motion";
-import { FaGraduationCap } from "react-icons/fa";
-import { User } from "lucide-react";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import { LinkIcon, User } from "lucide-react";
 import { educationData } from "../../../Datas/TimelineData.ts";
 import { certificationsData } from "../../../Datas/CertificationsData.ts";
 import { MdWorkspacePremium } from "react-icons/md";
@@ -117,7 +117,7 @@ export function About(): JSX.Element {
                 </motion.div>
             </motion.div>
 
-            {/* Row 3: Experience
+            {/* Experience */}
             <motion.div
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row items-center w-full sm:w-3/4 lg:w-2/3 gap-6 sm:gap-8"
@@ -126,24 +126,67 @@ export function About(): JSX.Element {
                     variants={itemVariants}
                     className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] rounded-full bg-[#10b981] flex items-center justify-center"
                 >
-                    <FaBriefcase size={50} className="text-white sm:!text-[50px]"/>
+                    <FaBriefcase size={50} className="text-white sm:!text-[50px]" />
                 </motion.div>
                 <motion.ul
                     variants={listVariants}
                     className="w-full sm:w-4/5 list-disc list-inside text-gray-300 space-y-2 flex flex-col items-center sm:items-start"
                 >
-                    <motion.li variants={itemVariants}>
-                        <strong>Nike</strong> — Employee (2023)
+                    <motion.li
+                        className="flex flex-wrap justify-center lg:justify-start items-center gap-x-2 gap-y-1"
+                        variants={itemVariants}
+                    >
+                        <strong className="shrink-0">Freelance -</strong>
+
+                        <span className="min-w-0">
+                            Built landing page for a natural medicine business.
+                        </span>
+
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://moshemedicalcenter.com"
+                            className="inline-flex shrink-0 items-center gap-1 text-[#10b981] hover:opacity-80 transition duration-200 ease-in"
+                        >
+                            <LinkIcon size={15} />
+                            <span>Website</span>
+                        </a>
                     </motion.li>
                 </motion.ul>
-            </motion.div> */}
+            </motion.div>
 
-            
+
             {/*Certifications*/}
+
+            {/* Certifications */}
             <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row items-center w-full sm:w-3/4 lg:w-2/3 gap-6 sm:gap-8"
+                className="flex flex-col-reverse sm:flex-row items-center sm:justify-end w-full sm:w-3/4 lg:w-2/3 gap-6"
             >
+                <motion.ul
+                    variants={listVariants}
+                    className="w-full sm:w-4/5 flex flex-col items-center sm:items-end space-y-2"
+                >
+                    {certificationsData.map((item, idx) => (
+                        <motion.li
+                            key={idx}
+                            variants={itemVariants}
+                            className="flex justify-end items-center gap-2 cursor-pointer"
+                            onClick={() => {
+                                setModalType(item.name as ModalType);
+                                setModalOpen(true);
+                            }}
+                        >
+                            <span className="text-sm sm:text-base text-center sm:text-right text-gray-300">
+                                <strong className="font-light hover:underline">
+                                    {item.name}
+                                </strong>
+                            </span>
+
+                            <span className="w-2 h-2 bg-gray-300 rounded-full shrink-0" />
+                        </motion.li>
+                    ))}
+                </motion.ul>
 
                 <motion.div
                     variants={itemVariants}
@@ -152,34 +195,9 @@ export function About(): JSX.Element {
                     <MdWorkspacePremium size={50} className="text-white sm:!text-[50px]" />
                 </motion.div>
 
-                <motion.div
-                    variants={itemVariants}
-                    className="w-3/4 flex flex-col items-center sm:items-start gap-2"
-                >
-                    {certificationsData.map((item, idx) => (
-                        <motion.li
-                            key={idx}
-                            variants={itemVariants}
-                            className="flex justify-start items-center space-x-2"
-                            onClick={() => {
-                                setModalType(item.name as ModalType);
-                                setModalOpen(true);
-                            }}
-                        >
-                            <span className="w-2 h-2 bg-gray-300 rounded-full" />
-                            <span className="text-right text-gray-300">
-                                <strong
-                                    className="font-light hover:underline cursor-pointer">{item.name}
-                                </strong>
-                            </span>
-
-                        </motion.li>
-                    ))}
-
-                    {modalOpen && <AboutModal type={modalType} onClose={()=>setModalOpen(false)}/> }
-
-                </motion.div>
-
+                {modalOpen && (
+                    <AboutModal type={modalType} onClose={() => setModalOpen(false)} />
+                )}
             </motion.div>
 
 

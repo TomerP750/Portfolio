@@ -16,6 +16,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
 
+    const mainImageUrl = project.imageUrl?.[0]?.trim();
     const githubDisabled = !project.gitHubUrl?.trim();
     const webUrlDisabled = !project.webUrl?.trim();
     const [imageHovered, setImageHovered] = useState<boolean>(false);
@@ -45,67 +46,76 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
 
     return (
         <>
-            <div className={`w-full min-h-164 flex flex-col items-center border border-[#10b981]`}>
-                {project.imageUrl ? <div className="relative w-full h-auto group flex items-center justify-center"
-                    onMouseOver={() => setImageHovered(true)}
-                    onMouseLeave={() => setImageHovered(false)}>
-                    <img
-                        src={project.imageUrl[0]}
-                        alt="image"
-                        className={`block w-full h-auto ${imageHovered ? "pointer-events-none" : ""}`}
-                    />
-                    {imageHovered && <AnimatePresence>
+            <div className=" border-[#10b981] flex flex-1 flex-col items-center w-full">
+                {mainImageUrl ? (
+                    <div
+                        className="relative w-full h-auto group flex items-center justify-center"
+                        onMouseOver={() => setImageHovered(true)}
+                        onMouseLeave={() => setImageHovered(false)}
+                    >
+                        <img
+                            src={mainImageUrl}
+                            alt={`${project.title} preview`}
+                            className={`block w-full h-auto ${imageHovered ? "pointer-events-none" : ""}`}
+                        />
+
                         {imageHovered && (
-                            <motion.div
-                                className="absolute inset-0 sm:px-10 flex items-center justify-around bg-black/60 z-10"
-                                variants={containerVariants}
-                                initial="hidden"
-                                animate="show"
-                                exit="hidden"
-                            >
+                            <AnimatePresence>
                                 <motion.div
-                                    className="flex flex-col items-center text-white hover:text-[#10b981] cursor-pointer"
-                                    variants={itemVariants}
-                                    onClick={() => navigate(`/project/${project.id}`)}
+                                    className="absolute inset-0 sm:px-10 flex items-center justify-around bg-black/60 z-10"
+                                    variants={containerVariants}
+                                    initial="hidden"
+                                    animate="show"
+                                    exit="hidden"
                                 >
-                                    <FaBookOpen
-                                        size={25}
+                                    <motion.div
+                                        className="flex flex-col items-center text-white hover:text-[#10b981] cursor-pointer"
+                                        variants={itemVariants}
+                                        onClick={() => navigate(`/project/${project.id}`)}
+                                    >
+                                        <FaBookOpen size={25} />
+                                        <p>Learn More</p>
+                                    </motion.div>
 
-                                        className=""
-                                    />
-                                    <p>Learn More</p>
-                                </motion.div>
+                                    <motion.div variants={itemVariants}>
+                                        <a href={project.gitHubUrl} target="_blank" rel="noopener noreferrer">
+                                            <Button
+                                                disabled={githubDisabled}
+                                                Icon={FaGithub}
+                                                size={25}
+                                                className="flex flex-col text-white items-center hover:text-[#10b981] cursor-pointer disabled:cursor-not-allowed disabled:text-white/50"
+                                            >
+                                                Github
+                                            </Button>
+                                        </a>
+                                    </motion.div>
 
-                                <motion.div variants={itemVariants}>
-                                    <a href={project.gitHubUrl} target="_blank" rel="noopener noreferrer">
-                                        <Button disabled={githubDisabled}
-                                            Icon={FaGithub}
-                                            size={25}
-                                            className={"flex flex-col text-white items-center hover:text-[#10b981] cursor-pointer disabled:cursor-not-allowed disabled:text-white/50"}
-                                        >Github
-                                        </Button>
-                                    </a>
+                                    <motion.div variants={itemVariants}>
+                                        <a href={project.webUrl} target="_blank" rel="noopener noreferrer">
+                                            <Button
+                                                disabled={webUrlDisabled}
+                                                Icon={FiExternalLink}
+                                                size={25}
+                                                className="flex flex-col text-white items-center hover:text-[#10b981] cursor-pointer disabled:cursor-not-allowed disabled:text-white/50"
+                                            >
+                                                Website
+                                            </Button>
+                                        </a>
+                                    </motion.div>
                                 </motion.div>
-
-                                <motion.div variants={itemVariants}>
-                                    <a href={project.webUrl} target="_blank" rel="noopener noreferrer">
-                                        <Button
-                                            disabled={webUrlDisabled}
-                                            Icon={FiExternalLink}
-                                            size={25}
-                                            className={"flex flex-col text-white items-center hover:text-[#10b981] cursor-pointer disabled:cursor-not-allowed disabled:text-white/50"}
-                                        >
-                                            Website
-                                        </Button>
-                                    </a>
-                                </motion.div>
-                            </motion.div>
+                            </AnimatePresence>
                         )}
-                    </AnimatePresence>}
-                </div>
+                    </div>
+                ) : (
+                    <div className="flex h-73 w-full items-center justify-center bg-white/5">
+                        <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10 text-4xl font-semibold text-white/60">
+                            ?
+                        </span>
+                    </div>
+                )}
 
-                    : <div className="w-full bg-[#10b981] h-4/5" />}
-                <div className={"border-t border-[#10b981] flex flex-col items-center h-full w-full"}>
+                {/* Bottom section */}
+                <div className="rounded-b-2xl shadow-lg shadow-[#10b981]/20 bg-slate-950/50 border-t border-[#10b981] flex h-[380px] flex-col items-center w-full">
 
                     <div className="flex flex-col items-start sm:flex-row sm:justify-between mt-5 w-9/10">
                         <p className="mb-4 font-semibold text-2xl text-white underline underline-offset-8">{project.id} {project.title}</p>
@@ -159,13 +169,11 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                         })}
                     </div>
 
-                    <div className="flex justify-start w-9/10 h-1/2 mt-8">
+                    <div className="flex justify-start w-9/10 mt-8">
                         <p className="text-white">{truncatedContent}</p>
                     </div>
 
-                    <div
-                        className="flex w-9/10 justify-end mb-8"
-                    >
+                    <div className="mt-auto flex w-9/10 justify-end pt-6 mb-8">
                         <span
                             onClick={() => navigate(`/project/${project.id}`)}
                             className={" flex items-center gap-1 text-[#10b981] hover:opacity-80 transition duration-200 ease-in cursor-pointer"}>
