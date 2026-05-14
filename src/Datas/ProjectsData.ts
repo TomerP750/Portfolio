@@ -32,6 +32,11 @@ import devpathLogin from "../assets/devpath-images/login.jpg";
 import devpathSignup from "../assets/devpath-images/signup.jpg";
 
 
+import bugLogDashboard from "../assets/buglog/dashboard.jpg";
+import bugLogDashboard2 from "../assets/buglog/dashboard2.jpg";
+import bugLogSignInPage from "../assets/buglog/signinpage.jpg";
+
+
 
 export const projectsData: Project[] = [
     new Project(
@@ -134,37 +139,11 @@ export const projectsData: Project[] = [
             auraFitCartPage, auraFitCheckoutPage,
             auraFitOrderSuccessPage, auraFitOrderHistory
         ],
-        // auraFitDemoVideo
+
     ),
 
-    // new Project(
-    //     6,
-    //     "TDEE Calculator",
-    //     "The TDEE Calculator is a front-end single-page application built with React and TypeScript that helps users determine their Total Daily Energy Expenditure. By entering age, gender, height, weight, and activity level, the app applies the Mifflin–St Jeor formula to generate an immediate calorie-target recommendation, offers optional macronutrient breakdowns, and updates results in real time as inputs change.",
-    //     [
-    //         "Input age, gender, height, weight, and activity level",
-    //         "Calculate daily caloric needs using the Mifflin–St Jeor formula",
-    //         "Optional macronutrient breakdown suggestions",
-    //         "Real-time result updates as inputs change",
-    //         "Responsive design for all devices"
-    //     ],
-    //     [ProjectType.FULLSTACK],
-    //     [
-    //         technologiesData[0],
-    //         technologiesData[1],
-    //         technologiesData[5],
-    //         technologiesData[2],
-    //         technologiesData[3],
-    //         technologiesData[9],
-    //         technologiesData[13],
-    //     ],
-    //     "",
-    //     "",
-    //     tdeeImage
-    // ),
-
     new Project(
-        7,
+        5,
         "Appify",
         "Appify is a full-stack job-application tracker with a Java Spring backend and a React (TypeScript) frontend that streamlines the job search process. Users add entries for each application—specifying company, role, submission date, status, and notes—then filter and search by company, city, or status. A dashboard summarizes total applications, today’s submissions, average per day, and status distribution, and data can be exported to CSV for offline analysis.",
         [
@@ -189,7 +168,7 @@ export const projectsData: Project[] = [
         [appifyImage]
     ),
     new Project(
-        8,
+        6,
         "Grouply",
         "Grouply is a collaborative platform for junior developers to connect, form study or development groups, and work together on projects. It helps users find other juniors based on shared interests, technologies, and roles—allowing them to create or join projects, post open positions, send invitations, and collaborate through integrated chat and notifications. Designed to simulate real teamwork and boost portfolio-building, Grouply combines social networking with project management in one modern platform.",
         [
@@ -215,7 +194,7 @@ export const projectsData: Project[] = [
         [grouplyFeed, grouplyLightMode, gropulyChat, groplyDashboardIndex, groplyDashboardTable, grouplySettings],
     ),
     new Project(
-        9,
+        7,
         "DevPath",
         "DevPath is a learning-progress platform for developers to organize their learning journey, manage study material, and track progress through structured folders and lectures. It helps users build a clear learning path, separate topics by category, and monitor their development over time through a clean dashboard-focused interface.",
         [
@@ -244,7 +223,43 @@ export const projectsData: Project[] = [
             devpathLogin,
             devpathSignup,
         ],
+        undefined,
+        true
     ),
+    new Project(
+        8,
+        "BugLog",
+        "A full-stack bug and issue tracking platform designed for teams to manage tickets, monitor progress, and collaborate efficiently. The project focuses on clean dashboard UX, structured ticket workflows, authentication, and scalable backend architecture.",
+        [
+            "User authentication and authorization",
+            "Create, update, and manage bug tickets",
+            "Ticket priority and status tracking",
+            "Personal ticket dashboard",
+            "Detailed ticket description panel",
+            "Activity history and comments section",
+            "Team-oriented issue management",
+            "Responsive dark SaaS-style interface",
+        ],
+        [ProjectType.FULLSTACK],
+        [
+            technologiesData["nodejs"],
+            technologiesData["expressjs"],
+            technologiesData["react"],
+            technologiesData["typescript"],
+            technologiesData["tailwindcss"],
+            technologiesData["mongodb"],
+            technologiesData["websocket"],
+        ],
+        "https://github.com/TomerP750/BugLog",
+        "",
+        [
+            bugLogDashboard,
+            bugLogDashboard2,
+            bugLogSignInPage
+        ],
+        "",
+        true
+    )
 
 
 

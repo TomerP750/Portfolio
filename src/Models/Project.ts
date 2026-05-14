@@ -14,9 +14,10 @@ export class Project {
     webUrl?: string
     imageUrl?: string[]
     videoUrl?: string
+    inProgress?: boolean
 
 
-    constructor(id: number , title:string, content:string, features?: string[] , projectType?: ProjectType[]  , programingLanguages?: Technology[], gitHubUrl?: string, webUrl?: string, imageUrl?:string[], videoUrl?: string) {
+    constructor(id: number , title:string, content:string, features?: string[] , projectType?: ProjectType[]  , programingLanguages?: Technology[], gitHubUrl?: string, webUrl?: string, imageUrl?:string[], videoUrl?: string, inProgress?: boolean) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -27,6 +28,7 @@ export class Project {
         this.webUrl = webUrl;
         this.imageUrl = imageUrl;
         this.videoUrl = videoUrl;
+        this.inProgress = inProgress;
 
     }
 }

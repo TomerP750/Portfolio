@@ -1,13 +1,14 @@
-import { JSX, useState } from "react";
-import "./ProjectCard.css";
-import { Project } from "../../../Models/Project.ts";
-import { ArrowRight } from "lucide-react";
-import { FiExternalLink } from "react-icons/fi";
-import { FaBookOpen, FaGithub } from "react-icons/fa";
-import { ProjectType } from "../../../Models/ProjectType.ts";
 import { AnimatePresence, motion, Variants } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { JSX, useState } from "react";
+import { FaBookOpen, FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
+import { GiProgression } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
+import { Project } from "../../../Models/Project.ts";
+import { ProjectType } from "../../../Models/ProjectType.ts";
 import { Button } from "../../Wrappers/Button/Button.tsx";
+import "./ProjectCard.css";
 
 
 interface ProjectCardProps {
@@ -143,13 +144,16 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                         </div>
                     </div>
 
-                    <div className="flex justify-start w-9/10">
+                    <div className="flex items-center w-9/10 gap-4">
                         {project.projectType?.map(p =>
                             <span
                                 key={p.toString()}
                                 className={`px-2 py-1 text-black text-sm rounded-xl
                             ${p === ProjectType.FULLSTACK ? "bg-[#EEF2FF]" : p === ProjectType.BACKEND ? "bg-[#ECFDF5]" : "bg-[#FFF8E1]"}`}>
                                 {p.toString()}</span>)}
+                        {project.inProgress && <span className="text-sm inline-flex items-center gap-1">
+                            <GiProgression size={18} />
+                            In Progress</span>}
                     </div>
 
 

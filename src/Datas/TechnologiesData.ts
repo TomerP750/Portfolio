@@ -9,7 +9,8 @@ import {
     SiTailwindcss,
     SiDocker, SiSocketdotio, SiPostman,
     SiFramer,
-    SiNodedotjs
+    SiNodedotjs,
+    SiExpress
 } from "react-icons/si";
 
 export const technologiesData: Record<string, Technology> = {
@@ -26,6 +27,7 @@ export const technologiesData: Record<string, Technology> = {
   docker: new Technology("Docker", "#2496ED", SiDocker),
   python: new Technology("Python", "#3776AB", FaPython),
   nodejs: new Technology("Node.Js", "#3776AB", SiNodedotjs),
+  expressjs: new Technology("Express.js", "#000000", SiExpress),
   websocket: new Technology("WebSocket", "#339933", SiSocketdotio),
   postman: new Technology("Postman", "#FF6C37", SiPostman),
   framer: new Technology("Framer Motion", "#0055FF", SiFramer),
