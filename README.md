@@ -19,7 +19,6 @@ A personal portfolio website showcasing my projects, skills, and experiences. Bu
 - **Framework & Bundler**: React 19 + Vite 6  
 - **Language**: TypeScript 5  
 - **Styling**: Tailwind CSS 4  
-- **Forms**: React Hook Form  
 - **Routing**: React Router DOM 7  
 - **Animations**: Framer Motion  
 - **Notifications**: React Toastify  
