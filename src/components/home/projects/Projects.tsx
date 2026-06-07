@@ -1,7 +1,7 @@
 import "./Projects.css";
 import { ChangeEvent, JSX, useMemo, useRef, useState } from "react";
 import { projectsData } from "../../../Datas/ProjectsData.ts";
-import { ProjectCard } from "../ProjectCard/ProjectCard.tsx";
+import { ProjectCard } from "../project-card/ProjectCard.tsx";
 import { motion, useInView } from "framer-motion";
 import image from "../../../assets/projectsImage.png";
 import { AiFillCaretDown } from "react-icons/ai";

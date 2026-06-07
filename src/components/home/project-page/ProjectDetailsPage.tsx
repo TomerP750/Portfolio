@@ -5,8 +5,8 @@ import { FiArrowLeft, FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { projectsData } from "../../../Datas/ProjectsData.ts";
 import { ProjectType } from "../../../Models/ProjectType.ts";
-import { Footer } from "../../Footer/Footer.tsx";
-import { Button } from "../../Wrappers/Button/Button.tsx";
+import { Footer } from "../../footer/Footer.tsx";
+import { Button } from "../../shared/Button/Button.tsx";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 

@@ -1,7 +1,7 @@
 import "./Layout.css";
-import {JSX, useEffect, useState} from "react";
-import {Routing} from "../Routing/Routing.tsx";
-import {FaArrowUp} from "react-icons/fa";
+import { JSX, useEffect, useState } from "react";
+import { Routing } from "./routing/Routing";
+import { FaArrowUp } from "react-icons/fa";
 // import {Navbar} from "../NavbarArea/Navbar/Navbar.tsx";
 
 export function Layout(): JSX.Element {
@@ -29,7 +29,7 @@ export function Layout(): JSX.Element {
     return (
         <div className="Layout">
 
-            <Routing/>
+            <Routing />
             {/*<Footer/>*/}
 
             {showBtn && (

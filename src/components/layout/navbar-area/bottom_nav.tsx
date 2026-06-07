@@ -1,5 +1,6 @@
 import { BiCodeAlt, BiFolderOpen, BiHome, BiUser } from "react-icons/bi";
-import { scrollToSection } from "../../Utils/Scroll";
+import { scrollToSection } from "../../../Utils/Scroll";
+
 
 const navBtn =
   "flex flex-col items-center justify-center gap-1 cursor-pointer text-gray-300 hover:text-teal-400 active:scale-95 transition-all duration-300";

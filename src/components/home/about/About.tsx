@@ -7,7 +7,7 @@ import { educationData } from "../../../Datas/TimelineData.ts";
 import { certificationsData } from "../../../Datas/CertificationsData.ts";
 import { MdWorkspacePremium } from "react-icons/md";
 import aboutImage from "../../../assets/aboutImage.png";
-import { AboutModal, ModalType } from "../AboutModal/AboutModal.tsx";
+import { AboutModal, ModalType } from "../about-modal/AboutModal.tsx";
 
 export function About(): JSX.Element {
 

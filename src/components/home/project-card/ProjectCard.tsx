@@ -7,7 +7,7 @@ import { GiProgression } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 import { Project } from "../../../Models/Project.ts";
 import { ProjectType } from "../../../Models/ProjectType.ts";
-import { Button } from "../../Wrappers/Button/Button.tsx";
+import { Button } from "../../shared/Button/Button.tsx";
 import "./ProjectCard.css";
 
 

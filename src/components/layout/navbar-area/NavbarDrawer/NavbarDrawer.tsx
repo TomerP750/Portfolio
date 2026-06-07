@@ -1,8 +1,8 @@
 import "./NavbarDrawer.css";
 import { JSX, useEffect } from "react";
-import { scrollToSection } from "../../../Utils/Scroll.ts";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
+import { scrollToSection } from "../../../../Utils/Scroll";
 
 interface NavbarDrawerProps {
     onClose: () => void;
@@ -24,8 +24,6 @@ export function NavbarDrawer({ onClose, isOpen }: NavbarDrawerProps): JSX.Elemen
         visible: { x: 0 },
         exit: { x: '-100%' },
     }
-
-    // const cvUrl = "/cv.pdf";
 
     const handleClick = (sectionId: string) => {
         scrollToSection(sectionId);
@@ -87,16 +85,7 @@ export function NavbarDrawer({ onClose, isOpen }: NavbarDrawerProps): JSX.Elemen
                     >
                         Contact
                     </li>
-                    {/* <li>
-                        <a
-                            href={cvUrl}
-                            download="Tomer_CV.pdf"
-                            className="inline-block relative text-[#10b981] hover:text-[#e5e7eb] no-underline transition-colors duration-300 px-4 py-2
-                        rounded-4xl border-1 cursor-pointer"
-                        >
-                            Download CV
-                        </a>
-                    </li> */}
+                   
                 </ul>
             </div>
         </motion.div>

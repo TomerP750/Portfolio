@@ -1,8 +1,8 @@
 import "./Routing.css";
 import {JSX} from "react";
 import {Route, Routes} from "react-router-dom";
-import {Home} from "../HomeArea/Home/Home.tsx";
-import {ProjectDetailsPage} from "../HomeArea/ProjectDetailsPage/ProjectDetailsPage.tsx";
+import {Home} from "../../home/home/Home.tsx";
+import {ProjectDetailsPage} from "../../home/project-page/ProjectDetailsPage.tsx";
 
 export function Routing(): JSX.Element {
     return (
