@@ -2,7 +2,7 @@ import "./Footer.css";
 import {JSX} from "react";
 import {FaGithub, FaLinkedin} from "react-icons/fa";
 import {NavLink} from "react-router-dom";
-import {scrollToSection} from "../../Utils/Scroll.ts";
+import { scrollToSection } from "../../../Utils/Scroll";
 
 
 interface FooterProps {
@@ -86,7 +86,7 @@ export function Footer({page}: FooterProps): JSX.Element {
 
 
                 <p className="text-center text-sm text-gray-400">
-                    &copy; {new Date().getFullYear()} Tomer Jacob. All rights reserved.
+                    &copy; {new Date().getFullYear()} Tomer. All rights reserved.
                 </p>
             </div>
         </footer>

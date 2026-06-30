@@ -3,7 +3,7 @@ import { JSX, useMemo, useState } from "react";
 import { skills } from "../../../Datas/SkillsData.ts";
 import { Role } from "../../../Models/Skill.ts";
 import image from "../../../assets/skillsImage.png";
-import { SkillCard } from "../SkillCard.tsx";
+import { SkillCard } from "./SkillCard.tsx";
 
 export function Skills(): JSX.Element {
 
@@ -65,7 +65,7 @@ export function Skills(): JSX.Element {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.9 }}
                 >
-                    {["backend", "database", "frontend", "tools", "cloud"].map((role) => (
+                    {["backend", "database", "frontend", "tools"].map((role) => (
                         <motion.button
                             aria-label="Skill header button"
                             key={role}

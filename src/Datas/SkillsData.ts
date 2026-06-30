@@ -1,19 +1,18 @@
-import { FaAws, FaJava } from "react-icons/fa";
+import { FaJava } from "react-icons/fa";
 import {
     SiCss3, SiDocker,
+    SiExpress,
     SiHtml5,
     SiJavascript,
     SiMongodb,
-    SiMysql, SiPython,
+    SiMysql,
+    SiNodedotjs,
+    SiPostman,
     SiReact,
+    SiRedis,
     SiSpring,
     SiTailwindcss,
-    SiTypescript,
-    SiNodedotjs,
-    SiExpress,
-    SiPostman,
-    SiFigma,
-    SiApachekafka
+    SiTypescript
 } from "react-icons/si";
 import { Role } from "../Models/Skill";
 
@@ -67,13 +66,6 @@ export const skills = [
         role: 'database' as Role 
         
     },
-    // {
-    //     name: 'PostgreSQL',
-    //     icon: SiPostgresql,
-    //     color: '#336791',
-    //     role: 'backend' as Role 
-        
-    // },
     {
         name: 'HTML5',
         icon: SiHtml5,
@@ -99,12 +91,6 @@ export const skills = [
         role: 'tools' as Role 
     },
     {
-        name: 'Python',
-        icon: SiPython,
-        color: '#2496ed',
-        role: 'backend' as Role 
-    },
-    {
         name: 'Node.JS',
         icon: SiNodedotjs,
         color: '#339933',
@@ -117,29 +103,17 @@ export const skills = [
         role: 'backend' as Role 
     },
     {
+        name: 'Redis',
+        icon: SiRedis,
+        color: '#E34F26',
+        role: 'backend' as Role 
+    },
+    {
         name: 'Postman',
         icon: SiPostman,
         color: '#FF6C37',
         role: 'tools' as Role 
     },
-    {
-        name: 'Figma',
-        icon: SiFigma,
-        color: '#F24E1E',
-        role: 'tools' as Role,
-    },
-    {
-        name: 'Kakfa',
-        icon: SiApachekafka,
-        color: '#F24E1E',
-        role: 'tools' as Role,
-    },
-    {
-        name: 'AWS - IAM, EC2, S3, Lambda ',
-        icon: FaAws,
-        color: '#FF9900',
-        role: 'cloud' as Role
-    }
-    
+   
 
 ]

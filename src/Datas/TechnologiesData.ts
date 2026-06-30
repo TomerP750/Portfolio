@@ -31,6 +31,7 @@ export const technologiesData: Record<string, Technology> = {
   websocket: new Technology("WebSocket", "#339933", SiSocketdotio),
   postman: new Technology("Postman", "#FF6C37", SiPostman),
   framer: new Technology("Framer Motion", "#0055FF", SiFramer),
+  redis: new Technology("Redis", "#E34F26", FaHtml5),
 };
 
 

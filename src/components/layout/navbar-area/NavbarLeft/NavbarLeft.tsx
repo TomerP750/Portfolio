@@ -1,7 +1,7 @@
 import "./NavbarLeft.css";
 import {JSX} from "react";
 import {useNavigate} from "react-router-dom";
-import logo from "../../../assets/mylogo.png"
+import logo from "../../../../assets/mylogo.png";
 
 export function NavbarLeft(): JSX.Element {
 

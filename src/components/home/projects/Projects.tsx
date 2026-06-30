@@ -18,7 +18,6 @@ export function Projects(): JSX.Element {
     const [sortType, setSortType] = useState<SortType>("oldest-newest");
 
     
-
     const sortProjects = (sortType: SortType) => {
 
         const projectList = [...projectsData];
@@ -58,45 +57,6 @@ export function Projects(): JSX.Element {
 
                 <div className={"flex w-4/5 items-center justify-end gap-5"}>
 
-                    {/* <div className="relative">
-                        <button onClick={() => setFilterOpen(!filterOpen)}>
-                            <FaFilter size={20} className={`hover:text-[#10b981] transition-colors cursor-pointer ${filterOpen ? 'text-[#10b981]' : 'text-white'}`} />
-                        </button>
-                        {filterOpen &&
-                            <div className="flex flex-col gap-5 items-start justify-center px-5 absolute bg-slate-800 border border-[#10b981] rounded-lg h-40 w-60 right-0 mt-2 z-1000">
-
-                                <label className="flex items-center space-x-3 mb-3 cursor-pointer">
-                                    <input
-                                        type="checkbox"
-                                        name="role"
-                                        value="fullstack"
-                                        className="w-4 aspect-square accent-[#10b981] rounded-md cursor-pointer"
-                                    />
-                                    <span className="text-white">Full Stack</span>
-                                </label>
-
-                                <label className="flex items-center space-x-3 mb-3 cursor-pointer">
-                                    <input
-                                        type="checkbox"
-                                        name="role"
-                                        value="frontend"
-                                        className="w-4 aspect-square accent-[#10b981] rounded-md cursor-pointer"
-                                    />
-                                    <span className="text-white">Front End</span>
-                                </label>
-
-                                <label className="flex items-center space-x-3 cursor-pointer">
-                                    <input
-                                        type="checkbox"
-                                        name="role"
-                                        value="backend"
-                                        className="w-4 aspect-square accent-[#10b981] rounded-md cursor-pointer"
-                                    />
-                                    <span className="text-white">Back End</span>
-                                </label>
-
-                            </div>}
-                    </div> */}
                     
                     <div className="relative inline-block w-40">
                         <select
@@ -128,15 +88,6 @@ export function Projects(): JSX.Element {
                     ))}
                 </div>
 
-                {/* {[...Array(paginationLength)].map((_, i) => (
-                    <button
-                        key={i}
-                        className="text-white border-2 p-1 hover:text-[#10b981] hover:border-[#10b981]-2 transition-colors  aspect-square rounded-full text-center cursor-pointer"
-                    >
-                        {i + 1}
-                    </button>
-                ))} */}
-                
             </motion.section>
         </div>
     );

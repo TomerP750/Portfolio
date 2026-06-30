@@ -4,15 +4,12 @@ import jbGrades from "../../../assets/JBGrades.jpeg";
 import { BiX } from "react-icons/bi";
 import { motion } from "framer-motion";
 
-export type ModalType = "John Bryce Grades" | "John Bryce";
 
 interface AboutModalProps {
-  type: ModalType;
   onClose: () => void;
 }
 
 export function AboutModal({
-  type,
   onClose,
 }: AboutModalProps): JSX.Element | null {
   const [zoomed, setZoomed] = useState(false);
@@ -26,10 +23,7 @@ export function AboutModal({
     };
   }, []);
 
-  const { src, alt } =
-    type === "John Bryce"
-      ? { src: jbGrades, alt: "John Bryce Certifications" }
-      : { src: jbGrades, alt: "John Bryce Grades screenshot" };
+  const { src, alt } = { src: jbGrades, alt: "John Bryce Grades" };
 
   // smaller zoom: 1 = no zoom, 1.15 = 15% bigger
   const ZOOM_SCALE = 1.15;

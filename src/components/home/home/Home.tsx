@@ -11,8 +11,6 @@ import { Projects } from "../projects/Projects.tsx";
 import { Skills } from "../skills/Skills.tsx";
 
 
-
-
 export function Home(): JSX.Element {
 
     const location = useLocation();

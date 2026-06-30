@@ -7,7 +7,7 @@ import { educationData } from "../../../Datas/TimelineData.ts";
 import { certificationsData } from "../../../Datas/CertificationsData.ts";
 import { MdWorkspacePremium } from "react-icons/md";
 import aboutImage from "../../../assets/aboutImage.png";
-import { AboutModal, ModalType } from "../about-modal/AboutModal.tsx";
+import { AboutModal } from "../about-modal/AboutModal.tsx";
 
 export function About(): JSX.Element {
 
@@ -35,7 +35,6 @@ export function About(): JSX.Element {
     const inView = useInView(ref, { once: true, margin: "0px", amount: 0.1 });
 
     const [modalOpen, setModalOpen] = useState<boolean>(false);
-    const [modalType, setModalType] = useState<ModalType>("John Bryce Grades");
 
     return (
         <motion.section
@@ -173,7 +172,6 @@ export function About(): JSX.Element {
                             variants={itemVariants}
                             className="flex justify-end items-center gap-2 cursor-pointer"
                             onClick={() => {
-                                setModalType(item.name as ModalType);
                                 setModalOpen(true);
                             }}
                         >
@@ -196,7 +194,7 @@ export function About(): JSX.Element {
                 </motion.div>
 
                 {modalOpen && (
-                    <AboutModal type={modalType} onClose={() => setModalOpen(false)} />
+                    <AboutModal onClose={() => setModalOpen(false)} />
                 )}
             </motion.div>
 

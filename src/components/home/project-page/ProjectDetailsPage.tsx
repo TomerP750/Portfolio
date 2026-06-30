@@ -1,13 +1,14 @@
 import "./ProjectDetailsPage.css";
 import { JSX, useEffect, useState } from "react";
 import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
-import { FiArrowLeft, FiExternalLink } from "react-icons/fi";
+import { FiArrowLeft } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 import { projectsData } from "../../../Datas/ProjectsData.ts";
 import { ProjectType } from "../../../Models/ProjectType.ts";
-import { Footer } from "../../footer/Footer.tsx";
-import { Button } from "../../shared/Button/Button.tsx";
+
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { Button } from "../../../shared/ui/Button.tsx";
+import { Footer } from "../../layout/footer/Footer.tsx";
 
 
 export function ProjectDetailsPage(): JSX.Element {
@@ -17,7 +18,6 @@ export function ProjectDetailsPage(): JSX.Element {
     const { id } = useParams<{ id: string }>();
     const project = projectsData.find(p => p.id === Number(id));
     const githubDisabled = !project?.gitHubUrl?.trim();
-    const webUrlDisabled = !project?.webUrl?.trim();
     const { pathname } = useLocation();
     const [index, setIndex] = useState<number>(0);
 
@@ -129,19 +129,13 @@ export function ProjectDetailsPage(): JSX.Element {
                         <div className="flex gap-5">
                             <a href={project.gitHubUrl} target="_blank" rel="noopener noreferrer">
                                 <Button disabled={githubDisabled}
-                                    Icon={FaGithub}
                                     size={30}
                                     className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50 hover:text-[#8257e5] cursor-pointer"}
-                                />
+                                >
+                                    <FaGithub size={30} />
+                                </Button>
                             </a>
-                            <a href={project.gitHubUrl} target="_blank" rel="noopener noreferrer">
-                                <Button
-                                    disabled={webUrlDisabled}
-                                    Icon={FiExternalLink}
-                                    size={30}
-                                    className={"flex flex-col text-white items-center disabled:cursor-not-allowed disabled:text-white/50 hover:text-[#10b981] cursor-pointer"}
-                                />
-                            </a>
+                            
 
                         </div>
                     </div>
