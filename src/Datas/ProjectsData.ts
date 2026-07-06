@@ -1,10 +1,8 @@
 import { Project } from "../Models/Project.ts";
 import { ProjectType } from "../Models/ProjectType.ts";
-// import barberShopImage from "../assets/barberShopImage.jpg";
 import socialMediaImg from "../assets/socialMediaProject.jpg";
-// import tdeeImage from "../assets/tdeeProjectImage.jpg"
 import { technologiesData } from "./TechnologiesData.ts";
-// import auraFitDemoVideo from "../../public/aurafit demo.mp4";
+
 import gropulyChat from "../assets/grouply/chat.jpg";
 import groplyDashboardIndex from "../assets/grouply/dashboard-index-1.jpg";
 import groplyDashboardTable from "../assets/grouply/dashboard-projects.jpg";
@@ -27,6 +25,12 @@ import bugLogDashboard from "../assets/buglog/dashboard.jpg";
 import bugLogDashboard2 from "../assets/buglog/dashboard2.jpg";
 import bugLogSignInPage from "../assets/buglog/signinpage.jpg";
 
+import appliBoardHero from "../assets/appliboard/hero.jpg";
+import appliBoardStats from "../assets/appliboard/stats.jpg";
+import appliboardSettings from "../assets/appliboard/settings.jpg";
+import appliboardList from "../assets/appliboard/list.jpg";
+import appliboardListWithFilters from "../assets/appliboard/withFilters.jpg"
+import appliboardDialog from "../assets/appliboard/dialog.jpg";
 
 
 export const projectsData: Project[] = [
@@ -58,13 +62,12 @@ export const projectsData: Project[] = [
     new Project(
         2,
         "Social Media",
-        "This Social Media platform pairs a Java Spring backend with a React frontend to deliver a full community experience. Users register and customize profiles; create posts with text, images, or hashtags; follow and unfollow other members; like, comment on, and share posts; receive instant notifications for new interactions; and exchange direct messages in a modern, real-time interface.",
+        "This Social Media platform pairs a Java Spring backend with a React frontend to deliver a full community experience. Users register and customize profiles; create posts with text, images, or hashtags; follow and unfollow other members; like, comment on posts.",
         [
             "User registration and customizable profiles",
             "Create, edit, and delete posts",
             "Follow/unfollow other users to curate personalized feeds",
             "Like and comment on posts",
-            "Receive notifications for new likes, comments, and follows",
         ],
         [ProjectType.FULLSTACK],
         [
@@ -82,14 +85,13 @@ export const projectsData: Project[] = [
     new Project(
         3,
         "AuraFit E-Commerce",
-        "AuraFit E-Commerce is a sport-brand online shop built with a Java Spring/Spring Security/MySQL backend and a React frontend. Customers can seamlessly browse a curated selection of athletic apparel, footwear, and workout equipment; filter products by category, size, color, or price; add items to a wishlist or shopping cart; apply discount codes at checkout; and securely review their order history.",
+        "AuraFit E-Commerce is a full-stack e-commerce project built with a Java Spring, Spring Security, and MySQL backend and a React frontend. The application demonstrates common e-commerce functionality, allowing users to browse a catalog of athletic apparel, footwear, and workout equipment, add products to a shopping cart and wishlist, apply discount codes, place simulated orders, and view their order history. The project was developed to showcase full-stack development skills, including secure authentication, REST API design, database integration, and a modern responsive user interface.",
         [
             "Browse product catalogs by category (apparel, shoes, accessories)",
-            "Filter and sort by size, color, price, and brand",
             "View detailed product pages with multiple images and descriptions",
             "Add items to wishlist or shopping cart",
-            "Apply discount codes at checkout",
-            "Complete secure checkout and review order history"
+            "checkout and review order history",
+            "Review on a products"
         ],
         [ProjectType.FULLSTACK],
         [
@@ -166,7 +168,42 @@ export const projectsData: Project[] = [
         ],
         "",
         true
-    )
+    ),
+    new Project(
+        6,
+        "AppliBoard",
+        "A full-stack bug and issue tracking platform designed for teams to manage tickets, monitor progress, and collaborate efficiently. The project focuses on clean dashboard UX, structured ticket workflows, authentication, and scalable backend architecture.",
+        [
+            "User authentication and authorization",
+            "Create, update, and manage bug tickets",
+            "Ticket priority and status tracking",
+            "Personal ticket dashboard",
+            "Detailed ticket description panel",
+            "Activity history and comments section",
+            "Team-oriented issue management",
+            "Responsive dark SaaS-style interface",
+        ],
+        [ProjectType.FULLSTACK],
+        [
+            technologiesData["java"],
+            technologiesData["spring"],
+            technologiesData["react"],
+            technologiesData["mysql"],
+            technologiesData["tailwindcss"],
+            technologiesData["typescript"],
+        ],
+        "https://github.com/TomerP750/AppliBoard",
+        "",
+        [
+            appliBoardHero,
+            appliBoardStats,
+            appliboardList,
+            appliboardListWithFilters,
+            appliboardSettings,
+            appliboardDialog
+        ],
+        "",
+    ),
 
 
 
