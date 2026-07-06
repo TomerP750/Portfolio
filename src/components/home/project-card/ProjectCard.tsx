@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { JSX, useState } from "react";
-import { FaBookOpen, FaGithub } from "react-icons/fa";
+import { FaBookOpen, FaGithub, FaLink } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import { GiProgression } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
@@ -82,10 +82,10 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                                         <a href={project.gitHubUrl} target="_blank" rel="noopener noreferrer">
                                             <Button
                                                 disabled={githubDisabled}
-                                                Icon={FaGithub}
                                                 size={25}
                                                 className="flex flex-col text-white items-center hover:text-[#10b981] cursor-pointer disabled:cursor-not-allowed disabled:text-white/50"
                                             >
+                                                <FaGithub />
                                                 Github
                                             </Button>
                                         </a>
@@ -95,10 +95,10 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                                         <a href={project.webUrl} target="_blank" rel="noopener noreferrer">
                                             <Button
                                                 disabled={webUrlDisabled}
-                                                Icon={FiExternalLink}
                                                 size={25}
                                                 className="flex flex-col text-white items-center hover:text-[#10b981] cursor-pointer disabled:cursor-not-allowed disabled:text-white/50"
                                             >
+                                                <FaLink />
                                                 Website
                                             </Button>
                                         </a>
