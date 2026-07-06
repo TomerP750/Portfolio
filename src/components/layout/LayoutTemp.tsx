@@ -1,8 +1,7 @@
 import "./Layout.css";
 import { JSX, useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
-import { Routing } from "./routing/Routing";
-// import {Navbar} from "../NavbarArea/Navbar/Navbar.tsx";
+import { Routing } from "./routing/RoutingTemp";
 
 export function Layout(): JSX.Element {
 
