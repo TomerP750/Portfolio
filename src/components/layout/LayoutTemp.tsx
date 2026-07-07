@@ -1,4 +1,3 @@
-import "./Layout.css";
 import { JSX, useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { Routing } from "./routing/RoutingTemp";
