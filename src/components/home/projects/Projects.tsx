@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { JSX, useRef, useState } from "react";
+import { JSX, useRef } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 import image from "../../../assets/projectsImage.png";
 import { ProjectCard } from "../project-card/ProjectCard.tsx";
