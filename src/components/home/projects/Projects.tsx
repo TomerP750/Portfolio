@@ -1,49 +1,16 @@
-import "./Projects.css";
-import { ChangeEvent, JSX, useMemo, useRef, useState } from "react";
-import { projectsData } from "../../../Datas/ProjectsData.ts";
-import { ProjectCard } from "../project-card/ProjectCard.tsx";
 import { motion, useInView } from "framer-motion";
-import image from "../../../assets/projectsImage.png";
+import { JSX, useRef, useState } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
+import image from "../../../assets/projectsImage.png";
+import { ProjectCard } from "../project-card/ProjectCard.tsx";
+import "./Projects.css";
+import { projectsData } from "../../../Datas/ProjectsData.ts";
 
-
-
-type SortType = "newest-oldest" | "oldest-newest" | "a-z" | "z-a";
 
 export function Projects(): JSX.Element {
 
     const ref = useRef<HTMLElement>(null);
     const inView = useInView(ref, { once: true, margin: "0px", amount: 0.1 });
-
-    const [sortType, setSortType] = useState<SortType>("oldest-newest");
-
-    
-    const sortProjects = (sortType: SortType) => {
-
-        const projectList = [...projectsData];
-
-        switch (sortType) {
-            case "oldest-newest":
-                return projectsData.sort((a, b) => a.id - b.id)
-            case "newest-oldest":
-                return projectsData.sort((a, b) => b.id - a.id);
-            case "a-z":
-                return projectsData.sort((a, b) => a.title.localeCompare(b.title));
-            case "z-a":
-                return projectsData.sort((a, b) => b.title.localeCompare(a.title));
-            default:
-                return projectList;
-        }
-    }
-
-    const sortedProjects = useMemo(() =>
-        sortProjects(sortType),
-        [sortType])
-
-
-    const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        setSortType(e.target.value as SortType);
-    }
 
     return (
         <div className="overflow-x-hidden">
@@ -59,17 +26,7 @@ export function Projects(): JSX.Element {
 
                     
                     <div className="relative inline-block w-40">
-                        <select
-                            className="w-full bg-[#0f172a] px-2 py-1 pr-8 border border-[#10b981] focus:border-white cursor-pointer appearance-none"
-                            value={sortType}
-                            onChange={handleChange}
-                        >
-                            <option value="oldest-newest">Oldest - Newest</option>
-                            <option value="newest-oldest">Newest - Oldest</option>
-                            <option value="a-z">A - Z</option>
-                            <option value="z-a">Z - A</option>
-                        </select>
-
+                    
                         <div className="pointer-events-none absolute top-1/2 right-2 transform -translate-y-1/2">
                             <AiFillCaretDown className="text-white" />
                         </div>
@@ -78,7 +35,7 @@ export function Projects(): JSX.Element {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 w-4/5 gap-15 lg:gap-6">
-                    {sortedProjects.map((project) => (
+                    {projectsData.map((project) => (
                         <motion.div
                             key={project.id}
                             className="w-full"
