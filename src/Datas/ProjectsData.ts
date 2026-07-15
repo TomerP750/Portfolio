@@ -20,10 +20,6 @@ import auraFitOrderSuccessPage from "../assets/AuraFitImages/order-success.jpg";
 import auraFitItemReviews from "../assets/AuraFitImages/reviews.jpg";
 
 
-// import bugLogDashboard from "../assets/buglog/dashboard.jpg";
-// import bugLogDashboard2 from "../assets/buglog/dashboard2.jpg";
-// import bugLogSignInPage from "../assets/buglog/signinpage.jpg";
-
 import appliBoardHero from "../assets/appliboard/hero.jpg";
 import appliBoardStats from "../assets/appliboard/stats.jpg";
 import appliboardSettings from "../assets/appliboard/settings.jpg";
@@ -166,42 +162,6 @@ export const projectsData: Project[] = [
 
     
     
-    // new Project(
-    //     5,
-    //     "BugLog",
-    //     "A full-stack bug and issue tracking platform designed for teams to manage tickets, monitor progress, and collaborate efficiently. The project focuses on clean dashboard UX, structured ticket workflows, authentication, and scalable backend architecture.",
-    //     [
-    //         "User authentication and authorization",
-    //         "Create, update, and manage bug tickets",
-    //         "Ticket priority and status tracking",
-    //         "Personal ticket dashboard",
-    //         "Detailed ticket description panel",
-    //         "Activity history and comments section",
-    //         "Team-oriented issue management",
-    //         "Responsive dark SaaS-style interface",
-    //     ],
-    //     [ProjectType.FULLSTACK],
-    //     [
-    //         technologiesData["nodejs"],
-    //         technologiesData["expressjs"],
-    //         technologiesData["react"],
-    //         technologiesData["typescript"],
-    //         technologiesData["tailwindcss"],
-    //         technologiesData["mongodb"],
-    //     ],
-    //     "https://github.com/TomerP750/BugLog",
-    //     "",
-    //     [
-    //         bugLogDashboard,
-    //         bugLogDashboard2,
-    //         bugLogSignInPage
-    //     ],
-    //     "",
-    //     true
-    // ),
-
-
-
 
 ];
 

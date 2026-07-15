@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { JSX, useRef } from "react";
-import { AiFillCaretDown } from "react-icons/ai";
 import image from "../../../assets/projectsImage.png";
 import { ProjectCard } from "../project-card/ProjectCard.tsx";
 import "./Projects.css";
@@ -21,18 +20,6 @@ export function Projects(): JSX.Element {
                 animate={inView ? "visible" : "hidden"}
             >
                 <img src={image} alt="projects" className={"w-100 aspect-square"} />
-
-                <div className={"flex w-4/5 items-center justify-end gap-5"}>
-
-                    
-                    <div className="relative inline-block w-40">
-                    
-                        <div className="pointer-events-none absolute top-1/2 right-2 transform -translate-y-1/2">
-                            <AiFillCaretDown className="text-white" />
-                        </div>
-                    </div>
-
-                </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 w-4/5 gap-15 lg:gap-6">
                     {projectsData.map((project) => (
