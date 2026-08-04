@@ -55,9 +55,7 @@ export function Hero(): JSX.Element {
                     </motion.p>
 
                     <motion.p className="text-white w-3/4 font-light" variants={itemVariants}>
-                        I'm a passionate Full Stack Developer who creates modern, responsive websites and applications.
-                        Driven by curiosity, attention to detail, and a commitment to building digital experiences.
-                        Welcome to my portfolio.
+                        I'm a Full Stack Developer with a curious mindset, attention to detail, and a commitment to continuous learning and improvement.
                     </motion.p>
 
 

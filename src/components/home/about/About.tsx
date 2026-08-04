@@ -69,17 +69,7 @@ export function About(): JSX.Element {
                     className="w-3/4 sm:w-3/4 text-base leading-relaxed space-y-2"
                 >
                     <motion.span>
-                        Hello! I’m Tomer, a Full Stack Developer who enjoys building modern
-                        websites and applications
-                        from concept to launch. I combine thoughtful design with solid
-                        technical skills to turn ideas into
-                        smooth, functional, and visually appealing digital products. I focus
-                        on writing clean,
-                        maintainable code and really enjoy working as part of a team to build
-                        great solutions. Whether
-                        it’s a personal project or a collaborative effort, I’m always aiming
-                        to deliver quality work that
-                        meets real needs.
+                        I'm a Full Stack Developer with a curious mindset, attention to detail, and a commitment to continuous learning and improvement. I enjoy building web applications, exploring different approaches to development, and expanding my skills through hands-on projects. I’m always looking for opportunities to learn, experiment, and grow as a developer.
                     </motion.span>
                 </motion.div>
             </motion.div>
