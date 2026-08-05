@@ -91,35 +91,35 @@ export const projectsData: Project[] = [
         ],
 
     ),
-    new Project(
-        3,
-        "DevAtlas",
-        "AuraFit E-Commerce is a full-stack e-commerce project built with a Java Spring, Spring Security, and MySQL backend and a React frontend. The application demonstrates common e-commerce functionality, allowing users to browse a catalog of athletic apparel, footwear, and workout equipment, add products to a shopping cart and wishlist, apply discount codes, place simulated orders, and view their order history. The project was developed to showcase full-stack development skills, including secure authentication, REST API design, database integration, and a modern responsive user interface.",
-        [
-            "Browse product catalogs by category (apparel, shoes, accessories)",
-            "View detailed product pages with multiple images and descriptions",
-            "Add items to wishlist or shopping cart",
-            "checkout and review order history",
-            "Review on a products"
-        ],
-        [ProjectType.FULLSTACK],
-        [
-            technologiesData["nodejs"],
-            technologiesData["expressjs"],
-            technologiesData["react"],
-            technologiesData["typescript"],
-            technologiesData["mongodb"],
-            technologiesData["tailwindcss"],
-        ],
-        "https://github.com/TomerP750/DevAtlas",
-        "",
-        [
+    // new Project(
+    //     3,
+    //     "DevAtlas",
+    //     "AuraFit E-Commerce is a full-stack e-commerce project built with a Java Spring, Spring Security, and MySQL backend and a React frontend. The application demonstrates common e-commerce functionality, allowing users to browse a catalog of athletic apparel, footwear, and workout equipment, add products to a shopping cart and wishlist, apply discount codes, place simulated orders, and view their order history. The project was developed to showcase full-stack development skills, including secure authentication, REST API design, database integration, and a modern responsive user interface.",
+    //     [
+    //         "Browse product catalogs by category (apparel, shoes, accessories)",
+    //         "View detailed product pages with multiple images and descriptions",
+    //         "Add items to wishlist or shopping cart",
+    //         "checkout and review order history",
+    //         "Review on a products"
+    //     ],
+    //     [ProjectType.FULLSTACK],
+    //     [
+    //         technologiesData["nodejs"],
+    //         technologiesData["expressjs"],
+    //         technologiesData["react"],
+    //         technologiesData["typescript"],
+    //         technologiesData["mongodb"],
+    //         technologiesData["tailwindcss"],
+    //     ],
+    //     "https://github.com/TomerP750/DevAtlas",
+    //     "",
+    //     [
             
-        ],
-        undefined,
-        true
+    //     ],
+    //     undefined,
+    //     true
 
-    ),
+    // ),
     // new Project(
     //     3,
     //     "Grouply",
