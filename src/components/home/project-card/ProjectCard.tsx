@@ -116,7 +116,7 @@ export function ProjectCard({ project }: ProjectCardProps): JSX.Element {
                 )}
 
                 {/* Bottom section */}
-                <div className="rounded-b-2xl shadow-lg shadow-[#10b981]/20 bg-slate-950/50 border-t border-[#10b981] flex h-[380px] flex-col items-center w-full">
+                <div className="rounded-b-2xl shadow-lg shadow-[#10b981]/20 bg-slate-950/50 border-t border-[#10b981] flex min-h-[380px] flex-col items-center w-full">
 
                     <div className="flex flex-col items-start sm:flex-row sm:justify-between mt-5 w-9/10">
                         <p className="mb-4 font-semibold text-2xl text-white underline underline-offset-8">{project.id} {project.title}</p>
