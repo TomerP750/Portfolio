@@ -9,7 +9,6 @@ import {
     SiNodedotjs,
     SiPostman,
     SiReact,
-    SiRedis,
     SiSpring,
     SiTailwindcss,
     SiTypescript
