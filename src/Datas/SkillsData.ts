@@ -103,12 +103,6 @@ export const skills = [
         role: 'backend' as Role 
     },
     {
-        name: 'Redis',
-        icon: SiRedis,
-        color: '#E34F26',
-        role: 'backend' as Role 
-    },
-    {
         name: 'Postman',
         icon: SiPostman,
         color: '#FF6C37',
