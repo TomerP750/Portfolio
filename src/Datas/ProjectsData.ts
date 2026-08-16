@@ -10,6 +10,15 @@ import { technologiesData } from "./TechnologiesData.ts";
 // import grouplyLightMode from "../assets/grouply/lightmode.jpg";
 // import grouplySettings from "../assets/grouply/settings.jpg";
 
+import devAtlasHero from "../assets/devatlas/hero.jpg";
+import devAtlasSignIn from "../assets/devatlas/sign-in.jpg";
+import devAtlasListDark from "../assets/devatlas/list_dark.jpg";
+import devAtlasList from "../assets/devatlas/list.jpg";
+import devAtlasLearningPathPage from "../assets/devatlas/topics.jpg";
+import devAtlasTopicPage from "../assets/devatlas/sections.jpg";
+import devAtlasSectionPage from "../assets/devatlas/section_page.jpg";
+
+
 import auraFitMain from "../assets/auraFitImage.jpg";
 import auraFitCartPage from "../assets/AuraFitImages/cart-page.jpg";
 import auraFitCheckoutPage from "../assets/AuraFitImages/checkout-page.jpg";
@@ -91,35 +100,35 @@ export const projectsData: Project[] = [
         ],
 
     ),
-    // new Project(
-    //     3,
-    //     "DevAtlas",
-    //     "AuraFit E-Commerce is a full-stack e-commerce project built with a Java Spring, Spring Security, and MySQL backend and a React frontend. The application demonstrates common e-commerce functionality, allowing users to browse a catalog of athletic apparel, footwear, and workout equipment, add products to a shopping cart and wishlist, apply discount codes, place simulated orders, and view their order history. The project was developed to showcase full-stack development skills, including secure authentication, REST API design, database integration, and a modern responsive user interface.",
-    //     [
-    //         "Browse product catalogs by category (apparel, shoes, accessories)",
-    //         "View detailed product pages with multiple images and descriptions",
-    //         "Add items to wishlist or shopping cart",
-    //         "checkout and review order history",
-    //         "Review on a products"
-    //     ],
-    //     [ProjectType.FULLSTACK],
-    //     [
-    //         technologiesData["nodejs"],
-    //         technologiesData["expressjs"],
-    //         technologiesData["react"],
-    //         technologiesData["typescript"],
-    //         technologiesData["mongodb"],
-    //         technologiesData["tailwindcss"],
-    //     ],
-    //     "https://github.com/TomerP750/DevAtlas",
-    //     "",
-    //     [
-            
-    //     ],
-    //     undefined,
-    //     true
+    new Project(
+        3,
+        "DevAtlas",
+        "DevAtlas is a full-stack web application that helps developers structure technical learning goals into organized paths, topics, and study sections. Users can save notes and code snippets, track completion and confidence, and monitor progress through a responsive dashboard.",
+        [
+            "Built a modular NestJS REST API with TypeORM and MySQL, using validated DTOs and controller/service/repository separation.",
+            "Implemented authentication with in-memory JWT access tokens, HttpOnly refresh-token cookies, hashed token storage, transactional rotation, and server-side revocation.",
+            "Protected frontend routes and backend endpoints through React authentication state, global NestJS guards, and ownership-scoped database queries.",
+            "Developed a React and TypeScript dashboard with nested lazy-loaded routes, reusable components, responsive Tailwind CSS styling, and persistent themes.",
+            "Managed server state with TanStack Query and Axios, including caching, infinite pagination, mutations, cache invalidation, session restoration, and automatic token refresh.",
+            "Modeled hierarchical learning content with ordered topics, section completion controls, confidence indicators, code-snippet views, and aggregated progress tracking."
+        ],
+        [ProjectType.FULLSTACK],
+        [
+            technologiesData["nestjs"],
+            technologiesData["react"],
+            technologiesData["typescript"],
+            technologiesData["mysql"],
+            technologiesData["tailwindcss"],
+        ],
+        "https://github.com/TomerP750/DevAtlas",
+        "",
+        [
+            devAtlasHero, devAtlasSignIn, devAtlasListDark, 
+            devAtlasLearningPathPage, devAtlasTopicPage, devAtlasSectionPage, devAtlasList
+        ],
 
-    // ),
+    ),
+    
     // new Project(
     //     3,
     //     "Grouply",
